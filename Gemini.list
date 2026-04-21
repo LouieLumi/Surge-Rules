@@ -4,6 +4,7 @@
 #########################################
 
 # === Google ===
+DOMAIN-SUFFIX,google.com
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN,antigravity.google
 DOMAIN-SUFFIX,notebooklm.google
