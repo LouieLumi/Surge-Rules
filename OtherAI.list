@@ -1,0 +1,20 @@
+#########################################
+# Lumi's Ruleset - AIGC Domains
+# Reordered: Others
+#########################################
+
+DOMAIN-SUFFIX,groq.com
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,ai.com
+DOMAIN-SUFFIX,clipdrop.co
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN,openrouter.ai
+DOMAIN,api.jetbrains.ai
+DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,jasper.ai
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,dify.ai
+DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,g.ai

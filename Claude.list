@@ -1,0 +1,11 @@
+#########################################
+# Lumi's Ruleset - AIGC Domains
+# Reordered: Anthropic Claude
+#########################################
+
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN,platform.claude.com
+DOMAIN,api.anthropic.com
+DOMAIN,status.anthropic.com

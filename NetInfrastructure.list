@@ -1,0 +1,19 @@
+#########################################
+# Lumi's Ruleset - AIGC Domains
+# Reordered: Others
+#########################################
+
+# === Cloudflare ===
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN,api.cloudflare.com
+DOMAIN-SUFFIX,workers.dev
+DOMAIN-SUFFIX,pages.dev
+DOMAIN,gateway.ai.cloudflare.com
+
+# === GitHub ===
+DOMAIN-SUFFIX,github.com
+DOMAIN,api.github.com
+DOMAIN-SUFFIX,githubusercontent.com
+DOMAIN-SUFFIX,githubassets.com
+DOMAIN-SUFFIX,githubstatus.com
+DOMAIN-SUFFIX,github.io
