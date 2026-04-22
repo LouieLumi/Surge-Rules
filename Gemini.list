@@ -5,6 +5,9 @@
 
 # === Google ===
 DOMAIN-SUFFIX,google.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,googleapis.com
+DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN,antigravity.google
 DOMAIN-SUFFIX,notebooklm.google
@@ -27,5 +30,5 @@ DOMAIN-SUFFIX,aistudio.google.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN,jules.google.com
 DOMAIN-SUFFIX,bard.google.com
-DOMAIN-KEYWORD,alkalimakersuite-pa.clients6.google.com
+DOMAIN-KEYWORD,google
 URL-REGEX,https://www\.google\.com/.*continue=https://gemini\.google\.com.+
