@@ -36,9 +36,13 @@ def _manifest(root: Path) -> dict:
     manifest = json.loads((root / "rulesets.json").read_text(encoding="utf-8"))
     if manifest.get("schema_version") != 1:
         raise ValueError("unsupported rulesets.json schema_version")
+    if manifest.get("rules_directory") != "rules":
+        raise ValueError("rulesets.json rules_directory must be rules")
     base_url = manifest.get("base_url")
     if not isinstance(base_url, str) or not base_url.startswith("https://") or not base_url.endswith("/"):
         raise ValueError("rulesets.json base_url must be an HTTPS directory URL")
+    if not base_url.endswith("/rules/"):
+        raise ValueError("rulesets.json base_url must point to the rules/ directory")
     entries = manifest.get("rulesets")
     if not isinstance(entries, list) or not entries:
         raise ValueError("rulesets.json rulesets must be a nonempty list")
@@ -54,6 +58,15 @@ def _manifest(root: Path) -> dict:
         names.add(name)
         if not isinstance(policy, str) or not policy.strip():
             raise ValueError("missing rule-set policy: " + name)
+    auxiliary = manifest.get("auxiliary_rulesets", [])
+    if not isinstance(auxiliary, list):
+        raise ValueError("rulesets.json auxiliary_rulesets must be a list")
+    for name in auxiliary:
+        if not isinstance(name, str) or Path(name).name != name or not name.endswith(".list"):
+            raise ValueError("invalid auxiliary rule-set filename: {!r}".format(name))
+        if name in names:
+            raise ValueError("duplicate rulesets.json file: " + name)
+        names.add(name)
     return manifest
 
 
@@ -140,10 +153,23 @@ def check_repository(root: Union[str, Path] = ROOT) -> Tuple[List[str], Dict[str
     except (OSError, ValueError) as exc:
         return ["rulesets.json: " + str(exc)], counts
 
+    rules_root = root / manifest["rules_directory"]
+    names = list(LOCAL_FILES) + [entry["file"] for entry in manifest["rulesets"]]
+    names += manifest.get("auxiliary_rulesets", [])
+    try:
+        for path in rules_root.iterdir():
+            if path.name not in names or not path.is_file() or path.is_symlink():
+                errors.append("rules/: unexpected non-rule entry: " + path.name)
+    except OSError as exc:
+        errors.append("rules/: " + str(exc))
+    for path in list(root.glob("*.list")) + [root / name for name in LOCAL_FILES]:
+        if path.exists():
+            errors.append("rule file must be inside rules/: " + path.name)
+
     loaded: Dict[str, List[Rule]] = {}
-    for name in list(LOCAL_FILES) + [entry["file"] for entry in manifest["rulesets"]]:
+    for name in names:
         try:
-            rules = load_rules(root / name)
+            rules = load_rules(rules_root / name)
         except (OSError, ValueError) as exc:
             errors.append(str(exc))
             continue
@@ -173,8 +199,8 @@ def check_repository(root: Union[str, Path] = ROOT) -> Tuple[List[str], Dict[str
                     name, rule.render(), covered[0].render(), covered[1]))
         for rule in rules:
             previous.add(rule, name)
-    # The two original local override lists are parsed, but deliberately not
-    # deduplicated or included in the generated categories' ownership index.
+    # Original local overrides and unused auxiliary lists are parsed, but not
+    # deduplicated or included in the active categories' ownership index.
     _check_config(root, manifest, errors)
     return errors, counts
 
@@ -188,7 +214,7 @@ def load_domain_routes(root: Union[str, Path] = ROOT) -> DomainRoutes:
     manifest = _manifest(root)
     entries = [("ApplicationDirect", "DIRECT"), ("ApplicationReject", "REJECT")]
     entries += [(entry["file"], entry["policy"]) for entry in manifest["rulesets"]]
-    return [(name, policy, [rule for rule in load_rules(root / name)
+    return [(name, policy, [rule for rule in load_rules(root / manifest["rules_directory"] / name)
                            if rule.kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD"}])
             for name, policy in entries]
 

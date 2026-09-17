@@ -11,7 +11,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from check_rules import MESH_LINES, TAIL_LINES, check_repository, first_match_domain, load_domain_routes
+from check_rules import LOCAL_FILES, MESH_LINES, TAIL_LINES, check_repository, first_match_domain, load_domain_routes
 from rulelib import load_rules
 
 
@@ -33,10 +33,13 @@ class PublishedRoutingTests(unittest.TestCase):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "Gemini.list", "🧿 谷歌服务")
 
-    def test_apple_intelligence_precedes_apple(self):
-        for hostname in ("apple-relay.apple.com", "gspe1-ssl.ls.apple.com"):
-            self.assert_category(hostname, "AppleIntelligence.list", "👾 人工智能")
-        self.assert_category("www.apple.com", "Apple.list", "🍎 苹果服务")
+    def test_apple_and_all_intelligence_domains_share_apple_policy(self):
+        for hostname in ("apple-relay.apple.com", "gspe1-ssl.ls.apple.com",
+                         "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe", "apple-relay.cloudflare.com",
+                         "apple-relay.fastly-edge.com", "cp4.cloudflare.com", "www.apple.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "Apple.list", "🍎 苹果服务")
+        self.assertNotIn("AppleIntelligence.list", [name for name, _, _ in self.routes])
 
     def test_ai_domain_ownership(self):
         for hostname, filename in (("claude.ai", "Claude.list"), ("api.anthropic.com", "Claude.list"),
@@ -64,13 +67,16 @@ class PublishedRoutingTests(unittest.TestCase):
     def test_all_published_files_and_protected_configuration(self):
         errors, counts = check_repository(ROOT)
         self.assertEqual(errors, [], "\n".join(errors))
-        self.assertEqual(len(counts), 21)
+        manifest = json.loads((ROOT / "rulesets.json").read_text(encoding="utf-8"))
+        expected = set(LOCAL_FILES) | {entry["file"] for entry in manifest["rulesets"]}
+        expected.update(manifest.get("auxiliary_rulesets", []))
+        self.assertEqual(set(counts), expected)
 
     def test_cloudflare_asn_remains_only_in_configuration_tail(self):
         manifest = json.loads((ROOT / "rulesets.json").read_text(encoding="utf-8"))
         for entry in manifest["rulesets"]:
             self.assertFalse(any(rule.kind == "IP-ASN" and rule.value == "13335"
-                                 for rule in load_rules(ROOT / entry["file"])), entry["file"])
+                                 for rule in load_rules(ROOT / "rules" / entry["file"])), entry["file"])
         active = [line for line in (ROOT / "Surge-Rules.conf").read_text(encoding="utf-8").splitlines()
                   if line.strip() and not line.lstrip().startswith(("#", ";", "//"))]
         self.assertEqual(tuple(active[-3:]), TAIL_LINES)
@@ -81,17 +87,19 @@ class CheckerFailureTests(unittest.TestCase):
     """Prove malformed output is detected, including reverse-order overlap."""
 
     def make_fixture(self, root):
-        manifest = {"schema_version": 1, "base_url": "https://example.com/", "rulesets": [
+        manifest = {"schema_version": 1, "rules_directory": "rules",
+                    "base_url": "https://example.com/rules/", "rulesets": [
             {"file": "First.list", "policy": "Proxy"}, {"file": "Second.list", "policy": "DIRECT"}]}
         (root / "rulesets.json").write_text(json.dumps(manifest), encoding="utf-8")
-        (root / "ApplicationDirect").write_text("PROCESS-NAME,LocalApp\n", encoding="utf-8")
-        (root / "ApplicationReject").write_text("PROCESS-NAME,BlockedApp\n", encoding="utf-8")
-        (root / "First.list").write_text("DOMAIN-SUFFIX,example.com\n", encoding="utf-8")
-        (root / "Second.list").write_text("DOMAIN,unrelated.test\n", encoding="utf-8")
-        config = ["[Rule]", "RULE-SET,https://example.com/ApplicationDirect,DIRECT",
-                  "RULE-SET,https://example.com/ApplicationReject,REJECT,no-resolve"]
+        (root / "rules").mkdir()
+        (root / "rules/ApplicationDirect").write_text("PROCESS-NAME,LocalApp\n", encoding="utf-8")
+        (root / "rules/ApplicationReject").write_text("PROCESS-NAME,BlockedApp\n", encoding="utf-8")
+        (root / "rules/First.list").write_text("DOMAIN-SUFFIX,example.com\n", encoding="utf-8")
+        (root / "rules/Second.list").write_text("DOMAIN,unrelated.test\n", encoding="utf-8")
+        config = ["[Rule]", "RULE-SET,https://example.com/rules/ApplicationDirect,DIRECT",
+                  "RULE-SET,https://example.com/rules/ApplicationReject,REJECT,no-resolve"]
         config += list(MESH_LINES)
-        config += ["RULE-SET,https://example.com/First.list,Proxy", "RULE-SET,https://example.com/Second.list,DIRECT"]
+        config += ["RULE-SET,https://example.com/rules/First.list,Proxy", "RULE-SET,https://example.com/rules/Second.list,DIRECT"]
         config += list(TAIL_LINES)
         (root / "Surge-Rules.conf").write_text("\n".join(config) + "\n", encoding="utf-8")
 
@@ -100,7 +108,7 @@ class CheckerFailureTests(unittest.TestCase):
             root = Path(folder)
             self.make_fixture(root)
             self.assertEqual(check_repository(root)[0], [])
-            (root / "First.list").write_text("DOMAIN,api.example.com\nDOMAIN-SUFFIX,example.com\n", encoding="utf-8")
+            (root / "rules/First.list").write_text("DOMAIN,api.example.com\nDOMAIN-SUFFIX,example.com\n", encoding="utf-8")
             errors, _ = check_repository(root)
             self.assertTrue(any("First.list: redundant DOMAIN,api.example.com" in error for error in errors))
 
@@ -108,7 +116,7 @@ class CheckerFailureTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             self.make_fixture(root)
-            (root / "Second.list").write_text("DOMAIN,api.example.com\n", encoding="utf-8")
+            (root / "rules/Second.list").write_text("DOMAIN,api.example.com\n", encoding="utf-8")
             errors, _ = check_repository(root)
             self.assertTrue(any("preceding First.list" in error for error in errors))
 
@@ -123,6 +131,23 @@ class CheckerFailureTests(unittest.TestCase):
             errors, _ = check_repository(root)
             self.assertTrue(any("RULE-SET paths" in error for error in errors))
             self.assertTrue(any("mesh rules changed" in error for error in errors))
+
+    def test_rejects_documentation_in_rules_directory(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self.make_fixture(root)
+            (root / "rules/README.md").write_text("Documentation belongs outside rules.\n", encoding="utf-8")
+            errors, _ = check_repository(root)
+            self.assertTrue(any("unexpected non-rule entry: README.md" in error for error in errors))
+
+    def test_detects_rule_file_moved_back_to_root(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self.make_fixture(root)
+            (root / "rules/First.list").rename(root / "First.list")
+            errors, counts = check_repository(root)
+            self.assertTrue(any("rule file must be inside rules/: First.list" in error for error in errors))
+            self.assertNotIn("First.list", counts)
 
 
 if __name__ == "__main__":

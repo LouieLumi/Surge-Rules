@@ -1,22 +1,15 @@
 {
   "schema_version": 1,
-  "base_url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/",
+  "base_url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/",
   "rulesets": [
     {
-      "file": "AppleIntelligence.list",
-      "title": "Apple Intelligence",
-      "policy": "👾 人工智能",
-      "sources": [
-        "AppleIntelligence"
-      ]
-    },
-    {
       "file": "Apple.list",
-      "title": "苹果服务",
+      "title": "苹果服务（含 Apple Intelligence）",
       "policy": "🍎 苹果服务",
       "sources": [
         "Apple",
-        "GlobalMedia"
+        "GlobalMedia",
+        "AppleIntelligence"
       ]
     },
     {
@@ -169,5 +162,9 @@
         "ChinaDomain"
       ]
     }
+  ],
+  "rules_directory": "rules",
+  "auxiliary_rulesets": [
+    "NetInfrastructure.list"
   ]
 }

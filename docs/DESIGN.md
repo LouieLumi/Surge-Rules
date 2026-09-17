@@ -2,14 +2,14 @@
 
 Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库把可独立选择出口的服务放入专用分类，再保留通用服务、代理和国内直连兜底。分类文件自身只提供匹配条件，使用哪个策略由 `[Rule]` 中的 `RULE-SET` 行决定。
 
-本次基于用户现有规则和下载的上游快照整理。`rulesets.json` 记录 19 个分类、推荐顺序及现有策略；`Surge-Rules.conf` 提供可复制的 `[Rule]` 片段，不包含节点、DNS 或策略组定义。
+本次基于用户现有规则和下载的上游快照整理。`rulesets.json` 记录 18 个分类、推荐顺序及现有策略；`Surge-Rules.conf` 提供可复制的 `[Rule]` 片段，不包含节点、DNS 或策略组定义。
 
 ## 分类迁移
 
 | 内容 | 整理结果 |
 | --- | --- |
-| `ApplicationDirect`、`ApplicationReject` 与五条异地组网规则 | 原规则保留，仍放在全部分类前 |
-| Apple Intelligence | 独立为 `AppleIntelligence.list`，仍走 `👾 人工智能`；必须在 `Apple.list` 前，使具体 Apple AI 域名先于 Apple 的父域规则匹配 |
+| `ApplicationDirect`、`ApplicationReject` 与五条异地组网规则 | 规则内容保留，两个应用文件迁入 `rules/`，仍放在全部分类前 |
+| Apple Intelligence | 按后续要求合并到 `rules/Apple.list`，统一走 `🍎 苹果服务`；4 条补充保留，另 2 条由已有 `apple.com` 后缀覆盖 |
 | 苹果服务 | `Apple.list` 接收 Apple 上游规则，以及旧 `GlobalMedia.list` 的 Apple TV / Apple Music 章节 |
 | Claude、OpenAI、其他 AI | 保留独立分类；`chat.com` 归 `OpenAI.list`，`ai.com` 归 `OtherAI.list` |
 | Gemini / Google | 合并 Google 上游与原 Gemini 规则，继续使用 `Gemini.list` 路径和 `🧿 谷歌服务` 策略 |
@@ -24,7 +24,7 @@ Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库�
 
 `GlobalMedia.list` 排在 `ChinaMedia.list` 前，让 `inter.iqiyi.com`、`intl.iqiyi.com` 等国际爱奇艺具体子域先匹配国外媒体，再由国内媒体的 `iqiyi.com` 父域接住其余请求。这个顺序用于保留国际版例外，不把共享的国内域名一并转为国外媒体：`snssdk.com` 明确保留在 `ChinaMedia.list`。
 
-YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Microsoft 大类。Apple Intelligence 必须先于 Apple。更具体的域名放前、更宽的服务范围放后，是这些顺序的共同原因。
+YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Microsoft 大类。Apple 与 Apple Intelligence 现在共用一个文件和策略。更具体的域名放前、更宽的服务范围放后，是这些顺序的共同原因。
 
 上游 YouTube 清单同时包含 `gvt1.com`、`gvt2.com` 等 Google 共享 CDN。本次沿用该清单的归属，它们也可能承载地图或其他 Google 下载，不能理解成只匹配视频。Microsoft 清单中的 `edgesuite.net`、`optimizely.com` 等宽泛条目同理；Netflix、Disney 等明确的子域会先按前置专用规则匹配。
 
@@ -52,7 +52,7 @@ AS13335 的位置仍在 GEOIP 后、FINAL 前，并保留原来的解析行为�
 
 去重只处理能明确证明覆盖的情况：完全相同的规则、域名后缀包含关系，以及规则参数相同的 CIDR 包含关系。相同参数是保留 IP 解析语义的前提，例如不会把带 `no-resolve` 与不带该参数的规则当作完全等价。
 
-跨分类排除以后，部分后置列表只包含未被前置分类覆盖的剩余规则。更前的具体子域与更后的父域后缀会有意共存，例如 Apple Intelligence 与 Apple、国际爱奇艺与国内媒体。删除后面的父域会漏掉其余子域，删除前面的具体子域则会改变策略归属。
+跨分类排除以后，部分后置列表只包含未被前置分类覆盖的剩余规则。更前的具体子域与更后的父域后缀会有意共存，例如国际爱奇艺与国内媒体。删除后面的父域会漏掉其余子域，删除前面的具体子域则会改变策略归属。
 
 保留现有 Google 相关关键词和 `DOMAIN-KEYWORD,openai` 的宽匹配行为。这类关键词不要求是服务的官方域名，仍可能命中含相同文字的其他域名；本次未将其静默改窄。也不根据 ASN、GEOIP 或关键词推断并删除另一条域名/IP 规则，因为这些条件的覆盖关系并非仅靠静态文本就能可靠确定。
 
@@ -70,3 +70,7 @@ python3 -m unittest discover -s tests -v
 ```
 
 [来源清单](SOURCES.md) 与 [导入报告](import-report.json) 记录本次上游与整理情况；它们是本次导入的快照，不会因为之后手动修改规则而自动刷新。各上游及用户原有内容的许可分别保留，见 [第三方声明](../THIRD_PARTY_NOTICES.md)。
+
+## 2026-09-17 后续调整
+
+所有规则集迁入 `rules/`，目录内只放规则文件。订阅基址更新为 `https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/`。`AppleIntelligence.list` 已合并，不再单独订阅；Apple Intelligence 的策略从人工智能改为苹果服务。除 Apple 合并外，其它规则文件内容未变，五条异地组网与尾部规则原样保留。历史导入报告继续记录首次整理时的名称与数量。

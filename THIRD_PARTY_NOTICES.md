@@ -9,11 +9,11 @@
 | 上游 | 本仓库对应内容 | 上游许可及随附全文 |
 | --- | --- | --- |
 | [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | 来源注明为该仓库的 Apple、Microsoft、Google、游戏、媒体及 Proxy/Lan/ChinaASN 等衍生规则；以各文件实际来源为准 | 上游根 LICENSE 为 GNU GPL version 2；对应衍生内容保留该许可，见 [GPL-2.0.txt](LICENSES/GPL-2.0.txt) |
-| [SukkaW/Surge](https://github.com/SukkaW/Surge) / [Sukka Ruleset](https://ruleset.skk.moe) | 独立文件 `AppleIntelligence.list` | 上游文件头与根 LICENSE 为 GNU AGPL version 3；见 [AGPL-3.0.txt](LICENSES/AGPL-3.0.txt) |
-| [VirgilClyne/GetSomeFries](https://github.com/VirgilClyne/GetSomeFries) | 独立文件 `Telegram.list`，源自 `ruleset/ASN.Telegram.list` | 上游根 LICENSE 为 GNU GPL version 3；见 [GPL-3.0.txt](LICENSES/GPL-3.0.txt) |
-| [Blankwonder/surge-list](https://github.com/Blankwonder/surge-list) | `ChinaDomain.list` 中由 `cn.list` 整理的域名、USER-AGENT 和 IP 规则 | 核验时上游仓库及 `cn.list` 未声明许可证。本仓库仅记录来源，不为这部分内容添加或推定 GPL、AGPL 等授权 |
+| [SukkaW/Surge](https://github.com/SukkaW/Surge) / [Sukka Ruleset](https://ruleset.skk.moe) | `rules/Apple.list` 中标注 Apple Intelligence 的补充内容 | 上游文件头与根 LICENSE 为 GNU AGPL version 3；见 [AGPL-3.0.txt](LICENSES/AGPL-3.0.txt) |
+| [VirgilClyne/GetSomeFries](https://github.com/VirgilClyne/GetSomeFries) | 独立文件 `rules/Telegram.list`，源自 `ruleset/ASN.Telegram.list` | 上游根 LICENSE 为 GNU GPL version 3；见 [GPL-3.0.txt](LICENSES/GPL-3.0.txt) |
+| [Blankwonder/surge-list](https://github.com/Blankwonder/surge-list) | `rules/ChinaDomain.list` 中由 `cn.list` 整理的域名、USER-AGENT 和 IP 规则 | 核验时上游仓库及 `cn.list` 未声明许可证。本仓库仅记录来源，不为这部分内容添加或推定 GPL、AGPL 等授权 |
 
-`AppleIntelligence.list`、`Telegram.list` 与 blackmatrix7 的衍生规则分别存放，并分别标注来源许可。各许可全文中的无担保条款仍然适用于其对应内容。
+按用户后续要求，Apple Intelligence 补充已合并进 `rules/Apple.list`，对应来源与原许可在补充段中单独标注；该文件其余来源的原有声明继续保留，不把整个合并文件重新标为单一许可。`rules/Telegram.list` 继续单独保留其来源声明。各许可全文中的无担保条款仍然适用于其对应内容。
 
 ## 上游声明与进一步来源
 
