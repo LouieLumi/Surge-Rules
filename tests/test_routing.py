@@ -5,6 +5,7 @@ These tests do not execute Surge or infer IP, DNS, ASN or process behavior.
 
 from pathlib import Path
 import json
+import ipaddress
 import sys
 import tempfile
 import unittest
@@ -117,6 +118,21 @@ class PublishedRoutingTests(unittest.TestCase):
                          "a-new-overseas-service.example", "notcloudflare.com", "cloudflare.com.example"):
             with self.subTest(hostname=hostname):
                 self.assertIsNone(first_match_domain(hostname, routes=self.routes), hostname)
+
+    def test_cloudflare_ip_literal_probes_use_only_exact_resolver_hosts(self):
+        # The detection page requests https://1.1.1.1/cdn-cgi/trace directly;
+        # a domain suffix cannot catch that request after removing AS13335.
+        rules = load_rules(ROOT / "rules/OtherAI.list")
+        networks = [(ipaddress.ip_network(rule.value), rule) for rule in rules
+                    if rule.kind in ("IP-CIDR", "IP-CIDR6")]
+        for value in ("1.1.1.1", "1.0.0.1", "2606:4700:4700::1111", "2606:4700:4700::1001"):
+            matches = [(network, rule) for network, rule in networks if ipaddress.ip_address(value) in network]
+            self.assertEqual(len(matches), 1, value)
+            network, rule = matches[0]
+            self.assertEqual(network.prefixlen, network.max_prefixlen, value)
+            self.assertIn("no-resolve", rule.options)
+        for value in ("1.1.1.2", "1.0.0.2", "172.67.213.99", "2606:4700:4700::1112"):
+            self.assertFalse(any(ipaddress.ip_address(value) in network for network, _ in networks), value)
 
     def test_hostname_normalization(self):
         self.assert_category("YOUTUBEI.GOOGLEAPIS.COM.", "YouTube.list", "📹 油管视频")

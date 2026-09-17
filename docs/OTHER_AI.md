@@ -4,7 +4,7 @@
 
 本次核对 54 组服务，OtherAI 从 17 条扩展到 105 条，并从后置分类移走 11 条已被它覆盖的规则。逐条来源、迁移及原提交见 [审计快照](other-ai-audit.json)。
 
-同日后续调整新增 19 条 Cloudflare 服务域名条件，当前共 124 条。Cloudflare 全网的 ASN 13335 兜底已删除；Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
+同日后续调整新增 19 条 Cloudflare 服务域名条件和 4 条标准 DNS 精确 IP 条件，当前共 128 条。IP 条件包含检测页直接使用的 `1.1.1.1`；Cloudflare 全网的 ASN 13335 兜底已删除，Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
 
 ## 匹配范围
 

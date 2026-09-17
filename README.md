@@ -39,7 +39,7 @@
 
 普通境外流量通过 `Proxy.list` 或最终 `FINAL` 走 `✨ 星链网络`。Claude、OpenAI、OtherAI 和 Gemini/Google 统一使用 `👾 人工智能`；在 Surge 中将前者选到美国星链、后者选到英国独享。其它专用分类仍使用表中的策略组。
 
-Cloudflare 的官网、验证、STUN/TURN、DNS、Workers、Pages、R2 等已核对服务域名放入 OtherAI，Poe 也保留在 OtherAI。普通网站不会仅因为托管在 Cloudflare 网络就进入人工智能策略；范围和来源见 [Cloudflare 分流说明](docs/CLOUDFLARE.md)。
+Cloudflare 的官网、验证、STUN/TURN、DNS、Workers、Pages、R2 等已核对服务域名，以及 `1.1.1.1` 等四个标准 DNS 精确 IP 放入 OtherAI，Poe 也保留在 OtherAI。普通网站不会仅因为托管在 Cloudflare 网络就进入人工智能策略；范围、直接 IP 检测和来源见 [Cloudflare 分流说明](docs/CLOUDFLARE.md)。
 
 **已有配置需要同步调整：删除 `IP-ASN,13335,...` 整行，把 Proxy 的策略设为 `✨ 星链网络`，Gemini 的策略设为 `👾 人工智能`，再刷新远程规则集。** 只刷新 `.list` 不会自动修改你本地 `[Rule]` 中的策略或 ASN 行。
 
