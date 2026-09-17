@@ -48,6 +48,31 @@ class PublishedRoutingTests(unittest.TestCase):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, filename, "👾 人工智能")
 
+    def test_other_ai_frontends_and_backend_hosts_do_not_fall_through(self):
+        # Regressions for the Mistral screenshot and vendor-documented API,
+        # auth, nested cloud-computer and asset hosts beyond their homepages.
+        for hostname in ("mistral.ai", "chat.mistral.ai", "api.mistral.ai",
+                         "pixpix.com", "www.midjourney.com", "marketplace.cursorapi.com",
+                         "cursor-cdn.com", "computer.region.cursorvm.com", "agent.api5.cursor.sh",
+                         "anysphere-binaries.s3.us-east-1.amazonaws.com",
+                         "aws.api.jetbrains.ai", "api.openrouter.ai", "api.githubcopilot.com",
+                         "copilot-proxy.githubusercontent.com", "server.codeiumdata.com",
+                         "chat.deepseek.com", "api.moonshot.cn", "chat.qwen.ai",
+                         "queue.fal.run", "files.replicate.delivery"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+
+    def test_other_ai_does_not_capture_shared_hosts_or_lookalike_domains(self):
+        # A service-specific endpoint must not pull the whole shared cloud,
+        # source hosting, authentication, or general WebRTC provider into AI.
+        for hostname in ("github.com", "api.github.com", "www.microsoft.com",
+                         "storage.googleapis.com", "other-bucket.s3.us-east-1.amazonaws.com",
+                         "api.stripe.com", "global.turn.twilio.com", "example.turn.livekit.cloud",
+                         "notmistral.ai", "api.mistral.ai.example.org"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] != "OtherAI.list", (hostname, match))
+
     def test_domestic_and_international_media(self):
         for hostname in ("iq.com", "intl.iqiyi.com"):
             self.assert_category(hostname, "GlobalMedia.list", "🍿 国外媒体")

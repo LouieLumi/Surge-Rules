@@ -1,0 +1,631 @@
+{
+  "date": "2026-09-17",
+  "baseline_commit": "91e51bce44e03bc566fb5e04fbedf430beebe898",
+  "other_ai_rules_before": 17,
+  "other_ai_rules_after": 105,
+  "services_checked": 54,
+  "verified_services": [
+    {
+      "service": "Cursor",
+      "rules": [
+        "DOMAIN-SUFFIX,cursor.com",
+        "DOMAIN-SUFFIX,cursor.sh",
+        "DOMAIN-SUFFIX,cursorapi.com",
+        "DOMAIN-SUFFIX,cursor-cdn.com",
+        "DOMAIN-SUFFIX,cursorvm.com",
+        "DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com"
+      ],
+      "sources": [
+        "https://cursor.com/docs/enterprise/network-configuration"
+      ]
+    },
+    {
+      "service": "Windsurf / Codeium / Devin",
+      "rules": [
+        "DOMAIN-SUFFIX,windsurf.com",
+        "DOMAIN-SUFFIX,codeium.com",
+        "DOMAIN-SUFFIX,codeiumdata.com",
+        "DOMAIN-SUFFIX,devin.ai",
+        "DOMAIN-SUFFIX,devinenterprise.com"
+      ],
+      "sources": [
+        "https://docs.devin.ai/desktop/troubleshooting/windsurf-common-issues"
+      ]
+    },
+    {
+      "service": "Augment Code",
+      "rules": [
+        "DOMAIN-SUFFIX,augmentcode.com"
+      ],
+      "sources": [
+        "https://docs.augmentcode.com/setup-augment/network-configuration"
+      ]
+    },
+    {
+      "service": "JetBrains AI / Junie",
+      "rules": [
+        "DOMAIN-SUFFIX,api.jetbrains.ai",
+        "DOMAIN,api.app.prod.grazie.aws.intellij.net"
+      ],
+      "sources": [
+        "https://www.jetbrains.com/config/JetBrainsAIPlatform.json"
+      ]
+    },
+    {
+      "service": "GitHub Copilot",
+      "rules": [
+        "DOMAIN-SUFFIX,githubcopilot.com",
+        "DOMAIN,copilot-proxy.githubusercontent.com",
+        "DOMAIN,copilot-telemetry.githubusercontent.com",
+        "DOMAIN,origin-tracker.githubusercontent.com",
+        "DOMAIN,copilot-reports.github.com"
+      ],
+      "sources": [
+        "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference"
+      ]
+    },
+    {
+      "service": "Microsoft Copilot",
+      "rules": [
+        "DOMAIN,copilot.microsoft.com"
+      ],
+      "sources": [
+        "https://copilot.microsoft.com/"
+      ]
+    },
+    {
+      "service": "Tabnine",
+      "rules": [
+        "DOMAIN-SUFFIX,tabnine.com"
+      ],
+      "sources": [
+        "https://www.tabnine.com/",
+        "https://docs.tabnine.com/main/welcome/readme/system-requirements.md"
+      ]
+    },
+    {
+      "service": "TRAE",
+      "rules": [
+        "DOMAIN-SUFFIX,trae.ai",
+        "DOMAIN-SUFFIX,trae.com.cn",
+        "DOMAIN-SUFFIX,trae.cn"
+      ],
+      "sources": [
+        "https://www.trae.ai/",
+        "https://www.trae.com.cn/"
+      ]
+    },
+    {
+      "service": "Cline",
+      "rules": [
+        "DOMAIN-SUFFIX,cline.bot"
+      ],
+      "sources": [
+        "https://cline.bot/"
+      ]
+    },
+    {
+      "service": "Roo Code / Roomote",
+      "rules": [
+        "DOMAIN-SUFFIX,roocode.com",
+        "DOMAIN-SUFFIX,roomote.dev"
+      ],
+      "sources": [
+        "https://roocode.com/"
+      ]
+    },
+    {
+      "service": "Continue",
+      "rules": [
+        "DOMAIN-SUFFIX,continue.dev"
+      ],
+      "sources": [
+        "https://continue.dev/"
+      ]
+    },
+    {
+      "service": "Replit",
+      "rules": [
+        "DOMAIN-SUFFIX,replit.com"
+      ],
+      "sources": [
+        "https://replit.com/"
+      ]
+    },
+    {
+      "service": "Lovable",
+      "rules": [
+        "DOMAIN-SUFFIX,lovable.dev"
+      ],
+      "sources": [
+        "https://lovable.dev/"
+      ]
+    },
+    {
+      "service": "Bolt",
+      "rules": [
+        "DOMAIN-SUFFIX,bolt.new"
+      ],
+      "sources": [
+        "https://bolt.new/"
+      ]
+    },
+    {
+      "service": "v0",
+      "rules": [
+        "DOMAIN-SUFFIX,v0.dev",
+        "DOMAIN-SUFFIX,v0.app"
+      ],
+      "sources": [
+        "https://v0.dev/",
+        "https://v0.app/"
+      ]
+    },
+    {
+      "service": "Mistral / Le Chat",
+      "rules": [
+        "DOMAIN-SUFFIX,mistral.ai"
+      ],
+      "sources": [
+        "https://mistral.ai/",
+        "https://docs.mistral.ai/api/endpoint/models"
+      ]
+    },
+    {
+      "service": "Perplexity",
+      "rules": [
+        "DOMAIN-SUFFIX,perplexity.ai",
+        "DOMAIN-SUFFIX,pplx.ai"
+      ],
+      "sources": [
+        "https://docs.perplexity.ai/",
+        "https://www.perplexity.ai/contact-sales"
+      ]
+    },
+    {
+      "service": "You.com",
+      "rules": [
+        "DOMAIN-SUFFIX,you.com"
+      ],
+      "sources": [
+        "https://you.com/"
+      ]
+    },
+    {
+      "service": "Pi",
+      "rules": [
+        "DOMAIN-SUFFIX,pi.ai"
+      ],
+      "sources": [
+        "https://pi.ai/"
+      ]
+    },
+    {
+      "service": "Character.AI",
+      "rules": [
+        "DOMAIN-SUFFIX,character.ai"
+      ],
+      "sources": [
+        "https://character.ai/"
+      ]
+    },
+    {
+      "service": "DeepSeek",
+      "rules": [
+        "DOMAIN-SUFFIX,deepseek.com"
+      ],
+      "sources": [
+        "https://www.deepseek.com/"
+      ]
+    },
+    {
+      "service": "Kimi / Moonshot",
+      "rules": [
+        "DOMAIN-SUFFIX,kimi.com",
+        "DOMAIN-SUFFIX,kimi.ai",
+        "DOMAIN-SUFFIX,moonshot.ai",
+        "DOMAIN-SUFFIX,moonshot.cn"
+      ],
+      "sources": [
+        "https://www.kimi.com/",
+        "https://platform.moonshot.ai/docs/guide/start-using-kimi-api",
+        "https://platform.moonshot.cn/"
+      ]
+    },
+    {
+      "service": "Qwen / 千问",
+      "rules": [
+        "DOMAIN-SUFFIX,qwen.ai",
+        "DOMAIN-SUFFIX,qwenlm.ai",
+        "DOMAIN-SUFFIX,qianwen.com"
+      ],
+      "sources": [
+        "https://qwen.ai/",
+        "https://chat.qwenlm.ai/",
+        "https://www.qianwen.com/"
+      ]
+    },
+    {
+      "service": "Z.ai / 智谱",
+      "rules": [
+        "DOMAIN-SUFFIX,z.ai",
+        "DOMAIN-SUFFIX,bigmodel.cn",
+        "DOMAIN-SUFFIX,chatglm.cn"
+      ],
+      "sources": [
+        "https://z.ai/",
+        "https://docs.bigmodel.cn/",
+        "https://www.chatglm.cn/"
+      ]
+    },
+    {
+      "service": "MiniMax",
+      "rules": [
+        "DOMAIN-SUFFIX,minimax.io",
+        "DOMAIN-SUFFIX,minimaxi.com",
+        "DOMAIN-SUFFIX,minimax.cn"
+      ],
+      "sources": [
+        "https://www.minimax.io/",
+        "https://platform.minimaxi.com/"
+      ]
+    },
+    {
+      "service": "豆包",
+      "rules": [
+        "DOMAIN-SUFFIX,doubao.com"
+      ],
+      "sources": [
+        "https://www.doubao.com/"
+      ]
+    },
+    {
+      "service": "Coze / 扣子",
+      "rules": [
+        "DOMAIN-SUFFIX,coze.com",
+        "DOMAIN-SUFFIX,coze.cn"
+      ],
+      "sources": [
+        "https://www.coze.com/",
+        "https://www.coze.cn/"
+      ]
+    },
+    {
+      "service": "Genspark",
+      "rules": [
+        "DOMAIN-SUFFIX,genspark.ai"
+      ],
+      "sources": [
+        "https://www.genspark.ai/"
+      ]
+    },
+    {
+      "service": "Manus",
+      "rules": [
+        "DOMAIN-SUFFIX,manus.im"
+      ],
+      "sources": [
+        "https://manus.im/"
+      ]
+    },
+    {
+      "service": "Gamma",
+      "rules": [
+        "DOMAIN-SUFFIX,gamma.app"
+      ],
+      "sources": [
+        "https://gamma.app/"
+      ]
+    },
+    {
+      "service": "OpenRouter",
+      "rules": [
+        "DOMAIN-SUFFIX,openrouter.ai"
+      ],
+      "sources": [
+        "https://openrouter.ai/docs/quickstart"
+      ]
+    },
+    {
+      "service": "Hugging Face",
+      "rules": [
+        "DOMAIN-SUFFIX,huggingface.co",
+        "DOMAIN-SUFFIX,hf.co",
+        "DOMAIN-SUFFIX,hf.space",
+        "DOMAIN-SUFFIX,endpoints.huggingface.cloud"
+      ],
+      "sources": [
+        "https://huggingface.co/",
+        "https://hf.co/",
+        "https://huggingface.co/docs/hub/spaces-overview",
+        "https://huggingface.co/docs/inference-endpoints/guides/test_endpoint"
+      ]
+    },
+    {
+      "service": "Replicate",
+      "rules": [
+        "DOMAIN-SUFFIX,replicate.com",
+        "DOMAIN-SUFFIX,replicate.delivery"
+      ],
+      "sources": [
+        "https://replicate.com/",
+        "https://replicate.com/docs/topics/predictions/output-files"
+      ]
+    },
+    {
+      "service": "Together AI",
+      "rules": [
+        "DOMAIN-SUFFIX,together.ai",
+        "DOMAIN-SUFFIX,together.xyz"
+      ],
+      "sources": [
+        "https://docs.together.ai/docs/quickstart",
+        "https://docs.together.ai/reference/deployments-storage-volumes-get"
+      ]
+    },
+    {
+      "service": "Cohere",
+      "rules": [
+        "DOMAIN-SUFFIX,cohere.com",
+        "DOMAIN-SUFFIX,cohere.ai"
+      ],
+      "sources": [
+        "https://cohere.com/",
+        "https://docs.cohere.com/docs/compatibility-api"
+      ]
+    },
+    {
+      "service": "Cerebras",
+      "rules": [
+        "DOMAIN-SUFFIX,cerebras.ai"
+      ],
+      "sources": [
+        "https://www.cerebras.ai/"
+      ]
+    },
+    {
+      "service": "Fireworks AI",
+      "rules": [
+        "DOMAIN-SUFFIX,fireworks.ai"
+      ],
+      "sources": [
+        "https://fireworks.ai/"
+      ]
+    },
+    {
+      "service": "fal",
+      "rules": [
+        "DOMAIN-SUFFIX,fal.ai",
+        "DOMAIN-SUFFIX,fal.run"
+      ],
+      "sources": [
+        "https://fal.ai/",
+        "https://fal.ai/docs/documentation/model-apis/inference/queue"
+      ]
+    },
+    {
+      "service": "Ollama",
+      "rules": [
+        "DOMAIN-SUFFIX,ollama.com"
+      ],
+      "sources": [
+        "https://ollama.com/"
+      ]
+    },
+    {
+      "service": "LM Studio",
+      "rules": [
+        "DOMAIN-SUFFIX,lmstudio.ai"
+      ],
+      "sources": [
+        "https://lmstudio.ai/"
+      ]
+    },
+    {
+      "service": "Midjourney",
+      "rules": [
+        "DOMAIN-SUFFIX,midjourney.com"
+      ],
+      "sources": [
+        "https://www.midjourney.com/"
+      ]
+    },
+    {
+      "service": "PixPix",
+      "rules": [
+        "DOMAIN-SUFFIX,pixpix.com"
+      ],
+      "sources": [
+        "https://www.pixpix.com/"
+      ]
+    },
+    {
+      "service": "Runway",
+      "rules": [
+        "DOMAIN-SUFFIX,runwayml.com",
+        "DOMAIN-SUFFIX,runway.com"
+      ],
+      "sources": [
+        "https://runwayml.com/"
+      ]
+    },
+    {
+      "service": "Pika",
+      "rules": [
+        "DOMAIN-SUFFIX,pika.art"
+      ],
+      "sources": [
+        "https://pika.art/"
+      ]
+    },
+    {
+      "service": "Ideogram",
+      "rules": [
+        "DOMAIN-SUFFIX,ideogram.ai"
+      ],
+      "sources": [
+        "https://ideogram.ai/"
+      ]
+    },
+    {
+      "service": "Leonardo",
+      "rules": [
+        "DOMAIN-SUFFIX,leonardo.ai"
+      ],
+      "sources": [
+        "https://leonardo.ai/"
+      ]
+    },
+    {
+      "service": "Recraft",
+      "rules": [
+        "DOMAIN-SUFFIX,recraft.ai"
+      ],
+      "sources": [
+        "https://www.recraft.ai/"
+      ]
+    },
+    {
+      "service": "Kling / 可灵",
+      "rules": [
+        "DOMAIN-SUFFIX,klingai.com"
+      ],
+      "sources": [
+        "https://app.klingai.com/global/"
+      ]
+    },
+    {
+      "service": "Hailuo / 海螺",
+      "rules": [
+        "DOMAIN-SUFFIX,hailuoai.com",
+        "DOMAIN-SUFFIX,hailuoai.video"
+      ],
+      "sources": [
+        "https://hailuoai.com/",
+        "https://www.minimax.io/news/minimax-h3-open-source"
+      ]
+    },
+    {
+      "service": "Suno",
+      "rules": [
+        "DOMAIN-SUFFIX,suno.com",
+        "DOMAIN-SUFFIX,suno.ai"
+      ],
+      "sources": [
+        "https://suno.com/"
+      ]
+    },
+    {
+      "service": "Udio",
+      "rules": [
+        "DOMAIN-SUFFIX,udio.com"
+      ],
+      "sources": [
+        "https://www.udio.com/"
+      ]
+    },
+    {
+      "service": "ElevenLabs",
+      "rules": [
+        "DOMAIN-SUFFIX,elevenlabs.io"
+      ],
+      "sources": [
+        "https://elevenlabs.io/"
+      ]
+    },
+    {
+      "service": "Fish Audio",
+      "rules": [
+        "DOMAIN-SUFFIX,fish.audio"
+      ],
+      "sources": [
+        "https://fish.audio/"
+      ]
+    },
+    {
+      "service": "HeyGen",
+      "rules": [
+        "DOMAIN-SUFFIX,heygen.com"
+      ],
+      "sources": [
+        "https://www.heygen.com/"
+      ]
+    }
+  ],
+  "preserved_existing_rules": [
+    "DOMAIN-SUFFIX,ai.com",
+    "DOMAIN-SUFFIX,clipdrop.co",
+    "DOMAIN-SUFFIX,cloudflare.com",
+    "DOMAIN-SUFFIX,dify.ai",
+    "DOMAIN-SUFFIX,g.ai",
+    "DOMAIN-SUFFIX,grok.com",
+    "DOMAIN-SUFFIX,groq.com",
+    "DOMAIN-SUFFIX,jasper.ai",
+    "DOMAIN-SUFFIX,meta.ai",
+    "DOMAIN-SUFFIX,openart.ai",
+    "DOMAIN-SUFFIX,poe.com",
+    "DOMAIN-SUFFIX,x.ai"
+  ],
+  "replaced_exact_rules": [
+    "DOMAIN,api.jetbrains.ai",
+    "DOMAIN,openrouter.ai"
+  ],
+  "moved_from_later_categories": [
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,cerebras.ai",
+      "covered_by": "DOMAIN-SUFFIX,cerebras.ai"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,character.ai",
+      "covered_by": "DOMAIN-SUFFIX,character.ai"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,coze.com",
+      "covered_by": "DOMAIN-SUFFIX,coze.com"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fish.audio",
+      "covered_by": "DOMAIN-SUFFIX,fish.audio"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,huggingface.co",
+      "covered_by": "DOMAIN-SUFFIX,huggingface.co"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,leonardo.ai",
+      "covered_by": "DOMAIN-SUFFIX,leonardo.ai"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,manus.im",
+      "covered_by": "DOMAIN-SUFFIX,manus.im"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,mistral.ai",
+      "covered_by": "DOMAIN-SUFFIX,mistral.ai"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,suno.ai",
+      "covered_by": "DOMAIN-SUFFIX,suno.ai"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,suno.com",
+      "covered_by": "DOMAIN-SUFFIX,suno.com"
+    },
+    {
+      "from": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,you.com",
+      "covered_by": "DOMAIN-SUFFIX,you.com"
+    }
+  ],
+  "validation_scope": "Static hostname/rule checks only; no live client requests or exit IP measurements."
+}

@@ -1,22 +1,19 @@
-# 其他人工智能
+# 其他人工智能 / Other AI
 # Maintainer: LouieLumi
-# Organized: 2026-09-17
-# Rules: 17
-# Policy-free Surge RULE-SET; edit this file directly on GitHub.
-# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
-# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OtherAI.list
-# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OpenAI.list
-# Cloudflare rule moved from Proxy.list by user request on 2026-09-17.
-# Cloudflare source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list
-# This Cloudflare rule retains its upstream GPL-2.0 attribution; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
+# Updated: 2026-09-17
+# Rules: 105
+# Policy-free Surge RULE-SET. Edit this file directly; no regeneration is required.
+# Scope, verified sources and limitations: docs/OTHER_AI.md; docs/other-ai-audit.json.
+# Original sources: OtherAI.list, OpenAI.list and Proxy.list in this repository.
+# Entries migrated from the blackmatrix7-derived Proxy list retain their GPL-2.0 attribution.
+# Upstream: https://github.com/blackmatrix7/ios_rule_script and its credited contributors.
+# See LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md for those migrated entries.
+# Cloudflare remains here by user request; earlier Apple-specific exceptions still take priority.
 
-DOMAIN,api.jetbrains.ai
-DOMAIN,openrouter.ai
+# Existing services and the requested Cloudflare override
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,clipdrop.co
 DOMAIN-SUFFIX,cloudflare.com
-DOMAIN-SUFFIX,cursor.com
-DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,g.ai
 DOMAIN-SUFFIX,grok.com
@@ -24,6 +21,206 @@ DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,meta.ai
 DOMAIN-SUFFIX,openart.ai
-DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,x.ai
+
+# Cursor
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursorapi.com
+DOMAIN-SUFFIX,cursor-cdn.com
+DOMAIN-SUFFIX,cursorvm.com
+DOMAIN,anysphere-binaries.s3.us-east-1.amazonaws.com
+
+# Windsurf / Codeium / Devin
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,devin.ai
+DOMAIN-SUFFIX,devinenterprise.com
+
+# Augment Code
+DOMAIN-SUFFIX,augmentcode.com
+
+# JetBrains AI / Junie
+DOMAIN-SUFFIX,api.jetbrains.ai
+DOMAIN,api.app.prod.grazie.aws.intellij.net
+
+# GitHub Copilot
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN,copilot-telemetry.githubusercontent.com
+DOMAIN,origin-tracker.githubusercontent.com
+DOMAIN,copilot-reports.github.com
+
+# Microsoft Copilot
+DOMAIN,copilot.microsoft.com
+
+# Tabnine
+DOMAIN-SUFFIX,tabnine.com
+
+# TRAE
+DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,trae.com.cn
+DOMAIN-SUFFIX,trae.cn
+
+# Cline
+DOMAIN-SUFFIX,cline.bot
+
+# Roo Code / Roomote
+DOMAIN-SUFFIX,roocode.com
+DOMAIN-SUFFIX,roomote.dev
+
+# Continue
+DOMAIN-SUFFIX,continue.dev
+
+# Replit
+DOMAIN-SUFFIX,replit.com
+
+# Lovable
+DOMAIN-SUFFIX,lovable.dev
+
+# Bolt
+DOMAIN-SUFFIX,bolt.new
+
+# v0
+DOMAIN-SUFFIX,v0.dev
+DOMAIN-SUFFIX,v0.app
+
+# Mistral / Le Chat
+DOMAIN-SUFFIX,mistral.ai
+
+# Perplexity
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,pplx.ai
+
+# You.com
+DOMAIN-SUFFIX,you.com
+
+# Pi
+DOMAIN-SUFFIX,pi.ai
+
+# Character.AI
+DOMAIN-SUFFIX,character.ai
+
+# DeepSeek
+DOMAIN-SUFFIX,deepseek.com
+
+# Kimi / Moonshot
+DOMAIN-SUFFIX,kimi.com
+DOMAIN-SUFFIX,kimi.ai
+DOMAIN-SUFFIX,moonshot.ai
+DOMAIN-SUFFIX,moonshot.cn
+
+# Qwen / 千问
+DOMAIN-SUFFIX,qwen.ai
+DOMAIN-SUFFIX,qwenlm.ai
+DOMAIN-SUFFIX,qianwen.com
+
+# Z.ai / 智谱
+DOMAIN-SUFFIX,z.ai
+DOMAIN-SUFFIX,bigmodel.cn
+DOMAIN-SUFFIX,chatglm.cn
+
+# MiniMax
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,minimaxi.com
+DOMAIN-SUFFIX,minimax.cn
+
+# 豆包
+DOMAIN-SUFFIX,doubao.com
+
+# Coze / 扣子
+DOMAIN-SUFFIX,coze.com
+DOMAIN-SUFFIX,coze.cn
+
+# Genspark
+DOMAIN-SUFFIX,genspark.ai
+
+# Manus
+DOMAIN-SUFFIX,manus.im
+
+# Gamma
+DOMAIN-SUFFIX,gamma.app
+
+# OpenRouter
+DOMAIN-SUFFIX,openrouter.ai
+
+# Hugging Face
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,hf.space
+DOMAIN-SUFFIX,endpoints.huggingface.cloud
+
+# Replicate
+DOMAIN-SUFFIX,replicate.com
+DOMAIN-SUFFIX,replicate.delivery
+
+# Together AI
+DOMAIN-SUFFIX,together.ai
+DOMAIN-SUFFIX,together.xyz
+
+# Cohere
+DOMAIN-SUFFIX,cohere.com
+DOMAIN-SUFFIX,cohere.ai
+
+# Cerebras
+DOMAIN-SUFFIX,cerebras.ai
+
+# Fireworks AI
+DOMAIN-SUFFIX,fireworks.ai
+
+# fal
+DOMAIN-SUFFIX,fal.ai
+DOMAIN-SUFFIX,fal.run
+
+# Ollama
+DOMAIN-SUFFIX,ollama.com
+
+# LM Studio
+DOMAIN-SUFFIX,lmstudio.ai
+
+# Midjourney
+DOMAIN-SUFFIX,midjourney.com
+
+# PixPix
+DOMAIN-SUFFIX,pixpix.com
+
+# Runway
+DOMAIN-SUFFIX,runwayml.com
+DOMAIN-SUFFIX,runway.com
+
+# Pika
+DOMAIN-SUFFIX,pika.art
+
+# Ideogram
+DOMAIN-SUFFIX,ideogram.ai
+
+# Leonardo
+DOMAIN-SUFFIX,leonardo.ai
+
+# Recraft
+DOMAIN-SUFFIX,recraft.ai
+
+# Kling / 可灵
+DOMAIN-SUFFIX,klingai.com
+
+# Hailuo / 海螺
+DOMAIN-SUFFIX,hailuoai.com
+DOMAIN-SUFFIX,hailuoai.video
+
+# Suno
+DOMAIN-SUFFIX,suno.com
+DOMAIN-SUFFIX,suno.ai
+
+# Udio
+DOMAIN-SUFFIX,udio.com
+
+# ElevenLabs
+DOMAIN-SUFFIX,elevenlabs.io
+
+# Fish Audio
+DOMAIN-SUFFIX,fish.audio
+
+# HeyGen
+DOMAIN-SUFFIX,heygen.com
