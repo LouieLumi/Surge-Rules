@@ -1,7 +1,7 @@
 # 苹果服务（含 Apple Intelligence）
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 1620
+# Rules: 1618
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list
@@ -1634,7 +1634,6 @@ USER-AGENT,passd*
 # Original source license: AGPL-3.0; see LICENSES/AGPL-3.0.txt.
 # Source identification rule retained; other upstream notices remain applicable.
 # apple-relay.apple.com and gspe1-ssl.ls.apple.com are covered by apple.com above.
+# Cloudflare relay hosts are covered by OtherAI under the requested Cloudflare policy.
 DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
-DOMAIN,apple-relay.cloudflare.com
 DOMAIN,apple-relay.fastly-edge.com
-DOMAIN,cp4.cloudflare.com

@@ -27,7 +27,6 @@ MESH_LINES = (
 )
 TAIL_LINES = (
     "GEOIP,CN,DIRECT",
-    'IP-ASN,13335,"👾 人工智能"',
     "FINAL,✨ 星链网络,dns-failed",
 )
 
@@ -133,8 +132,8 @@ def _check_config(root: Path, manifest: dict, errors: List[str]) -> None:
         errors.append("Surge-Rules.conf: expected {} active rules, found {}".format(expected_length, len(active)))
     if tuple(active[2:7]) != MESH_LINES:
         errors.append("Surge-Rules.conf: the five original mesh rules changed or moved")
-    if tuple(active[-3:]) != TAIL_LINES:
-        errors.append("Surge-Rules.conf: GEOIP / ASN13335 / FINAL tail changed or moved")
+    if tuple(active[-len(TAIL_LINES):]) != TAIL_LINES:
+        errors.append("Surge-Rules.conf: GEOIP / FINAL tail changed or moved")
     # Comparing the complete rule shape catches a misplaced fallback or an
     # additional rule even when the subsequence of RULE-SET lines is correct.
     expected_shape = ["RULE-SET"] * 2 + list(MESH_LINES) + ["RULE-SET"] * len(manifest["rulesets"]) + list(TAIL_LINES)
@@ -178,7 +177,7 @@ def check_repository(root: Union[str, Path] = ROOT) -> Tuple[List[str], Dict[str
             errors.append(name + ": empty rule set")
         for rule in rules:
             if rule.kind == "IP-ASN" and rule.value == "13335":
-                errors.append(name + ": ASN13335 must remain only in the protected configuration tail")
+                errors.append(name + ": broad ASN13335 routing is disabled; use service domain rules")
 
     previous = RuleIndex()
     for entry in manifest["rulesets"]:

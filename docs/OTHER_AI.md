@@ -4,13 +4,15 @@
 
 本次核对 54 组服务，OtherAI 从 17 条扩展到 105 条，并从后置分类移走 11 条已被它覆盖的规则。逐条来源、迁移及原提交见 [审计快照](other-ai-audit.json)。
 
+同日后续调整新增 19 条 Cloudflare 服务域名条件，当前共 124 条。Cloudflare 全网的 ASN 13335 兜底已删除；Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
+
 ## 匹配范围
 
 - 通常使用 `DOMAIN-SUFFIX`，同时覆盖官网根域、API 以及未来新增的子域。共享云上的明确服务地址使用 `DOMAIN` 精确匹配。
 - OpenRouter 从仅匹配根域改为后缀匹配；JetBrains AI 从仅匹配 `api.jetbrains.ai` 改为同时覆盖其 AWS/GCP API 子域。
 - Cursor 包含其官方网络清单中的 API、Tab、代码索引、登录、CDN、marketplace、云端电脑域名及专用 S3 下载主机。
 - DeepSeek、Kimi、Qwen、智谱、MiniMax、豆包、扣子等国内 AI 也进入 OtherAI，优先于 ChinaDomain / ChinaASN 的国内直连兜底。
-- Claude、OpenAI、Gemini/Google 和 Apple Intelligence 继续使用现有专用分类。Cloudflare 的已有手工归属和 Apple 前置例外保留。
+- Claude、OpenAI、Gemini/Google 继续使用独立规则文件并统一映射到人工智能策略。Apple Intelligence 仍合并在 Apple，但两个 Cloudflare 中继域名改由 OtherAI 的 `cloudflare.com` 后缀覆盖。
 - Copilot 仅添加 AI 专用域名/主机；普通 GitHub、Microsoft、Google、AWS、支付及共享登录服务继续按现有分类匹配。
 - 平台主域规则可能同时覆盖官网、账单、文档和模型下载；不会自动识别该域名内某个 URL 是否属于 AI。
 

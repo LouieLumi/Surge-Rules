@@ -29,14 +29,16 @@ class PublishedRoutingTests(unittest.TestCase):
                 self.assert_category(hostname, "YouTube.list", "📹 油管视频")
 
     def test_gemini_and_general_google(self):
-        for hostname in ("generativelanguage.googleapis.com", "notebooklm.google", "notebooklm.google.com", "google.com", "gemini.google.com"):
+        for hostname in ("generativelanguage.googleapis.com", "notebooklm.google", "notebooklm.google.com",
+                         "google.com", "gemini.google.com", "accounts.google.com", "www.gstatic.com",
+                         "storage.googleapis.com", "stun.l.google.com", "server.1e100.net"):
             with self.subTest(hostname=hostname):
-                self.assert_category(hostname, "Gemini.list", "🧿 谷歌服务")
+                self.assert_category(hostname, "Gemini.list", "👾 人工智能")
 
-    def test_apple_and_all_intelligence_domains_share_apple_policy(self):
+    def test_apple_intelligence_remains_merged_except_cloudflare_services(self):
         for hostname in ("apple-relay.apple.com", "gspe1-ssl.ls.apple.com",
-                         "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe", "apple-relay.cloudflare.com",
-                         "apple-relay.fastly-edge.com", "cp4.cloudflare.com", "www.apple.com"):
+                         "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe",
+                         "apple-relay.fastly-edge.com", "www.apple.com"):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "Apple.list", "🍎 苹果服务")
         self.assertNotIn("AppleIntelligence.list", [name for name, _, _ in self.routes])
@@ -44,7 +46,8 @@ class PublishedRoutingTests(unittest.TestCase):
     def test_ai_domain_ownership(self):
         for hostname, filename in (("claude.ai", "Claude.list"), ("api.anthropic.com", "Claude.list"),
                                    ("chatgpt.com", "OpenAI.list"), ("chat.com", "OpenAI.list"),
-                                   ("ai.com", "OtherAI.list")):
+                                   ("ai.com", "OtherAI.list"), ("poe.com", "OtherAI.list"),
+                                   ("api.poe.com", "OtherAI.list")):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, filename, "👾 人工智能")
 
@@ -84,7 +87,36 @@ class PublishedRoutingTests(unittest.TestCase):
     def test_service_specific_shared_infrastructure(self):
         self.assert_category("cdn.optimizely.com", "Disney.list", "🎬 迪士尼+")
         self.assert_category("netflix.com.edgesuite.net", "Netflix.list", "🎥 奈飞视频")
-        self.assert_category("api.stripe.com", "Proxy.list", "👾 人工智能")
+        self.assert_category("api.stripe.com", "Proxy.list", "✨ 星链网络")
+
+    def test_cloudflare_services_follow_ai_without_routing_all_customers_by_asn(self):
+        for hostname in ("cloudflare.com", "api.cloudflare.com", "challenges.cloudflare.com",
+                         "cdnjs.cloudflare.com", "stun.cloudflare.com", "turn.cloudflare.com",
+                         "apple-relay.cloudflare.com", "cp4.cloudflare.com",
+                         "cloudflare-dns.com", "one.one.one.one", "cloudflare-ipfs.com",
+                         "www.cloudflarestatus.com", "static.cloudflareinsights.com",
+                         "zero-trust-client.cloudflareclient.com", "account.cloudflare-gateway.com",
+                         "team.cloudflareaccess.com", "demo.workers.dev", "demo.pages.dev",
+                         "account.r2.cloudflarestorage.com", "pub-example.r2.dev",
+                         "region1.v2.argotunnel.com", "example.cfargotunnel.com", "demo.trycloudflare.com",
+                         "imagedelivery.net", "customer.videodelivery.net", "customer.cloudflarestream.com",
+                         "example.com.cdn.cloudflare.net"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+
+    def test_general_overseas_sites_use_proxy_or_continue_to_non_ai_fallbacks(self):
+        # No per-site exceptions are needed: known proxy domains use Starlink;
+        # unlisted domains continue to IP/domestic checks and FINAL, never a
+        # Cloudflare ASN -> AI rule. This helper does not simulate those checks.
+        for hostname in ("coinbase.com", "www.okx.com", "binance.com", "zoom.us",
+                         "1password.com", "notion.so", "godaddy.com", "gitlab.com", "crunchyroll.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "Proxy.list", "✨ 星链网络")
+        for hostname in ("wise.com", "shopify.com", "producthunt.com", "registry.npmjs.org",
+                         "kali.download", "unpkg.com", "nodejs.org", "crypto.com",
+                         "a-new-overseas-service.example", "notcloudflare.com", "cloudflare.com.example"):
+            with self.subTest(hostname=hostname):
+                self.assertIsNone(first_match_domain(hostname, routes=self.routes), hostname)
 
     def test_hostname_normalization(self):
         self.assert_category("YOUTUBEI.GOOGLEAPIS.COM.", "YouTube.list", "📹 油管视频")
@@ -97,15 +129,16 @@ class PublishedRoutingTests(unittest.TestCase):
         expected.update(manifest.get("auxiliary_rulesets", []))
         self.assertEqual(set(counts), expected)
 
-    def test_cloudflare_asn_remains_only_in_configuration_tail(self):
+    def test_cloudflare_asn_is_removed_and_default_policy_is_starlink(self):
         manifest = json.loads((ROOT / "rulesets.json").read_text(encoding="utf-8"))
         for entry in manifest["rulesets"]:
             self.assertFalse(any(rule.kind == "IP-ASN" and rule.value == "13335"
                                  for rule in load_rules(ROOT / "rules" / entry["file"])), entry["file"])
         active = [line for line in (ROOT / "Surge-Rules.conf").read_text(encoding="utf-8").splitlines()
                   if line.strip() and not line.lstrip().startswith(("#", ";", "//"))]
-        self.assertEqual(tuple(active[-3:]), TAIL_LINES)
-        self.assertEqual(sum(line.startswith("IP-ASN,13335,") for line in active), 1)
+        self.assertEqual(tuple(active[-len(TAIL_LINES):]), TAIL_LINES)
+        self.assertFalse(any(line.startswith("IP-ASN,13335,") for line in active))
+        self.assertEqual(active[-1], "FINAL,✨ 星链网络,dns-failed")
 
 
 class CheckerFailureTests(unittest.TestCase):
@@ -156,6 +189,19 @@ class CheckerFailureTests(unittest.TestCase):
             errors, _ = check_repository(root)
             self.assertTrue(any("RULE-SET paths" in error for error in errors))
             self.assertTrue(any("mesh rules changed" in error for error in errors))
+
+    def test_rejects_reintroduced_cloudflare_asn_catchall(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self.make_fixture(root)
+            path = root / "rules/First.list"
+            path.write_text(path.read_text() + "IP-ASN,13335,no-resolve\n", encoding="utf-8")
+            self.assertTrue(any("broad ASN13335 routing is disabled" in error
+                                for error in check_repository(root)[0]))
+            path.write_text("DOMAIN-SUFFIX,example.com\n", encoding="utf-8")
+            config = root / "Surge-Rules.conf"
+            config.write_text(config.read_text().replace("FINAL,", 'IP-ASN,13335,"AI"\nFINAL,'), encoding="utf-8")
+            self.assertTrue(any("tail changed or moved" in error for error in check_repository(root)[0]))
 
     def test_rejects_documentation_in_rules_directory(self):
         with tempfile.TemporaryDirectory() as folder:

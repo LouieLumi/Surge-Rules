@@ -1,7 +1,7 @@
 # 通用代理兜底
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 6663
+# Rules: 6657
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list
@@ -11,6 +11,7 @@
 # Upstream-derived content: GPL-2.0; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
 # Includes shared AI dependencies and legacy AS20473 / 24.199.123.28 / 64.23.132.171.
 # These shared hosts and addresses are not claimed to be exclusive to an AI vendor.
+# Recommended policy: Starlink. Cloudflare's own domain and Poe remain in OtherAI.
 
 DOMAIN,api.waqi.info
 DOMAIN,aqi.aqicn.org
@@ -19,7 +20,6 @@ DOMAIN,browser-intake-datadoghq.com
 DOMAIN,browser-intake-us5-datadoghq.com
 DOMAIN,cloud.oracle.com
 DOMAIN,connect.facebook.net
-DOMAIN,static.cloudflareinsights.com
 DOMAIN-KEYWORD,1e100
 DOMAIN-KEYWORD,abema
 DOMAIN-KEYWORD,appledaily
@@ -1150,9 +1150,6 @@ DOMAIN-SUFFIX,clips4sale.com
 DOMAIN-SUFFIX,cloakpoint.com
 DOMAIN-SUFFIX,cloud.cupronickel.goog
 DOMAIN-SUFFIX,cloudcone.com
-DOMAIN-SUFFIX,cloudflare-dns.com
-DOMAIN-SUFFIX,cloudflare-ipfs.com
-DOMAIN-SUFFIX,cloudflarestatus.com
 DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,cloudgarage.jp
 DOMAIN-SUFFIX,cloudmagic.com
@@ -4122,7 +4119,6 @@ DOMAIN-SUFFIX,pacopacomama.com
 DOMAIN-SUFFIX,paddle.com
 DOMAIN-SUFFIX,paddleapi.com
 DOMAIN-SUFFIX,padmanet.com
-DOMAIN-SUFFIX,pages.dev
 DOMAIN-SUFFIX,pagodabox.com
 DOMAIN-SUFFIX,paimon.moe
 DOMAIN-SUFFIX,palacemoon.com
@@ -6218,7 +6214,6 @@ DOMAIN-SUFFIX,work2icu.org
 DOMAIN-SUFFIX,workatruna.com
 DOMAIN-SUFFIX,workerdemo.org.hk
 DOMAIN-SUFFIX,workerempowerment.org
-DOMAIN-SUFFIX,workers.dev
 DOMAIN-SUFFIX,workersthebig.net
 DOMAIN-SUFFIX,workflow.is
 DOMAIN-SUFFIX,workflowy.com

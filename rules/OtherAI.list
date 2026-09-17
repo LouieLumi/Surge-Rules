@@ -1,19 +1,41 @@
 # 其他人工智能 / Other AI
 # Maintainer: LouieLumi
 # Updated: 2026-09-17
-# Rules: 105
+# Rules: 124
 # Policy-free Surge RULE-SET. Edit this file directly; no regeneration is required.
 # Scope, verified sources and limitations: docs/OTHER_AI.md; docs/other-ai-audit.json.
 # Original sources: OtherAI.list, OpenAI.list and Proxy.list in this repository.
 # Entries migrated from the blackmatrix7-derived Proxy list retain their GPL-2.0 attribution.
 # Upstream: https://github.com/blackmatrix7/ios_rule_script and its credited contributors.
 # See LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md for those migrated entries.
-# Cloudflare remains here by user request; earlier Apple-specific exceptions still take priority.
+# Cloudflare service domains are routed here by user request; see docs/CLOUDFLARE.md.
 
-# Existing services and the requested Cloudflare override
+# Cloudflare services and provider-hosted endpoints (not the whole AS13335 network).
+# Covers the website, API, Turnstile, cdnjs and STUN/TURN via cloudflare.com.
+DOMAIN-SUFFIX,cloudflare.com
+DOMAIN-SUFFIX,cloudflare-dns.com
+DOMAIN-SUFFIX,cloudflare-ipfs.com
+DOMAIN-SUFFIX,cloudflarestatus.com
+DOMAIN-SUFFIX,cloudflareinsights.com
+DOMAIN-SUFFIX,cloudflareclient.com
+DOMAIN-SUFFIX,cloudflare-gateway.com
+DOMAIN-SUFFIX,cloudflareaccess.com
+DOMAIN-SUFFIX,workers.dev
+DOMAIN-SUFFIX,pages.dev
+DOMAIN-SUFFIX,r2.cloudflarestorage.com
+DOMAIN-SUFFIX,r2.dev
+DOMAIN-SUFFIX,argotunnel.com
+DOMAIN-SUFFIX,cfargotunnel.com
+DOMAIN-SUFFIX,trycloudflare.com
+DOMAIN-SUFFIX,imagedelivery.net
+DOMAIN-SUFFIX,videodelivery.net
+DOMAIN-SUFFIX,cloudflarestream.com
+DOMAIN-SUFFIX,cdn.cloudflare.net
+DOMAIN-SUFFIX,one.one.one.one
+
+# Existing AI services, including Poe
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,clipdrop.co
-DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,g.ai
 DOMAIN-SUFFIX,grok.com

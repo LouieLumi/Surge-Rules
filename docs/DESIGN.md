@@ -9,10 +9,10 @@ Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库�
 | 内容 | 整理结果 |
 | --- | --- |
 | `ApplicationDirect`、`ApplicationReject` 与五条异地组网规则 | 规则内容保留，两个应用文件迁入 `rules/`，仍放在全部分类前 |
-| Apple Intelligence | 按后续要求合并到 `rules/Apple.list`，统一走 `🍎 苹果服务`；4 条补充保留，另 2 条由已有 `apple.com` 后缀覆盖 |
+| Apple Intelligence | 合并到 `rules/Apple.list`；Cloudflare 中继域名随后按统一基础设施策略改由 OtherAI 覆盖，其余走 `🍎 苹果服务` |
 | 苹果服务 | `Apple.list` 接收 Apple 上游规则，以及旧 `GlobalMedia.list` 的 Apple TV / Apple Music 章节 |
 | Claude、OpenAI、其他 AI | 保留独立分类；`chat.com` 归 `OpenAI.list`，`ai.com` 归 `OtherAI.list` |
-| Gemini / Google | 合并 Google 上游与原 Gemini 规则，继续使用 `Gemini.list` 路径和 `🧿 谷歌服务` 策略 |
+| Gemini / Google | 合并 Google 上游与原 Gemini 规则，继续使用 `Gemini.list` 路径，当前与其它 AI 一起使用 `👾 人工智能` 策略 |
 | 微软服务 | 独立 `Microsoft.list`，位于专用 AI、游戏和媒体分类之后 |
 | Telegram | 独立 `Telegram.list`，保留域名、进程及 Telegram ASN/IP 条件 |
 | 游戏平台 | Epic、Sony、Steam、Nintendo 合并为 `Games.list` |
@@ -30,9 +30,11 @@ YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Micro
 
 ## AI 共享服务与 IP 行为
 
-原 Claude / OpenAI 列表中的共享云服务、认证、支付与遥测域名移入 `Proxy.list`，避免把它们全部归为某一家 AI 厂商。仍留在专用 AI 分类中的服务专属域名按各自策略匹配。`Proxy.list` 沿用用户原先的 `👾 人工智能` 出口，这次主要改变分类归属，未新建策略组。
+原 Claude / OpenAI 列表中的共享云服务、认证、支付与遥测域名移入 `Proxy.list`，避免把它们全部归为某一家 AI 厂商。仍留在专用 AI 分类中的服务专属域名按各自策略匹配。最初整理时 Proxy 沿用了原有人工智能策略；按后续“普通境外默认星链”的要求，当前 `Proxy.list` 与 FINAL 均使用 `✨ 星链网络`。
 
-按后续要求，`DOMAIN-SUFFIX,cloudflare.com` 从 `rules/Proxy.list` 移到 `rules/OtherAI.list`，使 `stun.cloudflare.com`、`turn.cloudflare.com` 及该后缀下其它未被前置规则匹配的域名跟随 OtherAI 策略。它也会影响 Cloudflare 官网、API、验证服务等，不表示这些服务都是 AI。前置 Apple 分类中的 `apple-relay.cloudflare.com` 与 `cp4.cloudflare.com` 仍走苹果服务；其它独立 Cloudflare 域名、Twilio、LiveKit 以及 ASN 13335 不受这次移动影响。这是域名规则调整，不是对所有 WebRTC 连接出口的保证。
+`DOMAIN-SUFFIX,cloudflare.com` 已从 Proxy 移到 OtherAI，覆盖 Cloudflare 官网、API、验证、cdnjs、STUN/TURN。随后补充 DNS、Access、Workers、Pages、R2、Tunnel、图片与视频等已核对的服务域名，合计 20 条 Cloudflare 域名条件；这属于用户指定的基础设施出口，并不表示这些服务全是 AI。Apple 中的 `apple-relay.cloudflare.com` 与 `cp4.cloudflare.com` 两条前置例外已删除，由 OtherAI 的父域统一覆盖。其它 AI 专用主机仍优先，例如 OpenAI 自己的 Cloudflare CDN 主机继续命中 OpenAI，出口同样是人工智能策略。
+
+普通站点即使由 Cloudflare CDN 托管，也按请求域名本身分流，不再被 AS13335 捕获。没有增加 Wise、Shopify、npm 等站点的个别例外；调整的是通用默认策略。Twilio 和通用 LiveKit 仍由 Proxy 匹配，明确的 ChatGPT LiveKit 主机则由 OpenAI 匹配。详情和边界见 [Cloudflare 分流说明](CLOUDFLARE.md)。
 
 随后根据 Mistral 落入 Proxy 的反馈，对 54 组常用 AI 服务核对官网和网络/API 文档，OtherAI 从 17 条扩展到 105 条，并将 Proxy 中 11 条 AI 域名移入该类。Cursor 的 API、CDN、云端电脑域名、OpenRouter 和 JetBrains API 的子域覆盖得到补充；国内 AI 也优先于国内直连兜底。明细见 [OtherAI 覆盖与来源](OTHER_AI.md)；本次未调整专用 Claude、OpenAI、Gemini、Apple 分类或任何 IP/ASN 规则。
 
@@ -40,15 +42,14 @@ YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Micro
 
 除上述三条外，原有 IP 规则选项保持不变。特别是 `ChinaASN.list` 延续 `ChinaASN_Resolve.list` 的解析语义，**可能触发 DNS 查询**，没有为了去重统一增加 `no-resolve`。
 
-末尾继续按以下顺序保留：
+当前末尾为：
 
 ```ini
 GEOIP,CN,DIRECT
-IP-ASN,13335,"👾 人工智能"
 FINAL,✨ 星链网络,dns-failed
 ```
 
-AS13335 的位置仍在 GEOIP 后、FINAL 前，并保留原来的解析行为；它是独立的 Cloudflare ASN 兜底条件，不等同于仅匹配 AI 流量。
+原来位于 GEOIP 后、FINAL 前的 AS13335 规则已按后续要求删除，不再用整个共享 CDN 网络判断人工智能归属。规则校验会拒绝在任何规则文件重新引入 AS13335；配置片段也不再允许这条兜底。
 
 语义依据：[Surge 匹配顺序与 DNS](https://manual.nssurge.com/rules/overview.html)、[规则集格式与刷新参数](https://manual.nssurge.com/rules/ruleset.html)。AS20473 的基础设施归属见 [Vultr 官方说明](https://docs.vultr.com/support/products/network/what-is-vultrs-asn)；`chat.com` 与 `ai.com` 的归属按本次整理时的站点内容/跳转核对。
 
@@ -77,4 +78,4 @@ python3 -m unittest discover -s tests -v
 
 ## 2026-09-17 后续调整
 
-所有规则集迁入 `rules/`，目录内只放规则文件。订阅基址更新为 `https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/`。`AppleIntelligence.list` 已合并，不再单独订阅；Apple Intelligence 的策略从人工智能改为苹果服务。除 Apple 合并外，其它规则文件内容未变，五条异地组网与尾部规则原样保留。历史导入报告继续记录首次整理时的名称与数量。
+首次目录调整将所有规则集迁入 `rules/`，目录内只放规则文件。订阅基址更新为 `https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/`。`AppleIntelligence.list` 已合并，不再单独订阅。之后又扩充 OtherAI，并完成上文的 Cloudflare 域名迁移和 AS13335 删除。五条异地组网及两个本地应用规则的内容保持不变；历史导入报告继续记录首次整理时的名称与数量。

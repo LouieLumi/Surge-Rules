@@ -115,7 +115,7 @@
     {
       "file": "Gemini.list",
       "title": "Gemini / Google",
-      "policy": "🧿 谷歌服务",
+      "policy": "👾 人工智能",
       "sources": [
         "Gemini",
         "Google"
@@ -132,7 +132,7 @@
     {
       "file": "Proxy.list",
       "title": "通用代理兜底",
-      "policy": "👾 人工智能",
+      "policy": "✨ 星链网络",
       "sources": [
         "Proxy",
         "Claude",

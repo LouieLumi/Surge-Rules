@@ -6,7 +6,7 @@
 
 打开 [Surge-Rules.conf：Raw 规则片段](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/Surge-Rules.conf)，将其中规则复制到现有配置的 `[Rule]` 段。**这只是 `[Rule]` 片段，不是完整配置，不能用它替换整个 profile**；节点、策略组、DNS 等继续使用现有配置，已有 `[Rule]` 标题时不要重复添加。
 
-片段保留 `ApplicationDirect`、`ApplicationReject`、五条异地组网规则，以及末尾的 `GEOIP,CN,DIRECT`、`IP-ASN,13335,"👾 人工智能"` 和 `FINAL,✨ 星链网络,dns-failed`。所有策略组名称都必须在你的配置中原样存在，包括 emoji 和空格。
+片段保留 `ApplicationDirect`、`ApplicationReject`、五条异地组网规则，以及末尾的 `GEOIP,CN,DIRECT` 和 `FINAL,✨ 星链网络,dns-failed`。已移除影响范围过大的 `IP-ASN,13335`；Cloudflare 服务域名改由 OtherAI 匹配。所有策略组名称都必须在你的配置中原样存在，包括 emoji 和空格。
 
 18 个分类订阅都设为 `update-interval=3600`。提交到 GitHub 后，Surge 会在后续规则集更新时读取；需要立即生效可手动刷新远程规则集。`ApplicationDirect`、`ApplicationReject` 的规则内容和策略未变，仅更新到 `rules/` 路径，未额外指定刷新间隔。
 
@@ -14,7 +14,7 @@
 
 ## 分类与顺序
 
-以下顺序与推荐片段一致。Apple Intelligence 已合并进 `rules/Apple.list`，统一走 `🍎 苹果服务`；YouTube、游戏平台、AI 等专用分类在 Google、Microsoft 大类前，防止被大范围规则提前匹配。
+以下顺序与推荐片段一致。Apple Intelligence 已合并进 `rules/Apple.list`，使用 `🍎 苹果服务`；其中 Cloudflare 中继域名按基础设施策略归 OtherAI。YouTube、游戏平台、AI 等专用分类在 Google、Microsoft 大类前，防止被大范围规则提前匹配。
 
 | 顺序 | 分类 | 文件与订阅 | 现有策略 |
 | --- | --- | --- | --- |
@@ -30,14 +30,18 @@
 | 10 | 哔哩哔哩（含国际版） | [BiliBili.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/BiliBili.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/BiliBili.list) | 📽 哔哩哔哩 |
 | 11 | 其他国外媒体 | [GlobalMedia.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/GlobalMedia.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/GlobalMedia.list) | 🍿 国外媒体 |
 | 12 | 其他国内媒体 | [ChinaMedia.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/ChinaMedia.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/ChinaMedia.list) | 🍔 国内媒体 |
-| 13 | Gemini / Google | [Gemini.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Gemini.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Gemini.list) | 🧿 谷歌服务 |
+| 13 | Gemini / Google | [Gemini.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Gemini.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Gemini.list) | 👾 人工智能 |
 | 14 | 微软服务 | [Microsoft.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Microsoft.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Microsoft.list) | Ⓜ️ 微软服务 |
-| 15 | 通用代理兜底 | [Proxy.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Proxy.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Proxy.list) | 👾 人工智能 |
+| 15 | 通用代理兜底 | [Proxy.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Proxy.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Proxy.list) | ✨ 星链网络 |
 | 16 | 局域网兜底 | [LAN.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/LAN.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/LAN.list) | DIRECT |
 | 17 | 中国 ASN 直连兜底 | [ChinaASN.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/ChinaASN.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/ChinaASN.list) | DIRECT |
 | 18 | 国内域名 / 应用补全 | [ChinaDomain.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/ChinaDomain.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/ChinaDomain.list) | DIRECT |
 
-`Proxy.list` 是通用代理兜底，沿用原配置的 `👾 人工智能` 策略，并不表示其中所有服务都是 AI。
+普通境外流量通过 `Proxy.list` 或最终 `FINAL` 走 `✨ 星链网络`。Claude、OpenAI、OtherAI 和 Gemini/Google 统一使用 `👾 人工智能`；在 Surge 中将前者选到美国星链、后者选到英国独享。其它专用分类仍使用表中的策略组。
+
+Cloudflare 的官网、验证、STUN/TURN、DNS、Workers、Pages、R2 等已核对服务域名放入 OtherAI，Poe 也保留在 OtherAI。普通网站不会仅因为托管在 Cloudflare 网络就进入人工智能策略；范围和来源见 [Cloudflare 分流说明](docs/CLOUDFLARE.md)。
+
+**已有配置需要同步调整：删除 `IP-ASN,13335,...` 整行，把 Proxy 的策略设为 `✨ 星链网络`，Gemini 的策略设为 `👾 人工智能`，再刷新远程规则集。** 只刷新 `.list` 不会自动修改你本地 `[Rule]` 中的策略或 ASN 行。
 
 `OtherAI.list` 已补充 Mistral、Cursor、Windsurf、Augment、Copilot、Midjourney、PixPix、DeepSeek、Kimi 等常用服务的域名与专用 API。覆盖范围、官方来源和共享服务的边界见 [OtherAI 说明](docs/OTHER_AI.md)。它沿用 `👾 人工智能` 策略，实际英国出口由你在 Surge 中选择的节点决定。
 
@@ -51,7 +55,7 @@
 | `ChinaDomain.list` | 国内域名和应用特征补全直连 | `.cn`、支付宝/淘宝/百度等关键词、部分 User-Agent 和少量固定 IP |
 | `ChinaASN.list` | 根据目标 IP 所属的中国 ASN 直连 | ASN 是运营商或网络组织的编号；该规则可能先解析域名，不等同于判断网站使用中文 |
 
-三者都走 `DIRECT`，分别从本地网络、域名/应用、网络归属三个角度补漏；只有前面服务规则未命中时，才按配置顺序进入这些兜底。`GEOIP,CN,DIRECT` 再按 IP 地理数据库补全；`ASN 13335` 与 Final 保留原有顺序。
+三者都走 `DIRECT`，分别从本地网络、域名/应用、网络归属三个角度补漏；只有前面服务规则未命中时，才按配置顺序进入这些兜底。`GEOIP,CN,DIRECT` 再按 IP 地理数据库补全，其余未命中流量由 Final 送到星链。
 
 ## 以后怎么改
 
