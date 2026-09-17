@@ -32,6 +32,8 @@ YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Micro
 
 原 Claude / OpenAI 列表中的共享云服务、认证、支付与遥测域名移入 `Proxy.list`，避免把它们全部归为某一家 AI 厂商。仍留在专用 AI 分类中的服务专属域名按各自策略匹配。`Proxy.list` 沿用用户原先的 `👾 人工智能` 出口，这次主要改变分类归属，未新建策略组。
 
+按后续要求，`DOMAIN-SUFFIX,cloudflare.com` 从 `rules/Proxy.list` 移到 `rules/OtherAI.list`，使 `stun.cloudflare.com`、`turn.cloudflare.com` 及该后缀下其它未被前置规则匹配的域名跟随 OtherAI 策略。它也会影响 Cloudflare 官网、API、验证服务等，不表示这些服务都是 AI。前置 Apple 分类中的 `apple-relay.cloudflare.com` 与 `cp4.cloudflare.com` 仍走苹果服务；其它独立 Cloudflare 域名、Twilio、LiveKit 以及 ASN 13335 不受这次移动影响。这是域名规则调整，不是对所有 WebRTC 连接出口的保证。
+
 原 OpenAI 文件里的 `AS20473`、`24.199.123.28/32`、`64.23.132.171/32` 一并移入 `Proxy.list`。其中两个旧 IP 的现时用途未经验证，保留为兼容兜底，不声明它们是 OpenAI 专用地址。对这三条 IP/ASN 条件增加 `no-resolve`，避免匹配兜底时主动为每个未匹配域名触发 DNS；它们仍可匹配已知目标 IP。
 
 除上述三条外，原有 IP 规则选项保持不变。特别是 `ChinaASN.list` 延续 `ChinaASN_Resolve.list` 的解析语义，**可能触发 DNS 查询**，没有为了去重统一增加 `no-resolve`。

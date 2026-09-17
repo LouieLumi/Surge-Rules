@@ -1,16 +1,20 @@
 # 其他人工智能
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 16
+# Rules: 17
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OtherAI.list
 # Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OpenAI.list
+# Cloudflare rule moved from Proxy.list by user request on 2026-09-17.
+# Cloudflare source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list
+# This Cloudflare rule retains its upstream GPL-2.0 attribution; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
 
 DOMAIN,api.jetbrains.ai
 DOMAIN,openrouter.ai
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,clipdrop.co
+DOMAIN-SUFFIX,cloudflare.com
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,dify.ai
