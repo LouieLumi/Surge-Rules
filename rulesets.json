@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "base_url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/",
+  "rulesets": [
+    {
+      "file": "AppleIntelligence.list",
+      "title": "Apple Intelligence",
+      "policy": "👾 人工智能",
+      "sources": [
+        "AppleIntelligence"
+      ]
+    },
+    {
+      "file": "Apple.list",
+      "title": "苹果服务",
+      "policy": "🍎 苹果服务",
+      "sources": [
+        "Apple",
+        "GlobalMedia"
+      ]
+    },
+    {
+      "file": "Claude.list",
+      "title": "Claude",
+      "policy": "👾 人工智能",
+      "sources": [
+        "Claude"
+      ]
+    },
+    {
+      "file": "OpenAI.list",
+      "title": "OpenAI / ChatGPT / Sora",
+      "policy": "👾 人工智能",
+      "sources": [
+        "OpenAI",
+        "OtherAI"
+      ]
+    },
+    {
+      "file": "OtherAI.list",
+      "title": "其他人工智能",
+      "policy": "👾 人工智能",
+      "sources": [
+        "OtherAI",
+        "OpenAI"
+      ]
+    },
+    {
+      "file": "Telegram.list",
+      "title": "电报信息",
+      "policy": "📲 电报信息",
+      "sources": [
+        "Telegram"
+      ]
+    },
+    {
+      "file": "Games.list",
+      "title": "游戏平台（Epic / Sony / Steam / Nintendo）",
+      "policy": "🎮 游戏平台",
+      "sources": [
+        "Epic",
+        "Sony",
+        "Steam",
+        "Nintendo"
+      ]
+    },
+    {
+      "file": "YouTube.list",
+      "title": "YouTube / YouTube Music",
+      "policy": "📹 油管视频",
+      "sources": [
+        "YouTube",
+        "GlobalMedia"
+      ]
+    },
+    {
+      "file": "Netflix.list",
+      "title": "奈飞视频",
+      "policy": "🎥 奈飞视频",
+      "sources": [
+        "Netflix",
+        "GlobalMedia"
+      ]
+    },
+    {
+      "file": "Disney.list",
+      "title": "迪士尼",
+      "policy": "🎬 迪士尼+",
+      "sources": [
+        "Disney",
+        "GlobalMedia"
+      ]
+    },
+    {
+      "file": "BiliBili.list",
+      "title": "哔哩哔哩（含国际版）",
+      "policy": "📽 哔哩哔哩",
+      "sources": [
+        "BiliBili",
+        "GlobalMedia",
+        "ChinaMedia"
+      ]
+    },
+    {
+      "file": "GlobalMedia.list",
+      "title": "其他国外媒体",
+      "policy": "🍿 国外媒体",
+      "sources": [
+        "GlobalMedia"
+      ]
+    },
+    {
+      "file": "ChinaMedia.list",
+      "title": "其他国内媒体",
+      "policy": "🍔 国内媒体",
+      "sources": [
+        "ChinaMedia",
+        "GlobalMedia"
+      ]
+    },
+    {
+      "file": "Gemini.list",
+      "title": "Gemini / Google",
+      "policy": "🧿 谷歌服务",
+      "sources": [
+        "Gemini",
+        "Google"
+      ]
+    },
+    {
+      "file": "Microsoft.list",
+      "title": "微软服务",
+      "policy": "Ⓜ️ 微软服务",
+      "sources": [
+        "Microsoft"
+      ]
+    },
+    {
+      "file": "Proxy.list",
+      "title": "通用代理兜底",
+      "policy": "👾 人工智能",
+      "sources": [
+        "Proxy",
+        "Claude",
+        "OpenAI"
+      ]
+    },
+    {
+      "file": "LAN.list",
+      "title": "局域网兜底",
+      "policy": "DIRECT",
+      "sources": [
+        "LAN"
+      ]
+    },
+    {
+      "file": "ChinaASN.list",
+      "title": "中国 ASN 直连兜底",
+      "policy": "DIRECT",
+      "sources": [
+        "ChinaASN"
+      ]
+    },
+    {
+      "file": "ChinaDomain.list",
+      "title": "国内域名 / 应用补全",
+      "policy": "DIRECT",
+      "sources": [
+        "ChinaDomain"
+      ]
+    }
+  ]
+}

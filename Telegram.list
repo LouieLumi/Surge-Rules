@@ -1,0 +1,32 @@
+# 电报信息
+# Maintainer: LouieLumi
+# Organized: 2026-09-17
+# Rules: 20
+# Policy-free Surge RULE-SET; edit this file directly on GitHub.
+# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
+# Source: https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.Telegram.list
+#!name=🍟 Fries: 🌐 ASN Telegram
+#!author=VirgilClyne
+#!homepage=https://github.com/VirgilClyne/GetSomeFries/wiki/🌐-ASN
+# License: GPL-3.0; see LICENSES/GPL-3.0.txt
+
+DOMAIN-SUFFIX,comments.app
+DOMAIN-SUFFIX,graph.org
+DOMAIN-SUFFIX,legra.ph
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telegram-cdn.org
+DOMAIN-SUFFIX,telegram.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telesco.pe
+DOMAIN-SUFFIX,tx.me
+IP-ASN,211157,no-resolve
+IP-ASN,44907,no-resolve
+IP-ASN,59930,no-resolve
+IP-ASN,62014,no-resolve
+IP-ASN,62041,no-resolve
+IP-CIDR,109.239.140.0/24,no-resolve
+IP-CIDR,5.28.192.0/18,no-resolve
+IP-CIDR6,2a0a:f280::/32,no-resolve
+PROCESS-NAME,org.telegram.messenger

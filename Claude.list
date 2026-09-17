@@ -1,16 +1,11 @@
-#########################################
-# Lumi's Ruleset - AIGC Domains
-# Reordered: Anthropic Claude
-#########################################
+# Claude
+# Maintainer: LouieLumi
+# Organized: 2026-09-17
+# Rules: 3
+# Policy-free Surge RULE-SET; edit this file directly on GitHub.
+# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
+# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/Claude.list
 
+DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
-DOMAIN-SUFFIX,anthropic.com
-DOMAIN,platform.claude.com
-DOMAIN,api.anthropic.com
-DOMAIN,status.anthropic.com
-DOMAIN,browser-intake-us5-datadoghq.com
-DOMAIN,googletagmanager.com
-DOMAIN,connect.facebook.net
-DOMAIN,status.anthropic.com
-

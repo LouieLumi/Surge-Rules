@@ -1,0 +1,4589 @@
+{
+  "date": "2026-09-17",
+  "original_source_rule_count": 14050,
+  "untouched": [
+    "ApplicationDirect",
+    "ApplicationReject",
+    "NetInfrastructure.list"
+  ],
+  "statistics": [
+    {
+      "file": "AppleIntelligence.list",
+      "input_after_reclassification": 6,
+      "output": 6,
+      "removed": 0
+    },
+    {
+      "file": "Apple.list",
+      "input_after_reclassification": 1622,
+      "output": 1616,
+      "removed": 6
+    },
+    {
+      "file": "Claude.list",
+      "input_after_reclassification": 7,
+      "output": 3,
+      "removed": 4
+    },
+    {
+      "file": "OpenAI.list",
+      "input_after_reclassification": 18,
+      "output": 15,
+      "removed": 3
+    },
+    {
+      "file": "OtherAI.list",
+      "input_after_reclassification": 17,
+      "output": 16,
+      "removed": 1
+    },
+    {
+      "file": "Telegram.list",
+      "input_after_reclassification": 20,
+      "output": 20,
+      "removed": 0
+    },
+    {
+      "file": "Games.list",
+      "input_after_reclassification": 311,
+      "output": 311,
+      "removed": 0
+    },
+    {
+      "file": "YouTube.list",
+      "input_after_reclassification": 213,
+      "output": 190,
+      "removed": 23
+    },
+    {
+      "file": "Netflix.list",
+      "input_after_reclassification": 1184,
+      "output": 1158,
+      "removed": 26
+    },
+    {
+      "file": "Disney.list",
+      "input_after_reclassification": 189,
+      "output": 177,
+      "removed": 12
+    },
+    {
+      "file": "BiliBili.list",
+      "input_after_reclassification": 144,
+      "output": 136,
+      "removed": 8
+    },
+    {
+      "file": "GlobalMedia.list",
+      "input_after_reclassification": 355,
+      "output": 349,
+      "removed": 6
+    },
+    {
+      "file": "ChinaMedia.list",
+      "input_after_reclassification": 441,
+      "output": 310,
+      "removed": 131
+    },
+    {
+      "file": "Gemini.list",
+      "input_after_reclassification": 731,
+      "output": 698,
+      "removed": 33
+    },
+    {
+      "file": "Microsoft.list",
+      "input_after_reclassification": 673,
+      "output": 671,
+      "removed": 2
+    },
+    {
+      "file": "Proxy.list",
+      "input_after_reclassification": 6948,
+      "output": 6675,
+      "removed": 273
+    },
+    {
+      "file": "LAN.list",
+      "input_after_reclassification": 140,
+      "output": 138,
+      "removed": 2
+    },
+    {
+      "file": "ChinaASN.list",
+      "input_after_reclassification": 1009,
+      "output": 1009,
+      "removed": 0
+    },
+    {
+      "file": "ChinaDomain.list",
+      "input_after_reclassification": 13,
+      "output": 13,
+      "removed": 0
+    }
+  ],
+  "migrations": [
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,ggpht.cn",
+      "result": "DOMAIN-SUFFIX,ggpht.cn",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,ggpht.com",
+      "result": "DOMAIN-SUFFIX,ggpht.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,googlevideo.com",
+      "result": "DOMAIN-SUFFIX,googlevideo.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,gvt1.com",
+      "result": "DOMAIN-SUFFIX,gvt1.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,gvt2.com",
+      "result": "DOMAIN-SUFFIX,gvt2.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,video.google.com",
+      "result": "DOMAIN-SUFFIX,video.google.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,withyoutube.com",
+      "result": "DOMAIN-SUFFIX,withyoutube.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtu.be",
+      "result": "DOMAIN-SUFFIX,youtu.be",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtube-nocookie.com",
+      "result": "DOMAIN-SUFFIX,youtube-nocookie.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtube.com",
+      "result": "DOMAIN-SUFFIX,youtube.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtube.googleapis.com",
+      "result": "DOMAIN-SUFFIX,youtube.googleapis.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtubei.googleapis.com",
+      "result": "DOMAIN-SUFFIX,youtubei.googleapis.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtubekids.com",
+      "result": "DOMAIN-SUFFIX,youtubekids.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,yt.be",
+      "result": "DOMAIN-SUFFIX,yt.be",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,ytimg.com",
+      "result": "DOMAIN-SUFFIX,ytimg.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "DOMAIN-KEYWORD,youtube",
+      "result": "DOMAIN-KEYWORD,youtube",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,*YouTubeMusic*",
+      "result": "USER-AGENT,*YouTubeMusic*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,*com.google.ios.youtubemusic*",
+      "result": "USER-AGENT,*com.google.ios.youtubemusic*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,*youtube*",
+      "result": "USER-AGENT,*youtube*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,YouTube*",
+      "result": "USER-AGENT,YouTube*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,YouTubeMusic*",
+      "result": "USER-AGENT,YouTubeMusic*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,com.google.ios.youtube*",
+      "result": "USER-AGENT,com.google.ios.youtube*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "YouTube.list",
+      "rule": "USER-AGENT,com.google.ios.youtubemusic*",
+      "result": "USER-AGENT,com.google.ios.youtubemusic*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.ca",
+      "result": "DOMAIN-SUFFIX,netflix.ca",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.com",
+      "result": "DOMAIN-SUFFIX,netflix.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.com.au",
+      "result": "DOMAIN-SUFFIX,netflix.com.au",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.net",
+      "result": "DOMAIN-SUFFIX,netflix.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflixinvestor.com",
+      "result": "DOMAIN-SUFFIX,netflixinvestor.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflixstudios.com",
+      "result": "DOMAIN-SUFFIX,netflixstudios.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflixtechblog.com",
+      "result": "DOMAIN-SUFFIX,netflixtechblog.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxext.com",
+      "result": "DOMAIN-SUFFIX,nflxext.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflximg.com",
+      "result": "DOMAIN-SUFFIX,nflximg.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflximg.net",
+      "result": "DOMAIN-SUFFIX,nflximg.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxsearch.net",
+      "result": "DOMAIN-SUFFIX,nflxsearch.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxso.net",
+      "result": "DOMAIN-SUFFIX,nflxso.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxvideo.net",
+      "result": "DOMAIN-SUFFIX,nflxvideo.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "DOMAIN-KEYWORD,netflix",
+      "result": "DOMAIN-KEYWORD,netflix",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,23.246.0.0/18,no-resolve",
+      "result": "IP-CIDR,23.246.0.0/18,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,37.77.184.0/21,no-resolve",
+      "result": "IP-CIDR,37.77.184.0/21,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,45.57.0.0/17,no-resolve",
+      "result": "IP-CIDR,45.57.0.0/17,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,64.120.128.0/17,no-resolve",
+      "result": "IP-CIDR,64.120.128.0/17,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,66.197.128.0/17,no-resolve",
+      "result": "IP-CIDR,66.197.128.0/17,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,69.53.224.0/19,no-resolve",
+      "result": "IP-CIDR,69.53.224.0/19,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,108.175.32.0/20,no-resolve",
+      "result": "IP-CIDR,108.175.32.0/20,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,185.2.220.0/22,no-resolve",
+      "result": "IP-CIDR,185.2.220.0/22,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,185.9.188.0/22,no-resolve",
+      "result": "IP-CIDR,185.9.188.0/22,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,192.173.64.0/18,no-resolve",
+      "result": "IP-CIDR,192.173.64.0/18,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,198.38.96.0/19,no-resolve",
+      "result": "IP-CIDR,198.38.96.0/19,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Netflix.list",
+      "rule": "IP-CIDR,198.45.48.0/20,no-resolve",
+      "result": "IP-CIDR,198.45.48.0/20,no-resolve",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,bamgrid.com",
+      "result": "DOMAIN-SUFFIX,bamgrid.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disney-plus.net",
+      "result": "DOMAIN-SUFFIX,disney-plus.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disney.com",
+      "result": "DOMAIN-SUFFIX,disney.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disneyplus.com",
+      "result": "DOMAIN-SUFFIX,disneyplus.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disneyplus.net",
+      "result": "DOMAIN-SUFFIX,disneyplus.net",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disneystreaming.com",
+      "result": "DOMAIN-SUFFIX,disneystreaming.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,dssott.com",
+      "result": "DOMAIN-SUFFIX,dssott.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,dtci.co",
+      "result": "DOMAIN-SUFFIX,dtci.co",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,dtci.technology",
+      "result": "DOMAIN-SUFFIX,dtci.technology",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,marvel.com",
+      "result": "DOMAIN-SUFFIX,marvel.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,starwars.com",
+      "result": "DOMAIN-SUFFIX,starwars.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "USER-AGENT,DPlus*",
+      "result": "USER-AGENT,DPlus*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "USER-AGENT,Disney*",
+      "result": "USER-AGENT,Disney*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Disney.list",
+      "rule": "USER-AGENT,Disney+*",
+      "result": "USER-AGENT,Disney+*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Apple.list",
+      "rule": "DOMAIN,ocvideo.apple.com",
+      "result": "DOMAIN,ocvideo.apple.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Apple.list",
+      "rule": "DOMAIN-SUFFIX,applemusic.com",
+      "result": "DOMAIN-SUFFIX,applemusic.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Apple.list",
+      "rule": "DOMAIN-SUFFIX,tv.apple.com",
+      "result": "DOMAIN-SUFFIX,tv.apple.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Apple.list",
+      "rule": "DOMAIN-SUFFIX,music.apple.com",
+      "result": "DOMAIN-SUFFIX,music.apple.com",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Apple.list",
+      "rule": "USER-AGENT,AppleTV*",
+      "result": "USER-AGENT,AppleTV*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "Apple.list",
+      "rule": "USER-AGENT,com.apple.tv*",
+      "result": "USER-AGENT,com.apple.tv*",
+      "reason": "原有媒体章节迁入对应专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN,apm-misaka.biliapi.net",
+      "result": "DOMAIN,apm-misaka.biliapi.net",
+      "reason": "哔哩哔哩国际版归入哔哩哔哩"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.tv",
+      "result": "DOMAIN-SUFFIX,bilibili.tv",
+      "reason": "哔哩哔哩国际版归入哔哩哔哩"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,biliintl.com",
+      "result": "DOMAIN-SUFFIX,biliintl.com",
+      "reason": "哔哩哔哩国际版归入哔哩哔哩"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,bstarstatic.com",
+      "result": "DOMAIN-SUFFIX,bstarstatic.com",
+      "reason": "哔哩哔哩国际版归入哔哩哔哩"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "BiliBili.list",
+      "rule": "USER-AGENT,app/bstar*",
+      "result": "USER-AGENT,app/bstar*",
+      "reason": "哔哩哔哩国际版归入哔哩哔哩"
+    },
+    {
+      "from": "ChinaMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,p-bstarstatic.akamaized.net",
+      "result": "DOMAIN-SUFFIX,p-bstarstatic.akamaized.net",
+      "reason": "国内媒体中的哔哩哔哩补充归入专用分类"
+    },
+    {
+      "from": "ChinaMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,p.bstarstatic.com",
+      "result": "DOMAIN-SUFFIX,p.bstarstatic.com",
+      "reason": "国内媒体中的哔哩哔哩补充归入专用分类"
+    },
+    {
+      "from": "ChinaMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,upos-bstar-mirrorakam.akamaized.net",
+      "result": "DOMAIN-SUFFIX,upos-bstar-mirrorakam.akamaized.net",
+      "reason": "国内媒体中的哔哩哔哩补充归入专用分类"
+    },
+    {
+      "from": "ChinaMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,upos-bstar1-mirrorakam.akamaized.net",
+      "result": "DOMAIN-SUFFIX,upos-bstar1-mirrorakam.akamaized.net",
+      "reason": "国内媒体中的哔哩哔哩补充归入专用分类"
+    },
+    {
+      "from": "ChinaMedia.list",
+      "to": "BiliBili.list",
+      "rule": "DOMAIN-KEYWORD,bilibili",
+      "result": "DOMAIN-KEYWORD,bilibili",
+      "reason": "国内媒体中的哔哩哔哩补充归入专用分类"
+    },
+    {
+      "from": "ChinaMedia.list",
+      "to": "BiliBili.list",
+      "rule": "USER-AGENT,bilibili*",
+      "result": "USER-AGENT,bilibili*",
+      "reason": "国内媒体中的哔哩哔哩补充归入专用分类"
+    },
+    {
+      "from": "GlobalMedia.list",
+      "to": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,snssdk.com",
+      "result": "DOMAIN-SUFFIX,snssdk.com",
+      "reason": "共享字节域名维持国内媒体归属"
+    },
+    {
+      "from": "OtherAI.list",
+      "to": "OpenAI.list",
+      "rule": "DOMAIN-SUFFIX,chat.com",
+      "result": "DOMAIN-SUFFIX,chat.com",
+      "reason": "chat.com 当前重定向到 ChatGPT"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "OtherAI.list",
+      "rule": "DOMAIN-SUFFIX,ai.com",
+      "result": "DOMAIN-SUFFIX,ai.com",
+      "reason": "ai.com 当前是独立 AI 服务"
+    },
+    {
+      "from": "Claude.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN,browser-intake-us5-datadoghq.com",
+      "result": "DOMAIN,browser-intake-us5-datadoghq.com",
+      "reason": "共享遥测/标签服务归入通用代理兜底"
+    },
+    {
+      "from": "Claude.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN,googletagmanager.com",
+      "result": "DOMAIN,googletagmanager.com",
+      "reason": "共享遥测/标签服务归入通用代理兜底"
+    },
+    {
+      "from": "Claude.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN,connect.facebook.net",
+      "result": "DOMAIN,connect.facebook.net",
+      "reason": "共享遥测/标签服务归入通用代理兜底"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN,browser-intake-datadoghq.com",
+      "result": "DOMAIN,browser-intake-datadoghq.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN,static.cloudflareinsights.com",
+      "result": "DOMAIN,static.cloudflareinsights.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,algolia.net",
+      "result": "DOMAIN-SUFFIX,algolia.net",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,api.statsig.com",
+      "result": "DOMAIN-SUFFIX,api.statsig.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,auth0.com",
+      "result": "DOMAIN-SUFFIX,auth0.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com",
+      "result": "DOMAIN-SUFFIX,client-api.arkoselabs.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,events.statsigapi.net",
+      "result": "DOMAIN-SUFFIX,events.statsigapi.net",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,featuregates.org",
+      "result": "DOMAIN-SUFFIX,featuregates.org",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,host.livekit.cloud",
+      "result": "DOMAIN-SUFFIX,host.livekit.cloud",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,identrust.com",
+      "result": "DOMAIN-SUFFIX,identrust.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,intercom.io",
+      "result": "DOMAIN-SUFFIX,intercom.io",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,intercomcdn.com",
+      "result": "DOMAIN-SUFFIX,intercomcdn.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,launchdarkly.com",
+      "result": "DOMAIN-SUFFIX,launchdarkly.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,observeit.net",
+      "result": "DOMAIN-SUFFIX,observeit.net",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,segment.io",
+      "result": "DOMAIN-SUFFIX,segment.io",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,sentry.io",
+      "result": "DOMAIN-SUFFIX,sentry.io",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,stripe.com",
+      "result": "DOMAIN-SUFFIX,stripe.com",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,turn.livekit.cloud",
+      "result": "DOMAIN-SUFFIX,turn.livekit.cloud",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "IP-CIDR,24.199.123.28/32",
+      "result": "IP-CIDR,24.199.123.28/32,no-resolve",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "IP-CIDR,64.23.132.171/32",
+      "result": "IP-CIDR,64.23.132.171/32,no-resolve",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    },
+    {
+      "from": "OpenAI.list",
+      "to": "Proxy.list",
+      "rule": "IP-ASN,20473",
+      "result": "IP-ASN,20473,no-resolve",
+      "reason": "共享基础设施或未验证旧 IP 归通用代理；迁移的 IP/ASN 加 no-resolve 避免提前触发 DNS"
+    }
+  ],
+  "removed_rules": [
+    {
+      "file": "Apple.list",
+      "rule": "DOMAIN-SUFFIX,applemusic.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,applemusic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Apple.list",
+      "rule": "DOMAIN-SUFFIX,music.apple.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Apple.list",
+      "rule": "DOMAIN-SUFFIX,tv.apple.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Apple.list",
+      "rule": "DOMAIN,ocvideo.apple.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Apple.list",
+      "rule": "USER-AGENT,AppleTV*",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "USER-AGENT,AppleTV*",
+      "scope": "within_category"
+    },
+    {
+      "file": "Apple.list",
+      "rule": "USER-AGENT,com.apple.tv*",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "USER-AGENT,com.apple.tv*",
+      "scope": "within_category"
+    },
+    {
+      "file": "Claude.list",
+      "rule": "DOMAIN,api.anthropic.com",
+      "covered_by_file": "Claude.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,anthropic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Claude.list",
+      "rule": "DOMAIN,platform.claude.com",
+      "covered_by_file": "Claude.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,claude.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Claude.list",
+      "rule": "DOMAIN,status.anthropic.com",
+      "covered_by_file": "Claude.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,anthropic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Claude.list",
+      "rule": "DOMAIN,status.anthropic.com",
+      "covered_by_file": "Claude.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,anthropic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "OpenAI.list",
+      "rule": "DOMAIN-SUFFIX,chatgpt.com",
+      "covered_by_file": "OpenAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chatgpt.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "OpenAI.list",
+      "rule": "DOMAIN-SUFFIX,oaistatic.com",
+      "covered_by_file": "OpenAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,oaistatic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "OpenAI.list",
+      "rule": "DOMAIN-KEYWORD,openai",
+      "covered_by_file": "OpenAI.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,openai",
+      "scope": "within_category"
+    },
+    {
+      "file": "OtherAI.list",
+      "rule": "DOMAIN-SUFFIX,ai.com",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ai.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,ggpht.cn",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ggpht.cn",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,ggpht.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ggpht.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,googlevideo.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googlevideo.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,gvt1.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt1.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,gvt2.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt2.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,withyoutube.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,withyoutube.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtu.be",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtu.be",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtube-nocookie.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtube-nocookie.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtube.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtube.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtubekids.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtubekids.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,yt.be",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,yt.be",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,ytimg.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ytimg.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,video.google.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,video.google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtube.googleapis.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtube.googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-SUFFIX,youtubei.googleapis.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtubei.googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "DOMAIN-KEYWORD,youtube",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,youtube",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,*YouTubeMusic*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,*YouTubeMusic*",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,*com.google.ios.youtubemusic*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,*com.google.ios.youtubemusic*",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,*youtube*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,*youtube*",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,YouTube*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,YouTube*",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,YouTubeMusic*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,YouTubeMusic*",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,com.google.ios.youtube*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,com.google.ios.youtube*",
+      "scope": "within_category"
+    },
+    {
+      "file": "YouTube.list",
+      "rule": "USER-AGENT,com.google.ios.youtubemusic*",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "USER-AGENT,com.google.ios.youtubemusic*",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.ca",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.ca",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflixinvestor.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflixinvestor.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflixstudios.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflixstudios.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflixtechblog.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflixtechblog.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxext.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxext.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflximg.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflximg.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflximg.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflximg.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxsearch.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxsearch.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxso.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxso.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,nflxvideo.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxvideo.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN-SUFFIX,netflix.com.au",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.com.au",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "DOMAIN,netflix.com.edgesuite.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.com.edgesuite.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,45.57.0.0/17,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,45.57.0.0/17,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,64.120.128.0/17,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,64.120.128.0/17,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,66.197.128.0/17,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,66.197.128.0/17,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,192.173.64.0/18,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,192.173.64.0/18,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,23.246.0.0/18,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,23.246.0.0/18,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,198.38.96.0/19,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,198.38.96.0/19,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,69.53.224.0/19,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,69.53.224.0/19,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,108.175.32.0/20,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,108.175.32.0/20,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,198.45.48.0/20,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,198.45.48.0/20,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,37.77.184.0/21,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,37.77.184.0/21,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,185.2.220.0/22,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,185.2.220.0/22,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Netflix.list",
+      "rule": "IP-CIDR,185.9.188.0/22,no-resolve",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "IP-CIDR,185.9.188.0/22,no-resolve",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,bamgrid.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bamgrid.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disney-plus.net",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disney-plus.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disney.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disney.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disneyplus.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disneyplus.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disneystreaming.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disneystreaming.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,dssott.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dssott.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,dtci.co",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dtci.co",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,dtci.technology",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dtci.technology",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,marvel.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,marvel.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,starwars.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,starwars.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "DOMAIN-SUFFIX,disney-portal.my.onetrust.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,onetrust.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Disney.list",
+      "rule": "USER-AGENT,Disney+*",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "USER-AGENT,Disney+*",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.tv",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.tv",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,biliintl.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliintl.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN-SUFFIX,p.bstarstatic.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bstarstatic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN,apm-misaka.biliapi.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliapi.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN,p-bstarstatic.akamaized.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,p-bstarstatic.akamaized.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN,p.bstarstatic.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bstarstatic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN,upos-bstar-mirrorakam.akamaized.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,upos-bstar-mirrorakam.akamaized.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "BiliBili.list",
+      "rule": "DOMAIN,upos-bstar1-mirrorakam.akamaized.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,upos-bstar1-mirrorakam.akamaized.net",
+      "scope": "within_category"
+    },
+    {
+      "file": "GlobalMedia.list",
+      "rule": "DOMAIN-SUFFIX,dmed.technology",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dmed.technology",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "GlobalMedia.list",
+      "rule": "DOMAIN-SUFFIX,espn.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,espn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "GlobalMedia.list",
+      "rule": "DOMAIN-SUFFIX,espn.net",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,espn.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "GlobalMedia.list",
+      "rule": "DOMAIN-SUFFIX,espncdn.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,espncdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "GlobalMedia.list",
+      "rule": "DOMAIN-SUFFIX,watchespn.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,watchespn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "GlobalMedia.list",
+      "rule": "DOMAIN-SUFFIX,espn.co.uk",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,espn.co.uk",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,acg.tv",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,acg.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,acgvideo.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,acgvideo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,animetamashi.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,animetamashi.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,animetamashi.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,animetamashi.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,anitama.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,anitama.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,anitama.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,anitama.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,b23.tv",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,b23.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,baka.im",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,baka.im",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bigfun.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bigfun.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bigfunapp.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bigfunapp.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bili22.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bili22.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bili2233.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bili2233.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bili23.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bili23.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bili33.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bili33.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biliapi.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliapi.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biliapi.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliapi.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.cc",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.cc",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.co",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibili.tv",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibili.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibiligame.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibiligame.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibiligame.co",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibiligame.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibiligame.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibiligame.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibilipay.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibilipay.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilibilipay.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilibilipay.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilicdn1.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilicdn1.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilicdn2.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilicdn2.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilicdn3.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilicdn3.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilicdn4.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilicdn4.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilicdn5.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilicdn5.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilicomics.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilicomics.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biligame.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biligame.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biligame.co",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biligame.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biligame.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biligame.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biligame.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biligame.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biligo.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biligo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biliimg.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliimg.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biliintl.co",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliintl.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biliintl.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliintl.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,biliplus.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,biliplus.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilivideo.cn",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilivideo.cn",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilivideo.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilivideo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,bilivideo.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bilivideo.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,corari.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,corari.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,dreamcast.hk",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dreamcast.hk",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,dyhgames.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dyhgames.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,hdslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hdslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,hdslb.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hdslb.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,hdslb.org",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hdslb.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,im9.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,im9.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,iq.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,iq.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,maoercdn.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,maoercdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,mcbbs.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,mcbbs.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,mincdn.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,mincdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,sharejoytech.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,sharejoytech.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,smtcdns.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,smtcdns.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,snssdk.com",
+      "covered_by_file": "ChinaMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,snssdk.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,yo9.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,yo9.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,upos-hz-mirrorakam.akamaized.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,upos-hz-mirrorakam.akamaized.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,uposdash-302-bilivideo.yfcdn.net",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,uposdash-302-bilivideo.yfcdn.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,hdslb.com.w.kunlunhuf.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hdslb.com.w.kunlunhuf.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN-SUFFIX,hdslb.com.w.kunlunpi.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hdslb.com.w.kunlunpi.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrc31.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrc31.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrc3s.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrc3s.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrc3z.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrc3z.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrctt.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrctt.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrctu.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjsgrzdrctu.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjz8yzdnc31.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjz8yzdnc31.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjz8yzdnc3t.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjz8yzdnc3t.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjzgazdrpba.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjzgazdrpba.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjzgazdrpbz.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjzgazdrpbz.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr4uqmtt8y41hcjzgazdrpjt.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr4uqmtt8y41hcjzgazdrpjt.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,0gr5dgmttgha1hcj38yzdncb3.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,0gr5dgmttgha1hcj38yzdncb3.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,112-81-125-43.dhost.00cdn.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,112-81-125-43.dhost.00cdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,113-219-145-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,113-219-145-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,114-236-92-129.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,114-236-92-129.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,180-101-74-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,180-101-74-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1geadrmttge3nhcjwgazdope.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1geadrmttge3nhcjwgazdope.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1geadrmttge3nhcjwgwzdqqe.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1geadrmttge3nhcjwgwzdqqe.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr3uomttgr31hcjo8yzdnco.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr3uomttgr31hcjo8yzdnco.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr3uomttgr31hcjo8yzdnpy.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr3uomttgr31hcjo8yzdnpy.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr3uomttgr31hcjtgezdkcy.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr3uomttgr31hcjtgezdkcy.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqca.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqca.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqce.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqce.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqco.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqco.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqpo.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr4uqmtt8y41hcjigazdqpo.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr4uqmtt8y41hcjzgwzdkqe.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr4uqmtt8y41hcjzgwzdkqe.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdcca.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdcca.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdcco.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdcco.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkca.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkca.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkco.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkco.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkpe.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkpe.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkpy.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkpy.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkqy.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj38yzdkqy.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcpa.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcpa.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcpe.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcpe.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcpo.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcpo.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcqy.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcj3gczdcqy.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1gr5dgmttgha1hcttgrzdnpo.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1gr5dgmttgha1hcttgrzdnpo.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,1graukmttga4nhcjtgozdgce.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,1graukmttga4nhcjtgozdgce.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,218-91-225-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,218-91-225-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,219-155-150-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,219-155-150-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,222-188-6-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,222-188-6-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,36-104-134-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,36-104-134-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,36-25-252-1.ksyungslb.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,36-25-252-1.ksyungslb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,3ge3drmttga5nhcbqge3ur.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,3ge3drmttga5nhcbqge3ur.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,3geauymtsgrzdnqbofa5do.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,3geauymtsgrzdnqbofa5do.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,3geauymtsgrzdnqbofa5dy.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,3geauymtsgrzdnqbofa5dy.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,3geauymtsgrzdrcbzfahue.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,3geauymtsgrzdrcbzfahue.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,3geauymtsgrzdrcbzfahuk.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,3geauymtsgrzdrcbzfahuk.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "DOMAIN,4go41hcjtgazdoctqge4o.ourdvsss.com",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "DOMAIN,4go41hcjtgazdoctqge4o.ourdvsss.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,203.107.1.0/24,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,203.107.1.0/24,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,106.75.74.76/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,106.75.74.76/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,111.206.25.147/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,111.206.25.147/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,119.3.238.64/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,119.3.238.64/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,120.92.108.182/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,120.92.108.182/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,120.92.113.99/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,120.92.113.99/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,120.92.153.217/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,120.92.153.217/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "IP-CIDR,134.175.207.130/32,no-resolve",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "IP-CIDR,134.175.207.130/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "PROCESS-NAME,com.bilibili.app.blue",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "PROCESS-NAME,com.bilibili.app.blue",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "PROCESS-NAME,com.bilibili.app.in",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "PROCESS-NAME,com.bilibili.app.in",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "PROCESS-NAME,com.bilibili.comic",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "PROCESS-NAME,com.bilibili.comic",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "PROCESS-NAME,com.bilibili.comic.intl",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "PROCESS-NAME,com.bilibili.comic.intl",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "PROCESS-NAME,tv.danmaku.bili",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "PROCESS-NAME,tv.danmaku.bili",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "PROCESS-NAME,tv.danmaku.bilibilihd",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "PROCESS-NAME,tv.danmaku.bilibilihd",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "USER-AGENT,*bili*",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "USER-AGENT,*bili*",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "USER-AGENT,Bilibili*",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "USER-AGENT,Bilibili*",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "USER-AGENT,bili*",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "USER-AGENT,bili*",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "ChinaMedia.list",
+      "rule": "USER-AGENT,bili-inter*",
+      "covered_by_file": "BiliBili.list",
+      "covered_by_rule": "USER-AGENT,bili-inter*",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,crashlytics.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,crashlytics.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,googleusercontent.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleusercontent.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,gstatic.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gstatic.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,aistudio.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,bard.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,beacons.gvt2.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt2.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,beacons2.gvt2.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt2.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,beacons3.gvt2.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt2.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,cloudcode-pa.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,gcp.gvt2.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt2.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,geller-pa.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,gemini.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,generativelanguage.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,makersuite.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,notebooklm.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,redirector.gvt1.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt1.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,redirector.gcpcdn.gvt1.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt1.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,redirector.offline-maps.gvt1.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt1.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-SUFFIX,redirector.snap.gvt1.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt1.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,ai.google.dev",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.dev",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,aida.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,aisandbox-pa.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,alkalicore-pa.clients6.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,daily-cloudcode-pa.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,jules.google.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,google.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN,robinfrontend-pa.googleapis.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googleapis.com",
+      "scope": "within_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "IP-CIDR,216.73.80.0/20,no-resolve",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "IP-CIDR,216.73.80.0/20,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "IP-CIDR,172.110.32.0/21,no-resolve",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "IP-CIDR,172.110.32.0/21,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "IP-CIDR6,2620:120:e000::/40,no-resolve",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "IP-CIDR6,2620:120:e000::/40,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Gemini.list",
+      "rule": "DOMAIN-KEYWORD,google",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,google",
+      "scope": "within_category"
+    },
+    {
+      "file": "Microsoft.list",
+      "rule": "DOMAIN-SUFFIX,akadns.net",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,akadns.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Microsoft.list",
+      "rule": "DOMAIN-SUFFIX,helpshift.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,helpshift.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,466453.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,466453.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,4gtv.tv",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,4gtv.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,abc.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,abc.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,abc.xyz",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,abc.xyz",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,admob.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,admob.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,adobedtm.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,adobedtm.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,adsense.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,adsense.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,advertisercommunity.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,advertisercommunity.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,aiv-cdn.net",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,aiv-cdn.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,aiv-delivery.net",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,aiv-delivery.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,amazonvideo.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,amazonvideo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ampproject.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ampproject.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ampproject.net",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ampproject.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ampproject.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ampproject.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,android.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,android.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,androidify.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,androidify.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,androidtv.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,androidtv.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,api.ai",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,api.ai",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,apigee.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apigee.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,app-measurement.net",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,app-measurement.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,apple-dns.net",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple-dns.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,appspot.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,appspot.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,appsto.re",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,appsto.re",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,aspnetcdn.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,aspnetcdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,autodraw.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,autodraw.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,azure.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,azure.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,azureedge.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,azureedge.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,azurewebsites.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,azurewebsites.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bamgrid.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bamgrid.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bandpage.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bandpage.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bbc.co",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bbc.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bbc.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bbc.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bbc.in",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bbc.in",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bing.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bing.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bing.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bing.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bingapis.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bingapis.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,blogblog.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,blogblog.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,blogger.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,blogger.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,byteoversea.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,byteoversea.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,c.gle",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,c.gle",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,certificate-transparency.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,certificate-transparency.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chat.com",
+      "covered_by_file": "OpenAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chat.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chrome.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chrome.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chromecast.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chromecast.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chromeexperiments.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chromeexperiments.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chromercise.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chromercise.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chromestatus.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chromestatus.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chromium.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,chromium.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,claude.com",
+      "covered_by_file": "Claude.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,claude.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,cloudfunctions.net",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,cloudfunctions.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,comments.app",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,comments.app",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,crashlytics.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,crashlytics.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,crbug.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,crbug.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,creativelab5.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,creativelab5.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,crrev.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,crrev.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dailymotion.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dailymotion.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dartlang.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dartlang.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,data-vocabulary.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,data-vocabulary.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dazn.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dazn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,debug.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,debug.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,deepmind.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,deepmind.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,deezer.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,deezer.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,deja.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,deja.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dify.ai",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dify.ai",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,digicert.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,digicert.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,digisfera.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,digisfera.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,disney-plus.net",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disney-plus.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,disneyplus.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disneyplus.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dmc.nico",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dmc.nico",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dmcdn.net",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dmcdn.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dmm.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dmm.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dssott.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dssott.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,edgesuite.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,edgesuite.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fabric.io",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,fabric.io",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fanatical.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,fanatical.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fast.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,fast.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,feedburner.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,feedburner.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fflick.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,fflick.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,firebaseio.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,firebaseio.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fubo.tv",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,fubo.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,fuchsia.dev",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,fuchsia.dev",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,g.ai",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,g.ai",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,g.co",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,g.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gcr.io",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gcr.io",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,get.app",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,get.app",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,get.dev",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,get.dev",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,get.how",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,get.how",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,get.page",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,get.page",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,getmdl.io",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,getmdl.io",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,getoutline.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,getoutline.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gfx.ms",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gfx.ms",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ggpht.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ggpht.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gmodules.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gmodules.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,go.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,go.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,godoc.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,godoc.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,golang.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,golang.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,goo.gl",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,goo.gl",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,graph.org",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,graph.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,grok.com",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,grok.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gstatic.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gstatic.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gvt0.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt0.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gvt1.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt1.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gvt3.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gvt3.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gwtproject.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gwtproject.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,hbo.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hbo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,hbomax.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hbomax.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,helpshift.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,helpshift.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,here.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,here.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,hockeyapp.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hockeyapp.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,html5rocks.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,html5rocks.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,hulu.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hulu.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,huluim.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,huluim.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,humblebundle.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,humblebundle.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,i-cable.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,i-cable.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,iam.soy",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,iam.soy",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ibytedtos.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ibytedtos.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,itasoftware.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,itasoftware.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,itun.es",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,itun.es",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,jtvnw.net",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,jtvnw.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,keyhole.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,keyhole.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,kkbox.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,kkbox.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,legra.ph",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,legra.ph",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,like.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,like.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,live.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,live.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,live.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,live.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,livefilestore.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,livefilestore.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,madewithcode.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,madewithcode.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,material.io",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,material.io",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,microsoft-falcon.io",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,microsoft-falcon.io",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,microsoft.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,microsoft.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,microsoftapp.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,microsoftapp.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,microsoftpersonalcontent.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,microsoftpersonalcontent.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,microsofttranslator.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,microsofttranslator.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,msedge.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,msedge.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,msn.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,msn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,muscdn.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,muscdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,musical.ly",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,musical.ly",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,mytvsuper.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,mytvsuper.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nationalgeographic.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nationalgeographic.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nbc.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nbc.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,netflix.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,netflix.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,netflix.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nflxext.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxext.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nflximg.com",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflximg.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nflximg.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflximg.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nflxso.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxso.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nflxvideo.net",
+      "covered_by_file": "Netflix.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nflxvideo.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nicoseiga.jp",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nicoseiga.jp",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nicovideo.jp",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nicovideo.jp",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nimg.jp",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nimg.jp",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nintendo.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nintendo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,nintendo.net",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,nintendo.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,now.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,now.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,olelive.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,olelive.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,olevod.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,olevod.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,on2.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,on2.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,onenote.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,onenote.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,openart.ai",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,openart.ai",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,overcast.fm",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,overcast.fm",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,page.link",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,page.link",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,pandora.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,pandora.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,perplexity.ai",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,perplexity.ai",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,picasaweb.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,picasaweb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,pki.goog",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,pki.goog",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,playartifact.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,playartifact.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,playstation.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,playstation.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,playstation.net",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,playstation.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,playstationnetwork.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,playstationnetwork.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,plus.codes",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,plus.codes",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,poe.com",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,poe.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,pokemon.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,pokemon.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,polymer-project.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,polymer-project.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,primevideo.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,primevideo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,questvisual.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,questvisual.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,recaptcha.net",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,recaptcha.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,redhotlabs.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,redhotlabs.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,rthk.hk",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,rthk.hk",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,s.team",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,s.team",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,savethedate.foo",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,savethedate.foo",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,scdn.co",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,scdn.co",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,schema.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,schema.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,sfx.ms",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,sfx.ms",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,shattered.io",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,shattered.io",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,shazam.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,shazam.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,skype.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,skype.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,snapseed.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,snapseed.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,sndcdn.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,sndcdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,soundcloud.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,soundcloud.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,supermariorun.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,supermariorun.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,synergyse.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,synergyse.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,t.me",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,t.me",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tdesktop.com",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tdesktop.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,teachparentstech.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,teachparentstech.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,telegra.ph",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,telegra.ph",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,telesco.pe",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,telesco.pe",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tenor.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tenor.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tensorflow.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tensorflow.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tfhub.dev",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tfhub.dev",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiktok.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiktok.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiktokcdn-eu.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiktokcdn-eu.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiktokcdn-us.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiktokcdn-us.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiktokcdn.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiktokcdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiktokv.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiktokv.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiktokv.us",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiktokv.us",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tiltbrush.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tiltbrush.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ttwstatic.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ttwstatic.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tvb.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tvb.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tvbanywhere.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tvbanywhere.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,twitch.tv",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,twitch.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,twitchcdn.net",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,twitchcdn.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,tx.me",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,tx.me",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,underlords.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,underlords.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,unfiltered.news",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,unfiltered.news",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,urchin.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,urchin.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,valvesoftware.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,valvesoftware.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,vimeo.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,vimeo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,vimeocdn.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,vimeocdn.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,viu.com",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,viu.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,viu.tv",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,viu.tv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,waveprotocol.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,waveprotocol.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,waymo.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,waymo.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,web.dev",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,web.dev",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,webmproject.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,webmproject.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,webpkgcache.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,webpkgcache.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,webrtc.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,webrtc.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,whatbrowser.org",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,whatbrowser.org",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,widevine.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,widevine.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,x.ai",
+      "covered_by_file": "OtherAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,x.ai",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,x.company",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,x.company",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,xn--ngstr-lra8j.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,xn--ngstr-lra8j.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,xn--p8j9a0d9c9a.xn--q9jyb4c",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,xn--p8j9a0d9c9a.xn--q9jyb4c",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,youtu.be",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,youtu.be",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,yt.be",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,yt.be",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,ytimg.com",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,ytimg.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,zynamics.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,zynamics.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bahamut.com.tw",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bahamut.com.tw",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bbc.co.uk",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bbc.co.uk",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,bbci.co.uk",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,bbci.co.uk",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,blobstore.apple.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,chat.openai.com",
+      "covered_by_file": "OpenAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,openai.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,content.office.net",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,office.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,cws.conviva.com",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,conviva.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,dmm.co.jp",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,dmm.co.jp",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,files.oaiusercontent.com",
+      "covered_by_file": "OpenAI.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,oaiusercontent.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,gamer.com.tw",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,gamer.com.tw",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,go.sony.com",
+      "covered_by_file": "Games.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,sony.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,jma.go.jp",
+      "covered_by_file": "Proxy.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,go.jp",
+      "scope": "within_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,msn.com.tw",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,msn.com.tw",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,npa.go.jp",
+      "covered_by_file": "Proxy.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,go.jp",
+      "scope": "within_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,rthk.org.hk",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,rthk.org.hk",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net",
+      "covered_by_file": "Disney.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,disneyplus.com.ssl.sc.omtrdc.net",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN,cvws.icloud-content.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,icloud-content.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN,developer.apple.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN,googletagmanager.com",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,googletagmanager.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN,login.microsoftonline.com",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,microsoftonline.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN,testflight.apple.com",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,apple.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN,voice.telephony.goog",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN,voice.telephony.goog",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "IP-CIDR,173.194.0.0/16,no-resolve",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "IP-CIDR,173.194.0.0/16,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "IP-CIDR,74.125.0.0/16,no-resolve",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "IP-CIDR,74.125.0.0/16,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "IP-CIDR,109.239.140.0/24,no-resolve",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "IP-CIDR,109.239.140.0/24,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "IP-CIDR6,2a0a:f280::/32,no-resolve",
+      "covered_by_file": "Telegram.list",
+      "covered_by_rule": "IP-CIDR6,2a0a:f280::/32,no-resolve",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,1drv",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,1drv",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,blogspot",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,blogspot",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,gmail",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,gmail",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,google",
+      "covered_by_file": "Gemini.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,google",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,onedrive",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,onedrive",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,skydrive",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,skydrive",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,spotify",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,spotify",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,ttvnw",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,ttvnw",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,uk-live",
+      "covered_by_file": "GlobalMedia.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,uk-live",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "DOMAIN-KEYWORD,youtube",
+      "covered_by_file": "YouTube.list",
+      "covered_by_rule": "DOMAIN-KEYWORD,youtube",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "USER-AGENT,OneDrive*",
+      "covered_by_file": "Microsoft.list",
+      "covered_by_rule": "USER-AGENT,OneDrive*",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "Proxy.list",
+      "rule": "USER-AGENT,com.apple.trustd*",
+      "covered_by_file": "Apple.list",
+      "covered_by_rule": "USER-AGENT,com.apple.trustd*",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "LAN.list",
+      "rule": "DOMAIN-SUFFIX,hiwifi.com",
+      "covered_by_file": "Proxy.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,hiwifi.com",
+      "scope": "earlier_category"
+    },
+    {
+      "file": "LAN.list",
+      "rule": "DOMAIN,local.adguard.org",
+      "covered_by_file": "Proxy.list",
+      "covered_by_rule": "DOMAIN-SUFFIX,adguard.org",
+      "scope": "earlier_category"
+    }
+  ],
+  "note": "Historical import audit only. Rule files are the editable source of truth; future manual edits do not require regenerating this report."
+}

@@ -1,0 +1,605 @@
+{
+  "retrieved_at": "2026-09-17T04:01:35.635646+00:00",
+  "sources": [
+    {
+      "name": "ApplicationDirect",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/ApplicationDirect",
+      "sha256": "2666a0a92ee65fa1a56a1f2d3d1ae35d70263e2807c717b0acb0c95341fcf895",
+      "bytes": 112,
+      "rules": 2,
+      "types": [
+        "PROCESS-NAME"
+      ],
+      "original_header": [
+        ""
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "ApplicationReject",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/ApplicationReject",
+      "sha256": "ecb1bca3c6acdad70d7f008049b8329ff0d4d983532bad88ce860c743625f95d",
+      "bytes": 553,
+      "rules": 7,
+      "types": [
+        "PROCESS-NAME"
+      ],
+      "original_header": [
+        ""
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "Apple",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple_All_No_Resolve.list",
+      "sha256": "16fc2e5a40ab140fa92f497f7be87a5f1c8d50a391398613b9a7a13a9f41d4c9",
+      "bytes": 51402,
+      "rules": 1616,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: Apple",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2026-09-16 04:45:18",
+        "# DOMAIN: 9",
+        "# DOMAIN-KEYWORD: 7",
+        "# DOMAIN-SUFFIX: 1551",
+        "# IP-CIDR: 10",
+        "# IP-CIDR6: 3",
+        "# PROCESS-NAME: 13",
+        "# USER-AGENT: 23",
+        "# TOTAL: 1616"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Apple/README.md"
+    },
+    {
+      "name": "AppleIntelligence",
+      "url": "https://ruleset.skk.moe/List/non_ip/apple_intelligence.conf",
+      "sha256": "728d4a842e4507e042b929ed599b9a9a3de4e89ba4a29438594470dd40c1a5f8",
+      "bytes": 631,
+      "rules": 6,
+      "types": [
+        "DOMAIN"
+      ],
+      "original_header": [
+        "#########################################",
+        "# Sukka's Ruleset - Apple Intelligence",
+        "# Last Updated: 2026-08-05T12:33:04.404Z",
+        "# Size: 6",
+        "# License: AGPL 3.0",
+        "# Homepage: https://ruleset.skk.moe",
+        "# GitHub: https://github.com/SukkaW/Surge",
+        "#",
+        "# This file contains domains of OpenAI, Claude.",
+        "#",
+        "# $content-hash-v1$:mM7ABwLpXn1--ksvD1oM7ChSbu1LyTRYRKRZhT-up34$",
+        "#########################################"
+      ],
+      "license": "AGPL-3.0"
+    },
+    {
+      "name": "Claude",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/Claude.list",
+      "sha256": "5f26359bda31901911c731e43fc227ef511d3a12e1ba7f3f92380e02807f46a9",
+      "bytes": 429,
+      "rules": 10,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-SUFFIX"
+      ],
+      "original_header": [
+        "#########################################",
+        "# Lumi's Ruleset - AIGC Domains",
+        "# Reordered: Anthropic Claude",
+        "#########################################",
+        ""
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "OpenAI",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OpenAI.list",
+      "sha256": "540e860c366ea6f4848f380871b9f1962e23e3c0e0620d91b2add506fc2a6f15",
+      "bytes": 1341,
+      "rules": 39,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-ASN",
+        "IP-CIDR"
+      ],
+      "original_header": [
+        "#########################################",
+        "# Lumi's Ruleset - AIGC Domains",
+        "# Reordered: OpenAI",
+        "#########################################",
+        ""
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "Gemini",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/Gemini.list",
+      "sha256": "ca599b40846cd3d7a5c8ae2305760c190c34c36f1e73d894a967391626120418",
+      "bytes": 1123,
+      "rules": 28,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "URL-REGEX"
+      ],
+      "original_header": [
+        "#########################################",
+        "# Lumi's Ruleset - AIGC Domains",
+        "# Reordered: Google",
+        "#########################################",
+        "",
+        "# === Google ==="
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "OtherAI",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OtherAI.list",
+      "sha256": "396591b2ab9ab4784b8ee715a6d0bdc9c3d8b93037dadfddfc4471f60f09d9ff",
+      "bytes": 527,
+      "rules": 17,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-SUFFIX"
+      ],
+      "original_header": [
+        "#########################################",
+        "# Lumi's Ruleset - AIGC Domains",
+        "# Reordered: Others",
+        "#########################################",
+        ""
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "GlobalMedia",
+      "url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/GlobalMedia.list",
+      "sha256": "ab639457678067ed83cf4fa328334a2f80e537753e5235d1212ba7590bb91fb2",
+      "bytes": 12509,
+      "rules": 430,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "############################################",
+        "# Louie's Ruleset - Global Media",
+        "# Surge External RULE-SET",
+        "# 仅影音 / 影视 / 流媒体 / 音乐 / 体育 / 短视频",
+        "# 不包含 AI / 开发工具类服务",
+        "# Updated: 2026-09-16 18:xx (+08:00)",
+        "############################################",
+        "",
+        "# TikTok / TikTok Music"
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "Microsoft",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Microsoft/Microsoft.list",
+      "sha256": "a2854b28dc9f903a64933c74fff5b50166e9bbebc70fdfce18c592f75793ff14",
+      "bytes": 20605,
+      "rules": 673,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: Microsoft",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-12-08 02:06:20",
+        "# DOMAIN: 1",
+        "# DOMAIN-KEYWORD: 4",
+        "# DOMAIN-SUFFIX: 663",
+        "# PROCESS-NAME: 2",
+        "# USER-AGENT: 3",
+        "# TOTAL: 673"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Microsoft/README.md"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.Telegram.list",
+      "sha256": "cac4fa2ce33125fca4f9fa529360582a0d9d5ffba3ba6bf3d9c9497e0b194d35",
+      "bytes": 1020,
+      "rules": 20,
+      "types": [
+        "DOMAIN-SUFFIX",
+        "IP-ASN",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "PROCESS-NAME"
+      ],
+      "original_header": [
+        "#!name=🍟 Fries: 🌐 ASN Telegram",
+        "#!desc=按ASN分流Telegram",
+        "#!author=VirgilClyne",
+        "#!homepage=https://github.com/VirgilClyne/GetSomeFries/wiki/🌐-ASN",
+        "#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Server.png",
+        "",
+        ""
+      ],
+      "license": "GPL-3.0"
+    },
+    {
+      "name": "Epic",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Epic/Epic.list",
+      "sha256": "8f5fcadadd967023aa81273803de80beb2ceadd9af4e9352b565b3b00ccf464d",
+      "bytes": 588,
+      "rules": 15,
+      "types": [
+        "DOMAIN-SUFFIX"
+      ],
+      "original_header": [
+        "# NAME: Epic",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:15:09",
+        "# DOMAIN-SUFFIX: 15",
+        "# TOTAL: 15"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Epic/README.md"
+    },
+    {
+      "name": "Sony",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Sony/Sony.list",
+      "sha256": "c3c96668d832b2b4e94ab185c14e2931d6af99d5a106bb658b0d83160fc9a19f",
+      "bytes": 3309,
+      "rules": 116,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-SUFFIX"
+      ],
+      "original_header": [
+        "# NAME: Sony",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:16:56",
+        "# DOMAIN: 1",
+        "# DOMAIN-SUFFIX: 115",
+        "# TOTAL: 116"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Sony/README.md"
+    },
+    {
+      "name": "Steam",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list",
+      "sha256": "35826051b8797c7636210389fafadea23a16af51378feee20ededbb652b43332",
+      "bytes": 2055,
+      "rules": 54,
+      "types": [
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX"
+      ],
+      "original_header": [
+        "# NAME: Steam",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:15:08",
+        "# DOMAIN-KEYWORD: 3",
+        "# DOMAIN-SUFFIX: 51",
+        "# TOTAL: 54"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Steam/README.md"
+    },
+    {
+      "name": "Nintendo",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nintendo/Nintendo.list",
+      "sha256": "ca3cf3ea5051ed220c255fbccbdd93e477f1c558e26ada6bf3dbcc2ba0487da2",
+      "bytes": 4120,
+      "rules": 126,
+      "types": [
+        "DOMAIN-SUFFIX",
+        "IP-CIDR"
+      ],
+      "original_header": [
+        "# NAME: Nintendo",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2026-05-04 02:19:07",
+        "# DOMAIN-SUFFIX: 125",
+        "# IP-CIDR: 1",
+        "# TOTAL: 126"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Nintendo/README.md"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list",
+      "sha256": "42274e143447066e26e1ebbf21ae03ce6efb40827f41e2775a84fb16d390713d",
+      "bytes": 5451,
+      "rules": 190,
+      "types": [
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: YouTube",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:15:09",
+        "# DOMAIN-KEYWORD: 1",
+        "# DOMAIN-SUFFIX: 179",
+        "# IP-CIDR: 2",
+        "# IP-CIDR6: 1",
+        "# USER-AGENT: 7",
+        "# TOTAL: 190"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/YouTube/README.md"
+    },
+    {
+      "name": "Netflix",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list",
+      "sha256": "aa03f015949e8f6f981d90a7d8b1acf7e88472ee48601632bd964b0bb740f8aa",
+      "bytes": 40424,
+      "rules": 1158,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: Netflix",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:16:54",
+        "# DOMAIN: 3",
+        "# DOMAIN-KEYWORD: 4",
+        "# DOMAIN-SUFFIX: 30",
+        "# IP-CIDR: 1115",
+        "# IP-CIDR6: 4",
+        "# PROCESS-NAME: 1",
+        "# USER-AGENT: 1",
+        "# TOTAL: 1158"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Netflix/README.md"
+    },
+    {
+      "name": "Disney",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list",
+      "sha256": "d0cfd6aee89d9d3075aef9dfadd98a2a3c6a2dba487f5091c801d1bcd70e9884",
+      "bytes": 5674,
+      "rules": 175,
+      "types": [
+        "DOMAIN-SUFFIX",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: Disney",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-07-30 02:08:18",
+        "# DOMAIN-SUFFIX: 172",
+        "# PROCESS-NAME: 2",
+        "# USER-AGENT: 1",
+        "# TOTAL: 175"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Disney/README.md"
+    },
+    {
+      "name": "BiliBili",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BiliBili/BiliBili.list",
+      "sha256": "8537129301d5e4040d9f2b2255217458a16c96eef850ec22367352c512bc3988",
+      "bytes": 4742,
+      "rules": 133,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: BiliBili",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:17:01",
+        "# DOMAIN: 53",
+        "# DOMAIN-SUFFIX: 62",
+        "# IP-CIDR: 8",
+        "# PROCESS-NAME: 6",
+        "# USER-AGENT: 4",
+        "# TOTAL: 133"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/BiliBili/README.md"
+    },
+    {
+      "name": "ChinaMedia",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMedia/ChinaMedia.list",
+      "sha256": "d82e7315457f8aa1c4649df09d560e54dbc19757dc4fc5d8d2df0bd78a373079",
+      "bytes": 14354,
+      "rules": 446,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: ChinaMedia",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2025-06-06 09:17:29",
+        "# DOMAIN: 67",
+        "# DOMAIN-KEYWORD: 2",
+        "# DOMAIN-SUFFIX: 252",
+        "# IP-CIDR: 55",
+        "# IP-CIDR6: 29",
+        "# PROCESS-NAME: 6",
+        "# USER-AGENT: 35",
+        "# TOTAL: 446"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/ChinaMedia/README.md"
+    },
+    {
+      "name": "Proxy",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Proxy/Proxy_All_No_Resolve.list",
+      "sha256": "42740af2b6b2a023e31824a2b87c8c6c5ab7ba32c69820cbfdc0dd8242254915",
+      "bytes": 189048,
+      "rules": 6924,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: Proxy",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2026-09-14 04:08:54",
+        "# DOMAIN: 9",
+        "# DOMAIN-KEYWORD: 26",
+        "# DOMAIN-SUFFIX: 6784",
+        "# IP-CIDR: 93",
+        "# IP-CIDR6: 4",
+        "# USER-AGENT: 8",
+        "# TOTAL: 6924"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Proxy/README.md"
+    },
+    {
+      "name": "LAN",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list",
+      "sha256": "4defb821f8900e6a2c3b1e1b8d12fefc8cfc190f9e6f5cdd5219eda8ed304532",
+      "bytes": 4794,
+      "rules": 140,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6"
+      ],
+      "original_header": [
+        "# NAME: Lan",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2026-04-14 02:28:00",
+        "# DOMAIN: 7",
+        "# DOMAIN-SUFFIX: 115",
+        "# IP-CIDR: 14",
+        "# IP-CIDR6: 4",
+        "# TOTAL: 140"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Lan/README.md"
+    },
+    {
+      "name": "ChinaASN",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaASN/ChinaASN_Resolve.list",
+      "sha256": "807bfb69e31e6db51c39922f10111245da59f307a1cfde8481f243ca8072f539",
+      "bytes": 13881,
+      "rules": 1009,
+      "types": [
+        "IP-ASN"
+      ],
+      "original_header": [
+        "# NAME: ChinaASN",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2024-01-08 16:02:22",
+        "# IP-ASN: 1009",
+        "# TOTAL: 1009"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/ChinaASN/README.md"
+    },
+    {
+      "name": "ChinaDomain",
+      "url": "https://raw.githubusercontent.com/Blankwonder/surge-list/master/cn.list",
+      "sha256": "b8aa4385d40e152984bf181482333162cae4d9ede9c296adc99a38602308f542",
+      "bytes": 376,
+      "rules": 13,
+      "types": [
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# China Apps"
+      ],
+      "license": "No license asserted by this import"
+    },
+    {
+      "name": "Google",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Google/Google.list",
+      "sha256": "4b08fd3ef47e2668d2a4bb79777773e2408394fdda60ac36014e1a4d3456ba6f",
+      "bytes": 19985,
+      "rules": 703,
+      "types": [
+        "DOMAIN",
+        "DOMAIN-KEYWORD",
+        "DOMAIN-SUFFIX",
+        "IP-CIDR",
+        "IP-CIDR6",
+        "PROCESS-NAME",
+        "USER-AGENT"
+      ],
+      "original_header": [
+        "# NAME: Google",
+        "# AUTHOR: blackmatrix7",
+        "# REPO: https://github.com/blackmatrix7/ios_rule_script",
+        "# UPDATED: 2026-05-12 02:38:11",
+        "# DOMAIN: 1",
+        "# DOMAIN-KEYWORD: 5",
+        "# DOMAIN-SUFFIX: 684",
+        "# IP-CIDR: 4",
+        "# IP-CIDR6: 1",
+        "# PROCESS-NAME: 5",
+        "# USER-AGENT: 3",
+        "# TOTAL: 703"
+      ],
+      "license": "GPL-2.0",
+      "upstream_readme": "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Google/README.md"
+    }
+  ]
+}

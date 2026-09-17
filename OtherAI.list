@@ -1,22 +1,25 @@
-#########################################
-# Lumi's Ruleset - AIGC Domains
-# Reordered: Others
-#########################################
+# 其他人工智能
+# Maintainer: LouieLumi
+# Organized: 2026-09-17
+# Rules: 16
+# Policy-free Surge RULE-SET; edit this file directly on GitHub.
+# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
+# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OtherAI.list
+# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OpenAI.list
 
-DOMAIN-SUFFIX,groq.com
-DOMAIN-SUFFIX,grok.com
-DOMAIN-SUFFIX,chat.com
-DOMAIN-SUFFIX,poe.com
+DOMAIN,api.jetbrains.ai
+DOMAIN,openrouter.ai
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,clipdrop.co
-DOMAIN-SUFFIX,perplexity.ai
-DOMAIN,openrouter.ai
-DOMAIN,api.jetbrains.ai
-DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,dify.ai
+DOMAIN-SUFFIX,g.ai
+DOMAIN-SUFFIX,grok.com
+DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,dify.ai
+DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,x.ai
-DOMAIN-SUFFIX,g.ai
-DOMAIN-SUFFIX,cursor.sh
-DOMAIN-SUFFIX,cursor.com

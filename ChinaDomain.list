@@ -1,0 +1,23 @@
+# 国内域名 / 应用补全
+# Maintainer: LouieLumi
+# Organized: 2026-09-17
+# Rules: 13
+# Policy-free Surge RULE-SET; edit this file directly on GitHub.
+# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
+# Source: https://raw.githubusercontent.com/Blankwonder/surge-list/master/cn.list
+# Upstream: Blankwonder/surge-list; no license declaration found in upstream.
+# Source attribution does not add a new license; see THIRD_PARTY_NOTICES.md.
+
+DOMAIN-KEYWORD,.tmall.
+DOMAIN-KEYWORD,alicdn
+DOMAIN-KEYWORD,alipay
+DOMAIN-KEYWORD,aliyun
+DOMAIN-KEYWORD,baidu
+DOMAIN-KEYWORD,taobao
+DOMAIN-SUFFIX,cn
+IP-CIDR,198.11.136.0/24,no-resolve
+IP-CIDR,198.11.188.0/25,no-resolve
+USER-AGENT,%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
+USER-AGENT,MApi*
+USER-AGENT,MicroMessenger Client
+USER-AGENT,WeChat*
