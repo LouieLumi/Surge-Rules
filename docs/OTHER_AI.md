@@ -4,7 +4,11 @@
 
 本次核对 54 组服务，OtherAI 从 17 条扩展到 105 条，并从后置分类移走 11 条已被它覆盖的规则。逐条来源、迁移及原提交见 [审计快照](other-ai-audit.json)。
 
-同日后续调整新增 19 条 Cloudflare 服务域名条件和 4 条标准 DNS 精确 IP 条件，当前共 128 条。IP 条件包含检测页直接使用的 `1.1.1.1`；Cloudflare 全网的 ASN 13335 兜底已删除，Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
+同日后续调整新增 19 条 Cloudflare 服务域名条件和 4 条标准 DNS 精确 IP 条件，增至 128 条。IP 条件包含检测页直接使用的 `1.1.1.1`；Cloudflare 全网的 ASN 13335 兜底已删除，Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
+
+2026-09-23 补充 Meta Muse 的 `muse.ai` 与 AI 官网 `ai.meta.com`，保留已有的 `meta.ai`，当前共 130 条。三条均为域名后缀匹配，覆盖其子域：包括 `introducing.muse.ai`、`security.muse.ai`、`dev.meta.ai`、`research.meta.ai`，以及 `ai.meta.com/muse/` 下的介绍与下载页面。
+
+本次按 AI 专用域名划分，不添加 `meta.com` 整站、Facebook、Instagram、WhatsApp、`fbcdn.net`、`fbsbx.com` 或 Meta ASN。共享登录、Graph API、社交平台内的 AI 功能与共享 CDN 继续按原规则匹配；仅凭共享主机无法区分其中的 AI 请求，因此这些条目不承诺覆盖 Muse 的全部登录和资源依赖。
 
 ## 匹配范围
 
@@ -22,6 +26,7 @@
 
 | 服务 | 域名 / 精确主机 | 来源 |
 | --- | --- | --- |
+| Meta AI / Muse | `meta.ai`、`muse.ai`、`ai.meta.com` | [Muse 官方发布与入口](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/) · [Muse 下载页](https://ai.meta.com/muse/download/) · [Muse Code / Meta Model API](https://dev.meta.ai/) |
 | Cursor | `cursor.com`、`cursor.sh`、`cursorapi.com`、`cursor-cdn.com`、`cursorvm.com`、`=anysphere-binaries.s3.us-east-1.amazonaws.com` | [来源 1](https://cursor.com/docs/enterprise/network-configuration) |
 | Windsurf / Codeium / Devin | `windsurf.com`、`codeium.com`、`codeiumdata.com`、`devin.ai`、`devinenterprise.com` | [来源 1](https://docs.devin.ai/desktop/troubleshooting/windsurf-common-issues) |
 | Augment Code | `augmentcode.com` | [来源 1](https://docs.augmentcode.com/setup-augment/network-configuration) |

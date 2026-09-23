@@ -66,6 +66,21 @@ class PublishedRoutingTests(unittest.TestCase):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
 
+    def test_meta_muse_ai_entry_points(self):
+        for hostname in ("muse.ai", "www.muse.ai", "introducing.muse.ai", "security.muse.ai",
+                         "ai.meta.com", "meta.ai", "dev.meta.ai", "research.meta.ai"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+
+    def test_meta_muse_does_not_capture_social_or_shared_services(self):
+        for hostname in ("facebook.com", "www.facebook.com", "graph.facebook.com", "connect.facebook.net",
+                         "static.xx.fbcdn.net", "lookaside.fbsbx.com", "www.instagram.com", "web.whatsapp.com",
+                         "www.meta.com", "accounts.meta.com", "muse.ai.example.org", "notmuse.ai",
+                         "ai.meta.com.example.org"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] != "OtherAI.list", (hostname, match))
+
     def test_other_ai_does_not_capture_shared_hosts_or_lookalike_domains(self):
         # A service-specific endpoint must not pull the whole shared cloud,
         # source hosting, authentication, or general WebRTC provider into AI.
