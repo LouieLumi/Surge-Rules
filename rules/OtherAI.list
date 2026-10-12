@@ -259,3 +259,6 @@ DOMAIN-SUFFIX,fish.audio
 
 # HeyGen
 DOMAIN-SUFFIX,heygen.com
+
+# Datadog
+DOMAIN-SUFFIX,datadoghq.com
