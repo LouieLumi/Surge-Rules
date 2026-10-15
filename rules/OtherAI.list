@@ -94,11 +94,6 @@ DOMAIN,copilot.microsoft.com
 # Tabnine
 DOMAIN-SUFFIX,tabnine.com
 
-# TRAE
-DOMAIN-SUFFIX,trae.ai
-DOMAIN-SUFFIX,trae.com.cn
-DOMAIN-SUFFIX,trae.cn
-
 # Cline
 DOMAIN-SUFFIX,cline.bot
 
@@ -138,37 +133,6 @@ DOMAIN-SUFFIX,pi.ai
 # Character.AI
 DOMAIN-SUFFIX,character.ai
 
-# DeepSeek
-DOMAIN-SUFFIX,deepseek.com
-
-# Kimi / Moonshot
-DOMAIN-SUFFIX,kimi.com
-DOMAIN-SUFFIX,kimi.ai
-DOMAIN-SUFFIX,moonshot.ai
-DOMAIN-SUFFIX,moonshot.cn
-
-# Qwen / 千问
-DOMAIN-SUFFIX,qwen.ai
-DOMAIN-SUFFIX,qwenlm.ai
-DOMAIN-SUFFIX,qianwen.com
-
-# Z.ai / 智谱
-DOMAIN-SUFFIX,z.ai
-DOMAIN-SUFFIX,bigmodel.cn
-DOMAIN-SUFFIX,chatglm.cn
-
-# MiniMax
-DOMAIN-SUFFIX,minimax.io
-DOMAIN-SUFFIX,minimaxi.com
-DOMAIN-SUFFIX,minimax.cn
-
-# 豆包
-DOMAIN-SUFFIX,doubao.com
-
-# Coze / 扣子
-DOMAIN-SUFFIX,coze.com
-DOMAIN-SUFFIX,coze.cn
-
 # Genspark
 DOMAIN-SUFFIX,genspark.ai
 
@@ -180,12 +144,6 @@ DOMAIN-SUFFIX,gamma.app
 
 # OpenRouter
 DOMAIN-SUFFIX,openrouter.ai
-
-# Hugging Face
-DOMAIN-SUFFIX,huggingface.co
-DOMAIN-SUFFIX,hf.co
-DOMAIN-SUFFIX,hf.space
-DOMAIN-SUFFIX,endpoints.huggingface.cloud
 
 # Replicate
 DOMAIN-SUFFIX,replicate.com
@@ -209,12 +167,6 @@ DOMAIN-SUFFIX,fireworks.ai
 DOMAIN-SUFFIX,fal.ai
 DOMAIN-SUFFIX,fal.run
 
-# Ollama
-DOMAIN-SUFFIX,ollama.com
-
-# LM Studio
-DOMAIN-SUFFIX,lmstudio.ai
-
 # Midjourney
 DOMAIN-SUFFIX,midjourney.com
 
@@ -236,13 +188,6 @@ DOMAIN-SUFFIX,leonardo.ai
 
 # Recraft
 DOMAIN-SUFFIX,recraft.ai
-
-# Kling / 可灵
-DOMAIN-SUFFIX,klingai.com
-
-# Hailuo / 海螺
-DOMAIN-SUFFIX,hailuoai.com
-DOMAIN-SUFFIX,hailuoai.video
 
 # Suno
 DOMAIN-SUFFIX,suno.com
