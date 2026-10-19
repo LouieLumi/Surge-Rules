@@ -80,4 +80,4 @@ python3 -m unittest discover -s tests -v
 
 首次目录调整将所有规则集迁入 `rules/`，目录内只放规则文件。订阅基址更新为 `https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/`。`AppleIntelligence.list` 已合并，不再单独订阅。之后又扩充 OtherAI，并完成上文的 Cloudflare 域名迁移和 AS13335 删除。五条异地组网及两个本地应用规则的内容保持不变；历史导入报告继续记录首次整理时的名称与数量。
 
-DeepSeek、Kimi / Moonshot、Qwen / 千问后来从 OtherAI 移出。它们的非 `.cn` 主域补进 `ChinaDomain.list`，与该文件已有的 `DOMAIN-SUFFIX,cn` 一起走 `DIRECT`，避免 `deepseek.com`、`qwen.ai` 这类域名漏到最终的 `✨ 星链网络`。`.cn` 主机不再单独写后缀，以免和 `DOMAIN-SUFFIX,cn` 重复。
+DeepSeek、Kimi / Moonshot、Qwen / 千问、TRAE、智谱、MiniMax、豆包、扣子、Hugging Face、Ollama、LM Studio、可灵、海螺后来从 OtherAI 移出。它们的非 `.cn` 主域补进 `ChinaDomain.list`，与该文件已有的 `DOMAIN-SUFFIX,cn` 一起走 `DIRECT`，避免这些域名漏到最终的 `✨ 星链网络`。`.cn` 主机不再单独写后缀，以免和 `DOMAIN-SUFFIX,cn` 重复。`ollama.ai` 仍留在 `ApplicationDirect`，策略同样是 `DIRECT`。

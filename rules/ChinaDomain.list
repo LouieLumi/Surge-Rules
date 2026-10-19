@@ -2,7 +2,7 @@
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
 # Updated: 2026-10-19
-# Rules: 20
+# Rules: 35
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/Blankwonder/surge-list/master/cn.list
@@ -23,9 +23,10 @@ USER-AGENT,MApi*
 USER-AGENT,MicroMessenger Client
 USER-AGENT,WeChat*
 
-# DeepSeek、Kimi / Moonshot、Qwen / 千问：国内服务直连，不进入「👾 人工智能」。
-# 只补非 .cn 主域。moonshot.cn 等 .cn 主机已由上面的 DOMAIN-SUFFIX,cn 覆盖，
-# 再写子域会造成文件内重复，校验会拒绝。
+# 从 OtherAI 移出后改为直连，不进入「👾 人工智能」。
+# 只补非 .cn 主域。.cn / .com.cn（如 moonshot.cn、bigmodel.cn、trae.cn）已由
+# DOMAIN-SUFFIX,cn 覆盖，再写会造成文件内重复。ollama.ai 已在 ApplicationDirect，
+# 同样是 DIRECT，这里不重复。
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,kimi.com
 DOMAIN-SUFFIX,kimi.ai
@@ -33,3 +34,18 @@ DOMAIN-SUFFIX,moonshot.ai
 DOMAIN-SUFFIX,qwen.ai
 DOMAIN-SUFFIX,qwenlm.ai
 DOMAIN-SUFFIX,qianwen.com
+DOMAIN-SUFFIX,trae.ai
+DOMAIN-SUFFIX,z.ai
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,minimaxi.com
+DOMAIN-SUFFIX,doubao.com
+DOMAIN-SUFFIX,coze.com
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+DOMAIN-SUFFIX,hf.space
+DOMAIN-SUFFIX,endpoints.huggingface.cloud
+DOMAIN-SUFFIX,ollama.com
+DOMAIN-SUFFIX,lmstudio.ai
+DOMAIN-SUFFIX,klingai.com
+DOMAIN-SUFFIX,hailuoai.com
+DOMAIN-SUFFIX,hailuoai.video
