@@ -43,7 +43,9 @@ Cloudflare 的官网、验证、STUN/TURN、DNS、Workers、Pages、R2 等已核
 
 **已有配置需要同步调整：删除 `IP-ASN,13335,...` 整行，把 Proxy 的策略设为 `✨ 星链网络`，Gemini 的策略设为 `👾 人工智能`，再刷新远程规则集。** 只刷新 `.list` 不会自动修改你本地 `[Rule]` 中的策略或 ASN 行。
 
-`OtherAI.list` 已补充 Mistral、Cursor、Windsurf、Augment、Copilot、Midjourney、PixPix、DeepSeek、Kimi 等常用服务的域名与专用 API。覆盖范围、官方来源和共享服务的边界见 [OtherAI 说明](docs/OTHER_AI.md)。它沿用 `👾 人工智能` 策略，实际英国出口由你在 Surge 中选择的节点决定。
+`OtherAI.list` 已补充 Mistral、Cursor、Windsurf、Augment、Copilot、Midjourney、PixPix 等常用服务的域名与专用 API。覆盖范围、官方来源和共享服务的边界见 [OtherAI 说明](docs/OTHER_AI.md)。它沿用 `👾 人工智能` 策略，实际英国出口由你在 Surge 中选择的节点决定。
+
+DeepSeek、Kimi / Moonshot、Qwen / 千问改为直连，不再进入 `👾 人工智能`。`deepseek.com`、`kimi.com`、`kimi.ai`、`moonshot.ai`、`qwen.ai`、`qwenlm.ai`、`qianwen.com` 写在 `ChinaDomain.list`；`moonshot.cn` 等 `.cn` 主机仍由该文件的 `DOMAIN-SUFFIX,cn` 命中 `DIRECT`。
 
 ## 目录与直连兜底
 
@@ -52,7 +54,7 @@ Cloudflare 的官网、验证、STUN/TURN、DNS、Workers、Pages、R2 等已核
 | 规则 | 作用 | 例子 / 匹配依据 |
 | --- | --- | --- |
 | `LAN.list` | 局域网和特殊用途地址直连 | 私网 IP、路由器域名、`.local` 等；不会因为它存在就自动建立异地组网 |
-| `ChinaDomain.list` | 国内域名和应用特征补全直连 | `.cn`、支付宝/淘宝/百度等关键词、部分 User-Agent 和少量固定 IP |
+| `ChinaDomain.list` | 国内域名和应用特征补全直连 | `.cn`、支付宝/淘宝/百度等关键词、DeepSeek / Kimi / 千问的非 `.cn` 主域、部分 User-Agent 和少量固定 IP |
 | `ChinaASN.list` | 根据目标 IP 所属的中国 ASN 直连 | ASN 是运营商或网络组织的编号；该规则可能先解析域名，不等同于判断网站使用中文 |
 
 三者都走 `DIRECT`，分别从本地网络、域名/应用、网络归属三个角度补漏；只有前面服务规则未命中时，才按配置顺序进入这些兜底。`GEOIP,CN,DIRECT` 再按 IP 地理数据库补全，其余未命中流量由 Final 送到星链。

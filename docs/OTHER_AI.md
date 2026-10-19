@@ -15,7 +15,7 @@
 - 通常使用 `DOMAIN-SUFFIX`，同时覆盖官网根域、API 以及未来新增的子域。共享云上的明确服务地址使用 `DOMAIN` 精确匹配。
 - OpenRouter 从仅匹配根域改为后缀匹配；JetBrains AI 从仅匹配 `api.jetbrains.ai` 改为同时覆盖其 AWS/GCP API 子域。
 - Cursor 包含其官方网络清单中的 API、Tab、代码索引、登录、CDN、marketplace、云端电脑域名及专用 S3 下载主机。
-- DeepSeek、Kimi、Qwen、智谱、MiniMax、豆包、扣子等国内 AI 也进入 OtherAI，优先于 ChinaDomain / ChinaASN 的国内直连兜底。
+- DeepSeek、Kimi / Moonshot、Qwen / 千问已从 OtherAI 移出，改由 `ChinaDomain.list` 直连，不再优先于国内直连兜底。详见下文「改为直连的国内服务」。
 - Claude、OpenAI、Gemini/Google 继续使用独立规则文件并统一映射到人工智能策略。Apple Intelligence 仍合并在 Apple，但两个 Cloudflare 中继域名改由 OtherAI 的 `cloudflare.com` 后缀覆盖。
 - Copilot 仅添加 AI 专用域名/主机；普通 GitHub、Microsoft、Google、AWS、支付及共享登录服务继续按现有分类匹配。
 - 平台主域规则可能同时覆盖官网、账单、文档和模型下载；不会自动识别该域名内某个 URL 是否属于 AI。
@@ -47,9 +47,6 @@
 | You.com | `you.com` | [来源 1](https://you.com/) |
 | Pi | `pi.ai` | [来源 1](https://pi.ai/) |
 | Character.AI | `character.ai` | [来源 1](https://character.ai/) |
-| DeepSeek | `deepseek.com` | [来源 1](https://www.deepseek.com/) |
-| Kimi / Moonshot | `kimi.com`、`kimi.ai`、`moonshot.ai`、`moonshot.cn` | [来源 1](https://www.kimi.com/) · [来源 2](https://platform.moonshot.ai/docs/guide/start-using-kimi-api) · [来源 3](https://platform.moonshot.cn/) |
-| Qwen / 千问 | `qwen.ai`、`qwenlm.ai`、`qianwen.com` | [来源 1](https://qwen.ai/) · [来源 2](https://chat.qwenlm.ai/) · [来源 3](https://www.qianwen.com/) |
 | Z.ai / 智谱 | `z.ai`、`bigmodel.cn`、`chatglm.cn` | [来源 1](https://z.ai/) · [来源 2](https://docs.bigmodel.cn/) · [来源 3](https://www.chatglm.cn/) |
 | MiniMax | `minimax.io`、`minimaxi.com`、`minimax.cn` | [来源 1](https://www.minimax.io/) · [来源 2](https://platform.minimaxi.com/) |
 | 豆包 | `doubao.com` | [来源 1](https://www.doubao.com/) |
@@ -82,10 +79,22 @@
 | Fish Audio | `fish.audio` | [来源 1](https://fish.audio/) |
 | HeyGen | `heygen.com` | [来源 1](https://www.heygen.com/) |
 
+## 改为直连的国内服务
+
+DeepSeek、Kimi / Moonshot、Qwen / 千问走国内网络，策略是 `DIRECT`，不要加回 `rules/OtherAI.list`。非 `.cn` 主域写在 `rules/ChinaDomain.list`，用 `DOMAIN-SUFFIX` 覆盖官网和 API 子域。`moonshot.cn` 已经被同一文件的 `DOMAIN-SUFFIX,cn` 覆盖，不再单独写一条，否则规则去重会把它判为重复。
+
+| 服务 | 直连条件 | 例子 |
+| --- | --- | --- |
+| DeepSeek | `deepseek.com` | `chat.deepseek.com`、`api.deepseek.com` |
+| Kimi / Moonshot | `kimi.com`、`kimi.ai`、`moonshot.ai`；`moonshot.cn` 由 `.cn` 接住 | `www.kimi.com`、`platform.moonshot.ai`、`api.moonshot.cn` |
+| Qwen / 千问 | `qwen.ai`、`qwenlm.ai`、`qianwen.com` | `chat.qwen.ai`、`chat.qwenlm.ai`、`www.qianwen.com` |
+
+[审计快照](other-ai-audit.json) 仍记录它们当初进入 OtherAI 时的条目，那是历史快照，不代表当前分流。
+
 ## 验证与后续维护
 
 修改后运行 `python3 scripts/check_rules.py` 和 `python3 -m unittest discover -s tests -v`。规则集是直接维护的最终文件，来源审计是本次快照，不会自动覆盖今后的 GitHub 修改。
 
-本次验证包含 Mistral 官网/API、Cursor 多种后端、截图中的服务、国内 AI 对直连兜底的优先级，以及共享主域没有被误归类。它是静态规则验证，不是每个应用的登录/语音/下载实测，也不证明每条连接的实际出口 IP。
+本次验证包含 Mistral 官网/API、Cursor 多种后端、截图中的服务，以及共享主域没有被误归类。DeepSeek、Kimi / Moonshot、Qwen / 千问的预期是 `ChinaDomain.list` / `DIRECT`，而不是人工智能策略。它是静态规则验证，不是每个应用的登录/语音/下载实测，也不证明每条连接的实际出口 IP。
 
 服务会增加新域名；第三方 OAuth、支付、遥测、通用 STUN/TURN、直接 IP 连接或客户端自定义 API 仍可能按其它规则匹配。代理未接管的流量也无法靠域名规则改变。发现遗漏时，在 Surge 请求记录中取得实际目标主机、命中规则和最终策略，再补具体地址；不要用 `.ai`、`ai` 关键词或整段公共云 IP 粗略兜住全部 AI。

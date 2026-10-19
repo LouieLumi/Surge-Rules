@@ -61,10 +61,28 @@ class PublishedRoutingTests(unittest.TestCase):
                          "anysphere-binaries.s3.us-east-1.amazonaws.com",
                          "aws.api.jetbrains.ai", "api.openrouter.ai", "api.githubcopilot.com",
                          "copilot-proxy.githubusercontent.com", "server.codeiumdata.com",
-                         "chat.deepseek.com", "api.moonshot.cn", "chat.qwen.ai",
                          "queue.fal.run", "files.replicate.delivery"):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+
+    def test_domestic_chinese_ai_routes_direct(self):
+        # Removed from OtherAI on purpose. Non-.cn suffixes are explicit
+        # ChinaDomain rules; .cn hosts such as api.moonshot.cn already match
+        # DOMAIN-SUFFIX,cn in the same file and must stay DIRECT.
+        for hostname in ("deepseek.com", "www.deepseek.com", "chat.deepseek.com", "api.deepseek.com",
+                         "kimi.com", "www.kimi.com", "kimi.ai",
+                         "moonshot.ai", "platform.moonshot.ai", "api.moonshot.ai",
+                         "moonshot.cn", "api.moonshot.cn", "platform.moonshot.cn",
+                         "qwen.ai", "chat.qwen.ai", "qwenlm.ai", "chat.qwenlm.ai",
+                         "qianwen.com", "www.qianwen.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "ChinaDomain.list", "DIRECT")
+        for hostname in ("notdeepseek.com", "deepseek.com.example", "notkimi.com",
+                         "kimi.com.example.org", "notqwen.ai", "qwen.ai.example",
+                         "moonshot.ai.evil.net", "qianwen.com.example.org"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] != "ChinaDomain.list", (hostname, match))
 
     def test_meta_muse_ai_entry_points(self):
         for hostname in ("muse.ai", "www.muse.ai", "introducing.muse.ai", "security.muse.ai",
