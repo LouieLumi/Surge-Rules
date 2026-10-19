@@ -4,3 +4,4 @@ PROCESS-NAME,/Library/Application Support/ZeroTier/One/zerotier-one
 PROCESS-NAME,/Applications/极空间.app/
 DOMAIN-SUFFIX,ollama.ai
 PROCESS-NAME,/Applications/Ollama.app/Contents/Resources/ollama
+DOMAIN-SUFFIX,anxx.net
