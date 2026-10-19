@@ -61,10 +61,49 @@ class PublishedRoutingTests(unittest.TestCase):
                          "anysphere-binaries.s3.us-east-1.amazonaws.com",
                          "aws.api.jetbrains.ai", "api.openrouter.ai", "api.githubcopilot.com",
                          "copilot-proxy.githubusercontent.com", "server.codeiumdata.com",
-                         "chat.deepseek.com", "api.moonshot.cn", "chat.qwen.ai",
                          "queue.fal.run", "files.replicate.delivery"):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+
+    def test_services_removed_from_other_ai_route_direct(self):
+        # Removed from OtherAI on purpose. Non-.cn suffixes are explicit
+        # ChinaDomain rules; .cn hosts already match DOMAIN-SUFFIX,cn there.
+        # ollama.ai was added earlier to ApplicationDirect and is already DIRECT.
+        for hostname in ("deepseek.com", "www.deepseek.com", "chat.deepseek.com", "api.deepseek.com",
+                         "kimi.com", "www.kimi.com", "kimi.ai",
+                         "moonshot.ai", "platform.moonshot.ai", "api.moonshot.ai",
+                         "moonshot.cn", "api.moonshot.cn", "platform.moonshot.cn",
+                         "qwen.ai", "chat.qwen.ai", "qwenlm.ai", "chat.qwenlm.ai",
+                         "qianwen.com", "www.qianwen.com",
+                         "trae.ai", "www.trae.ai", "trae.com.cn", "api.trae.cn",
+                         "z.ai", "chat.z.ai", "docs.bigmodel.cn", "www.chatglm.cn",
+                         "minimax.io", "www.minimax.io", "api.minimaxi.com", "platform.minimaxi.com",
+                         "minimax.cn",
+                         "doubao.com", "www.doubao.com",
+                         "coze.com", "www.coze.com", "www.coze.cn",
+                         "huggingface.co", "cdn-lfs.huggingface.co", "hf.co", "api.hf.co",
+                         "user.hf.space", "endpoints.huggingface.cloud",
+                         "ollama.com", "www.ollama.com", "registry.ollama.com",
+                         "lmstudio.ai", "www.lmstudio.ai",
+                         "klingai.com", "app.klingai.com",
+                         "hailuoai.com", "www.hailuoai.com", "hailuoai.video"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "ChinaDomain.list", "DIRECT")
+        for hostname in ("ollama.ai", "www.ollama.ai"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "ApplicationDirect", "DIRECT")
+        for hostname in ("notdeepseek.com", "deepseek.com.example", "notkimi.com",
+                         "kimi.com.example.org", "notqwen.ai", "qwen.ai.example",
+                         "moonshot.ai.evil.net", "qianwen.com.example.org",
+                         "nottrae.ai", "trae.ai.example", "notz.ai", "buzz.ai", "bitz.ai",
+                         "z.ai.example.org", "notminimax.io", "minimaxi.com.example",
+                         "notdoubao.com", "notcoze.com", "huggingface.co.example",
+                         "nothf.co", "hf.space.example.org", "endpoints.huggingface.cloud.example",
+                         "notollama.com", "notlmstudio.ai", "notklingai.com",
+                         "hailuoai.com.example", "nothailuoai.video"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] != "ChinaDomain.list", (hostname, match))
 
     def test_meta_muse_ai_entry_points(self):
         for hostname in ("muse.ai", "www.muse.ai", "introducing.muse.ai", "security.muse.ai",

@@ -6,7 +6,9 @@
 
 同日后续调整新增 19 条 Cloudflare 服务域名条件和 4 条标准 DNS 精确 IP 条件，增至 128 条。IP 条件包含检测页直接使用的 `1.1.1.1`；Cloudflare 全网的 ASN 13335 兜底已删除，Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
 
-2026-09-23 补充 Meta Muse 的 `muse.ai` 与 AI 官网 `ai.meta.com`，保留已有的 `meta.ai`，当前共 130 条。三条均为域名后缀匹配，覆盖其子域：包括 `introducing.muse.ai`、`security.muse.ai`、`dev.meta.ai`、`research.meta.ai`，以及 `ai.meta.com/muse/` 下的介绍与下载页面。
+2026-09-23 补充 Meta Muse 的 `muse.ai` 与 AI 官网 `ai.meta.com`，保留已有的 `meta.ai`，当时共 130 条。三条均为域名后缀匹配，覆盖其子域：包括 `introducing.muse.ai`、`security.muse.ai`、`dev.meta.ai`、`research.meta.ai`，以及 `ai.meta.com/muse/` 下的介绍与下载页面。
+
+2026-10-19：DeepSeek、Kimi / Moonshot、Qwen / 千问、TRAE、智谱、MiniMax、豆包、扣子、Hugging Face、Ollama、LM Studio、可灵、海螺已从 OtherAI 移出，改为 `DIRECT`。见下文「改为直连的服务」。上面的 130 条只是 2026-09-23 的计数。
 
 本次按 AI 专用域名划分，不添加 `meta.com` 整站、Facebook、Instagram、WhatsApp、`fbcdn.net`、`fbsbx.com` 或 Meta ASN。共享登录、Graph API、社交平台内的 AI 功能与共享 CDN 继续按原规则匹配；仅凭共享主机无法区分其中的 AI 请求，因此这些条目不承诺覆盖 Muse 的全部登录和资源依赖。
 
@@ -15,7 +17,7 @@
 - 通常使用 `DOMAIN-SUFFIX`，同时覆盖官网根域、API 以及未来新增的子域。共享云上的明确服务地址使用 `DOMAIN` 精确匹配。
 - OpenRouter 从仅匹配根域改为后缀匹配；JetBrains AI 从仅匹配 `api.jetbrains.ai` 改为同时覆盖其 AWS/GCP API 子域。
 - Cursor 包含其官方网络清单中的 API、Tab、代码索引、登录、CDN、marketplace、云端电脑域名及专用 S3 下载主机。
-- DeepSeek、Kimi、Qwen、智谱、MiniMax、豆包、扣子等国内 AI 也进入 OtherAI，优先于 ChinaDomain / ChinaASN 的国内直连兜底。
+- DeepSeek、Kimi / Moonshot、Qwen / 千问、TRAE、智谱、MiniMax、豆包、扣子、Hugging Face、Ollama、LM Studio、可灵、海螺已从 OtherAI 移出，改由直连规则命中 `DIRECT`，不再优先于国内直连兜底。详见下文「改为直连的服务」。
 - Claude、OpenAI、Gemini/Google 继续使用独立规则文件并统一映射到人工智能策略。Apple Intelligence 仍合并在 Apple，但两个 Cloudflare 中继域名改由 OtherAI 的 `cloudflare.com` 后缀覆盖。
 - Copilot 仅添加 AI 专用域名/主机；普通 GitHub、Microsoft、Google、AWS、支付及共享登录服务继续按现有分类匹配。
 - 平台主域规则可能同时覆盖官网、账单、文档和模型下载；不会自动识别该域名内某个 URL 是否属于 AI。
@@ -34,7 +36,6 @@
 | GitHub Copilot | `githubcopilot.com`、`=copilot-proxy.githubusercontent.com`、`=copilot-telemetry.githubusercontent.com`、`=origin-tracker.githubusercontent.com`、`=copilot-reports.github.com` | [来源 1](https://docs.github.com/en/copilot/reference/copilot-allowlist-reference) |
 | Microsoft Copilot | `=copilot.microsoft.com` | [来源 1](https://copilot.microsoft.com/) |
 | Tabnine | `tabnine.com` | [来源 1](https://www.tabnine.com/) · [来源 2](https://docs.tabnine.com/main/welcome/readme/system-requirements.md) |
-| TRAE | `trae.ai`、`trae.com.cn`、`trae.cn` | [来源 1](https://www.trae.ai/) · [来源 2](https://www.trae.com.cn/) |
 | Cline | `cline.bot` | [来源 1](https://cline.bot/) |
 | Roo Code / Roomote | `roocode.com`、`roomote.dev` | [来源 1](https://roocode.com/) |
 | Continue | `continue.dev` | [来源 1](https://continue.dev/) |
@@ -47,26 +48,16 @@
 | You.com | `you.com` | [来源 1](https://you.com/) |
 | Pi | `pi.ai` | [来源 1](https://pi.ai/) |
 | Character.AI | `character.ai` | [来源 1](https://character.ai/) |
-| DeepSeek | `deepseek.com` | [来源 1](https://www.deepseek.com/) |
-| Kimi / Moonshot | `kimi.com`、`kimi.ai`、`moonshot.ai`、`moonshot.cn` | [来源 1](https://www.kimi.com/) · [来源 2](https://platform.moonshot.ai/docs/guide/start-using-kimi-api) · [来源 3](https://platform.moonshot.cn/) |
-| Qwen / 千问 | `qwen.ai`、`qwenlm.ai`、`qianwen.com` | [来源 1](https://qwen.ai/) · [来源 2](https://chat.qwenlm.ai/) · [来源 3](https://www.qianwen.com/) |
-| Z.ai / 智谱 | `z.ai`、`bigmodel.cn`、`chatglm.cn` | [来源 1](https://z.ai/) · [来源 2](https://docs.bigmodel.cn/) · [来源 3](https://www.chatglm.cn/) |
-| MiniMax | `minimax.io`、`minimaxi.com`、`minimax.cn` | [来源 1](https://www.minimax.io/) · [来源 2](https://platform.minimaxi.com/) |
-| 豆包 | `doubao.com` | [来源 1](https://www.doubao.com/) |
-| Coze / 扣子 | `coze.com`、`coze.cn` | [来源 1](https://www.coze.com/) · [来源 2](https://www.coze.cn/) |
 | Genspark | `genspark.ai` | [来源 1](https://www.genspark.ai/) |
 | Manus | `manus.im` | [来源 1](https://manus.im/) |
 | Gamma | `gamma.app` | [来源 1](https://gamma.app/) |
 | OpenRouter | `openrouter.ai` | [来源 1](https://openrouter.ai/docs/quickstart) |
-| Hugging Face | `huggingface.co`、`hf.co`、`hf.space`、`endpoints.huggingface.cloud` | [来源 1](https://huggingface.co/) · [来源 2](https://hf.co/) · [来源 3](https://huggingface.co/docs/hub/spaces-overview) · [来源 4](https://huggingface.co/docs/inference-endpoints/guides/test_endpoint) |
 | Replicate | `replicate.com`、`replicate.delivery` | [来源 1](https://replicate.com/) · [来源 2](https://replicate.com/docs/topics/predictions/output-files) |
 | Together AI | `together.ai`、`together.xyz` | [来源 1](https://docs.together.ai/docs/quickstart) · [来源 2](https://docs.together.ai/reference/deployments-storage-volumes-get) |
 | Cohere | `cohere.com`、`cohere.ai` | [来源 1](https://cohere.com/) · [来源 2](https://docs.cohere.com/docs/compatibility-api) |
 | Cerebras | `cerebras.ai` | [来源 1](https://www.cerebras.ai/) |
 | Fireworks AI | `fireworks.ai` | [来源 1](https://fireworks.ai/) |
 | fal | `fal.ai`、`fal.run` | [来源 1](https://fal.ai/) · [来源 2](https://fal.ai/docs/documentation/model-apis/inference/queue) |
-| Ollama | `ollama.com` | [来源 1](https://ollama.com/) |
-| LM Studio | `lmstudio.ai` | [来源 1](https://lmstudio.ai/) |
 | Midjourney | `midjourney.com` | [来源 1](https://www.midjourney.com/) |
 | PixPix | `pixpix.com` | [来源 1](https://www.pixpix.com/) |
 | Runway | `runwayml.com`、`runway.com` | [来源 1](https://runwayml.com/) |
@@ -74,18 +65,38 @@
 | Ideogram | `ideogram.ai` | [来源 1](https://ideogram.ai/) |
 | Leonardo | `leonardo.ai` | [来源 1](https://leonardo.ai/) |
 | Recraft | `recraft.ai` | [来源 1](https://www.recraft.ai/) |
-| Kling / 可灵 | `klingai.com` | [来源 1](https://app.klingai.com/global/) |
-| Hailuo / 海螺 | `hailuoai.com`、`hailuoai.video` | [来源 1](https://hailuoai.com/) · [来源 2](https://www.minimax.io/news/minimax-h3-open-source) |
 | Suno | `suno.com`、`suno.ai` | [来源 1](https://suno.com/) |
 | Udio | `udio.com` | [来源 1](https://www.udio.com/) |
 | ElevenLabs | `elevenlabs.io` | [来源 1](https://elevenlabs.io/) |
 | Fish Audio | `fish.audio` | [来源 1](https://fish.audio/) |
 | HeyGen | `heygen.com` | [来源 1](https://www.heygen.com/) |
 
+## 改为直连的服务
+
+下列服务已从 `rules/OtherAI.list` 移出，策略是 `DIRECT`，不要加回去。非 `.cn` 主域写在 `rules/ChinaDomain.list`，用 `DOMAIN-SUFFIX` 覆盖官网和 API 子域。`.cn` 与 `.com.cn` 已经被同一文件的 `DOMAIN-SUFFIX,cn` 覆盖，不再单独写，否则规则去重会判为重复。`ollama.ai` 早先写在 `ApplicationDirect`，排在分类规则之前，同样是 `DIRECT`，因此 `ChinaDomain.list` 不再写一条。
+
+| 服务 | 直连条件 | 例子 |
+| --- | --- | --- |
+| DeepSeek | `deepseek.com` | `chat.deepseek.com`、`api.deepseek.com` |
+| Kimi / Moonshot | `kimi.com`、`kimi.ai`、`moonshot.ai`；`moonshot.cn` 由 `.cn` 接住 | `www.kimi.com`、`platform.moonshot.ai`、`api.moonshot.cn` |
+| Qwen / 千问 | `qwen.ai`、`qwenlm.ai`、`qianwen.com` | `chat.qwen.ai`、`chat.qwenlm.ai`、`www.qianwen.com` |
+| TRAE | `trae.ai`；`trae.cn`、`trae.com.cn` 由 `.cn` 接住 | `www.trae.ai`、`api.trae.cn` |
+| Z.ai / 智谱 | `z.ai`；`bigmodel.cn`、`chatglm.cn` 由 `.cn` 接住 | `chat.z.ai`、`docs.bigmodel.cn` |
+| MiniMax | `minimax.io`、`minimaxi.com`；`minimax.cn` 由 `.cn` 接住 | `platform.minimaxi.com` |
+| 豆包 | `doubao.com` | `www.doubao.com` |
+| Coze / 扣子 | `coze.com`；`coze.cn` 由 `.cn` 接住 | `www.coze.com`、`www.coze.cn` |
+| Hugging Face | `huggingface.co`、`hf.co`、`hf.space`、`endpoints.huggingface.cloud` | `cdn-lfs.huggingface.co`、`user.hf.space` |
+| Ollama | `ollama.com` 在 ChinaDomain；`ollama.ai` 在 ApplicationDirect | `registry.ollama.com`、`www.ollama.ai` |
+| LM Studio | `lmstudio.ai` | `www.lmstudio.ai` |
+| Kling / 可灵 | `klingai.com` | `app.klingai.com` |
+| Hailuo / 海螺 | `hailuoai.com`、`hailuoai.video` | `www.hailuoai.com` |
+
+[审计快照](other-ai-audit.json) 仍记录它们当初进入 OtherAI 时的条目，那是历史快照，不代表当前分流。
+
 ## 验证与后续维护
 
 修改后运行 `python3 scripts/check_rules.py` 和 `python3 -m unittest discover -s tests -v`。规则集是直接维护的最终文件，来源审计是本次快照，不会自动覆盖今后的 GitHub 修改。
 
-本次验证包含 Mistral 官网/API、Cursor 多种后端、截图中的服务、国内 AI 对直连兜底的优先级，以及共享主域没有被误归类。它是静态规则验证，不是每个应用的登录/语音/下载实测，也不证明每条连接的实际出口 IP。
+本次验证包含 Mistral 官网/API、Cursor 多种后端、截图中的服务，以及共享主域没有被误归类。上表「改为直连的服务」的预期是 `DIRECT`（多数为 `ChinaDomain.list`，`ollama.ai` 为 `ApplicationDirect`），而不是人工智能策略。它是静态规则验证，不是每个应用的登录/语音/下载实测，也不证明每条连接的实际出口 IP。
 
 服务会增加新域名；第三方 OAuth、支付、遥测、通用 STUN/TURN、直接 IP 连接或客户端自定义 API 仍可能按其它规则匹配。代理未接管的流量也无法靠域名规则改变。发现遗漏时，在 Surge 请求记录中取得实际目标主机、命中规则和最终策略，再补具体地址；不要用 `.ai`、`ai` 关键词或整段公共云 IP 粗略兜住全部 AI。
