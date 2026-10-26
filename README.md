@@ -45,6 +45,8 @@ Cloudflare 的官网、验证、STUN/TURN、DNS、Workers、Pages、R2 等已核
 
 `OtherAI.list` 已补充 Mistral、Cursor、Windsurf、Augment、Copilot、Midjourney、PixPix、DeepSeek、Kimi 等常用服务的域名与专用 API。覆盖范围、官方来源和共享服务的边界见 [OtherAI 说明](docs/OTHER_AI.md)。它沿用 `👾 人工智能` 策略，实际英国出口由你在 Surge 中选择的节点决定。
 
+Claude / OpenAI 已按 2026-10-26 的参考清单和官方网络文档补齐 MCP、认证、资源、语音及具体遥测端点，并收窄关键词和共享云服务匹配。现有订阅地址不变，刷新两个 AI 规则集及 Proxy 即可；范围、来源、IP 与本地 STUN 规则的边界见 [Claude / OpenAI 说明](docs/CLAUDE_OPENAI.md)。
+
 ## 目录与直连兜底
 
 `rules/` 只存放规则集：18 个分类文件、`ApplicationDirect`、`ApplicationReject`，以及保留的 `NetInfrastructure.list`。后者未加入推荐订阅，内容保持不变。配置片段 `Surge-Rules.conf`、README、`rulesets.json`、`docs/`、`scripts/`、`tests/` 和 `LICENSES/` 都放在规则目录外。

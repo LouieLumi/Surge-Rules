@@ -1,12 +1,33 @@
-# Claude
+# Claude / Claude Code
 # Maintainer: LouieLumi
-# Organized: 2026-09-17
-# Rules: 3
+# Updated: 2026-10-26
+# Rules: 16
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
-# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
-# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/Claude.list
+# Scope, sources and exclusions: docs/CLAUDE_OPENAI.md.
+# Original source: https://github.com/LouieLumi/Surge-Rules/blob/1c578ec604fbb7304d3c3a011eb3420dec52157b/Claude.list
+# Migrated Proxy entries retain their upstream GPL-2.0 attribution; see THIRD_PARTY_NOTICES.md.
 
+# Core, authentication, API, MCP and user content (including all subdomains).
 DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
 DOMAIN-SUFFIX,claudeusercontent.com
+
+# Named third-party CDN / legacy authentication / content endpoints.
+DOMAIN,anthropic.com.cdn.cloudflare.net
+DOMAIN,servd-anthropic-website.b-cdn.net
+DOMAIN,anthropic.auth0.com
+DOMAIN,anthropic-com.ghost.io
+DOMAIN,cdn.usefathom.com
+
+# Documented telemetry endpoints; these hosts also serve other customers.
+# The hyphenated browser-intake root is NOT a subdomain of datadoghq.com.
+DOMAIN-SUFFIX,browser-intake-us5-datadoghq.com
+DOMAIN,http-intake.logs.us5.datadoghq.com
+
+# Official API INBOUND ranges. Skip unresolved domains; do not force DNS.
+IP-CIDR,160.79.104.0/23,no-resolve
+IP-CIDR6,2607:6bc0::/48,no-resolve

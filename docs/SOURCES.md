@@ -67,3 +67,7 @@ Google 是为“Gemini & Google”补充的同一 blackmatrix7 上游清单；�
 **合计：14041 → 13511 条，去除 530 条重复或被完整覆盖的规则。**
 
 该表是此次导入快照，不是实时计数。此后 GitHub 手工维护以各 `.list` 文件实际内容为准。
+
+## 2026-10-26 Claude / OpenAI 查漏
+
+依据用户提供的 Net.Coffee 两份清单，交叉核对 Claude、OpenAI 和 Surge 文档及社区域名数据。规则变化与每项来源见 [Claude / OpenAI 分流维护](CLAUDE_OPENAI.md)。本次没有改写首次导入快照；当前数量以规则正文及校验输出为准。

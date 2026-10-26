@@ -34,7 +34,7 @@ YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Micro
 
 `DOMAIN-SUFFIX,cloudflare.com` 已从 Proxy 移到 OtherAI，覆盖 Cloudflare 官网、API、验证、cdnjs、STUN/TURN。随后补充 DNS、Access、Workers、Pages、R2、Tunnel、图片与视频等已核对的服务域名，合计 20 条 Cloudflare 域名条件；这属于用户指定的基础设施出口，并不表示这些服务全是 AI。Apple 中的 `apple-relay.cloudflare.com` 与 `cp4.cloudflare.com` 两条前置例外已删除，由 OtherAI 的父域统一覆盖。其它 AI 专用主机仍优先，例如 OpenAI 自己的 Cloudflare CDN 主机继续命中 OpenAI，出口同样是人工智能策略。
 
-普通站点即使由 Cloudflare CDN 托管，也按请求域名本身分流，不再被 AS13335 捕获。没有增加 Wise、Shopify、npm 等站点的个别例外；调整的是通用默认策略。Twilio 和通用 LiveKit 仍由 Proxy 匹配，明确的 ChatGPT LiveKit 主机则由 OpenAI 匹配。详情和边界见 [Cloudflare 分流说明](CLOUDFLARE.md)。
+普通站点即使由 Cloudflare CDN 托管，也按请求域名本身分流，不再被 AS13335 捕获。没有增加 Wise、Shopify、npm 等站点的个别例外；调整的是通用默认策略。Twilio 仍由 Proxy 匹配；ChatGPT LiveKit 及 2026-10-26 补充的 host/turn 命名空间由 OpenAI 匹配，后两者是共享基础设施。详情和边界见 [Cloudflare 分流说明](CLOUDFLARE.md)。
 
 随后根据 Mistral 落入 Proxy 的反馈，对 54 组常用 AI 服务核对官网和网络/API 文档，OtherAI 从 17 条扩展到 105 条，并将 Proxy 中 11 条 AI 域名移入该类。Cursor 的 API、CDN、云端电脑域名、OpenRouter 和 JetBrains API 的子域覆盖得到补充；国内 AI 也优先于国内直连兜底。明细见 [OtherAI 覆盖与来源](OTHER_AI.md)；本次未调整专用 Claude、OpenAI、Gemini、Apple 分类或任何 IP/ASN 规则。
 
@@ -59,7 +59,7 @@ FINAL,✨ 星链网络,dns-failed
 
 跨分类排除以后，部分后置列表只包含未被前置分类覆盖的剩余规则。更前的具体子域与更后的父域后缀会有意共存，例如国际爱奇艺与国内媒体。删除后面的父域会漏掉其余子域，删除前面的具体子域则会改变策略归属。
 
-保留现有 Google 相关关键词和 `DOMAIN-KEYWORD,openai` 的宽匹配行为。这类关键词不要求是服务的官方域名，仍可能命中含相同文字的其他域名；本次未将其静默改窄。也不根据 ASN、GEOIP 或关键词推断并删除另一条域名/IP 规则，因为这些条件的覆盖关系并非仅靠静态文本就能可靠确定。
+现有 Google 相关关键词保留。2026-10-26 已将 `DOMAIN-KEYWORD,openai` 替换为明确的 OpenAI 域名及 Web PubSub 命名模式，避免将包含同名文字的第三方域名误归为 OpenAI。也不根据 ASN、GEOIP 或关键词推断并删除另一条域名/IP 规则，因为这些条件的覆盖关系并非仅靠静态文本就能可靠确定。
 
 因此，这些分类要按 `Surge-Rules.conf` 的推荐组合和顺序使用，不能把任意一个去重后的列表理解为对应上游的完整独立版本。
 
@@ -79,3 +79,7 @@ python3 -m unittest discover -s tests -v
 ## 2026-09-17 后续调整
 
 首次目录调整将所有规则集迁入 `rules/`，目录内只放规则文件。订阅基址更新为 `https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/`。`AppleIntelligence.list` 已合并，不再单独订阅。之后又扩充 OtherAI，并完成上文的 Cloudflare 域名迁移和 AS13335 删除。五条异地组网及两个本地应用规则的内容保持不变；历史导入报告继续记录首次整理时的名称与数量。
+
+## 2026-10-26 Claude / OpenAI 调整
+
+专用分类补齐 MCP、CDN、认证、语音和具体遥测端点，Proxy 的 7 条后置重复规则随之移除。Claude IP 兜底只采用官方 API 入站范围并加 no-resolve；共享服务没有整类迁入 AI。此前关于保持原有 IP 条件和关键词的描述属于初次整理历史，当前取舍与来源见 [Claude / OpenAI 说明](CLAUDE_OPENAI.md)。

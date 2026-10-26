@@ -31,3 +31,7 @@
 - `LICENSES/GPL-2.0.txt`：[blackmatrix7 根 LICENSE](https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/LICENSE)
 - `LICENSES/GPL-3.0.txt`：[GetSomeFries 根 LICENSE](https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/LICENSE)
 - `LICENSES/AGPL-3.0.txt`：[SukkaW/Surge 根 LICENSE](https://raw.githubusercontent.com/SukkaW/Surge/master/LICENSE)
+
+## 2026-10-26 Claude / OpenAI 补充
+
+`rules/Claude.list` 与 `rules/OpenAI.list` 中从 Proxy 迁入的端点，以及依据 blackmatrix7 Claude 清单补充的 Fathom 端点，继续保留原 GPL-2.0 来源归属；迁移不会改变许可。其他域名及网络事实按 [维护说明](docs/CLAUDE_OPENAI.md) 中的服务商文档、用户参考与 v2fly 数据核对，未整体复制其清单或文章。

@@ -1,24 +1,56 @@
-# OpenAI / ChatGPT / Sora
+# OpenAI / ChatGPT / Codex / Sora
 # Maintainer: LouieLumi
-# Organized: 2026-09-17
-# Rules: 15
+# Updated: 2026-10-26
+# Rules: 37
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
-# Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
-# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OpenAI.list
-# Source: https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/OtherAI.list
+# Scope, sources and exclusions: docs/CLAUDE_OPENAI.md.
+# Original source: https://github.com/LouieLumi/Surge-Rules/blob/1c578ec604fbb7304d3c3a011eb3420dec52157b/OpenAI.list
+# Migrated Proxy entries retain their upstream GPL-2.0 attribution; see THIRD_PARTY_NOTICES.md.
 
-DOMAIN,chat.openai.com.cdn.cloudflare.net
-DOMAIN,openai-api.arkoselabs.com
-DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
-DOMAIN,openaicomproductionae4b.blob.core.windows.net
-DOMAIN,production-openaicom-storage.azureedge.net
-DOMAIN-KEYWORD,openai
+# Core domains cover API, auth, WebSocket, Codex, static assets and uploads.
 DOMAIN-SUFFIX,chat.com
 DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,chatgpt.site
+DOMAIN-SUFFIX,crixet.com
 DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaistatsig.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,openai.org
 DOMAIN-SUFFIX,sora.com
+
+# Named CDN/storage endpoints; no openai keyword or shared Azure catch-all.
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,openai.com.cdn.cloudflare.net
+DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,openaiassets.blob.core.windows.net
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,openaicom.imgix.net
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,cdn.openaimerge.com
+DOMAIN-WILDCARD,chatgpt-async-webps-prod-*-*.webpubsub.azure.com
+
+# Verification and documented authentication dependencies (shared hosts).
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,cdn.workos.com
+DOMAIN,forwarder.workos.com
+DOMAIN,frontend-apps-multi-region.workos.com
+DOMAIN,setup.workos.com
+DOMAIN,images.workoscdn.com
+DOMAIN,workos.imgix.net
+
+# Voice: host/turn namespaces are shared LiveKit infrastructure.
+# UDP support and any earlier PROTOCOL,STUN rule are profile-level concerns.
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud
+
+# Known telemetry and payment hosts; do not match all Sentry/Stripe tenants.
+DOMAIN-SUFFIX,browser-intake-datadoghq.com
+DOMAIN,o207216.ingest.sentry.io
+DOMAIN,o33249.ingest.sentry.io
+DOMAIN,o33249.ingest.us.sentry.io
+DOMAIN,openai.qualtrics.com
+DOMAIN,js.stripe.com

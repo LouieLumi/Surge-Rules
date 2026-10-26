@@ -13,7 +13,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from check_rules import LOCAL_FILES, MESH_LINES, TAIL_LINES, check_repository, first_match_domain, load_domain_routes
-from rulelib import load_rules
+from rulelib import Rule, load_rules
 
 
 class PublishedRoutingTests(unittest.TestCase):
@@ -53,6 +53,7 @@ class PublishedRoutingTests(unittest.TestCase):
                 self.assert_category(hostname, filename, "👾 人工智能")
 
     def test_other_ai_frontends_and_backend_hosts_do_not_fall_through(self):
+        # OtherAI should continue to route independently of the dedicated lists.
         # Regressions for the Mistral screenshot and vendor-documented API,
         # auth, nested cloud-computer and asset hosts beyond their homepages.
         for hostname in ("mistral.ai", "chat.mistral.ai", "api.mistral.ai",
@@ -61,10 +62,16 @@ class PublishedRoutingTests(unittest.TestCase):
                          "anysphere-binaries.s3.us-east-1.amazonaws.com",
                          "aws.api.jetbrains.ai", "api.openrouter.ai", "api.githubcopilot.com",
                          "copilot-proxy.githubusercontent.com", "server.codeiumdata.com",
-                         "chat.deepseek.com", "api.moonshot.cn", "chat.qwen.ai",
                          "queue.fal.run", "files.replicate.delivery"):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+
+    def test_previously_removed_domestic_ai_hosts_stay_out_of_other_ai(self):
+        # d834799 deliberately removed these rules; preserve that choice.
+        for hostname in ("chat.deepseek.com", "api.moonshot.cn", "chat.qwen.ai"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] != "OtherAI.list", (hostname, match))
 
     def test_meta_muse_ai_entry_points(self):
         for hostname in ("muse.ai", "www.muse.ai", "introducing.muse.ai", "security.muse.ai",
@@ -148,6 +155,65 @@ class PublishedRoutingTests(unittest.TestCase):
             self.assertIn("no-resolve", rule.options)
         for value in ("1.1.1.2", "1.0.0.2", "172.67.213.99", "2606:4700:4700::1112"):
             self.assertFalse(any(ipaddress.ip_address(value) in network for network, _ in networks), value)
+
+    def test_claude_auth_mcp_assets_and_telemetry_precede_shared_fallbacks(self):
+        for hostname in ("clau.de", "platform.claude.com", "mcp-proxy.anthropic.com",
+                         "bridge.claudeusercontent.com", "widget.claudemcpcontent.com",
+                         "api.claudemcpclient.com", "anthropic.auth0.com",
+                         "anthropic.com.cdn.cloudflare.net", "servd-anthropic-website.b-cdn.net",
+                         "browser-intake-us5-datadoghq.com", "rum.browser-intake-us5-datadoghq.com",
+                         "http-intake.logs.us5.datadoghq.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "Claude.list", "👾 人工智能")
+
+    def test_openai_auth_assets_voice_and_telemetry_precede_proxy_and_microsoft(self):
+        for hostname in ("api.openai.com", "auth.openai.com", "ws.chatgpt.com",
+                         "files.oaiusercontent.com", "ab.chatgpt.com", "cdn.oaistatic.com",
+                         "ab.oaistatsig.com", "backend-v2.crixet.com", "cdn.openaimerge.com",
+                         "openaiassets.blob.core.windows.net", "openaicom.imgix.net",
+                         "openai.com.cdn.cloudflare.net", "chat.openai.com.cdn.cloudflare.net",
+                         "client-api.arkoselabs.com", "openai-api.arkoselabs.com",
+                         "setup.workos.com", "images.workoscdn.com", "js.stripe.com",
+                         "chatgpt.livekit.cloud", "region.host.livekit.cloud", "region.turn.livekit.cloud",
+                         "rum.browser-intake-datadoghq.com", "o207216.ingest.sentry.io",
+                         "o33249.ingest.sentry.io", "o33249.ingest.us.sentry.io",
+                         "chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com",
+                         "chatgpt-async-webps-prod-westeurope-42.webpubsub.azure.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "OpenAI.list", "👾 人工智能")
+
+    def test_dedicated_ai_rules_do_not_capture_shared_providers_or_lookalikes(self):
+        for hostname in ("api.stripe.com", "unrelated.auth0.com", "api.workos.com",
+                         "o999999.ingest.sentry.io", "other.imgix.net", "other.azureedge.net",
+                         "other.blob.core.windows.net", "other.webpubsub.azure.com",
+                         "chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com.example.org",
+                         "customer.livekit.cloud", "statsigapi.net", "intercom.io",
+                         "openai.example.org", "notopenai.com", "openai.com.example.org",
+                         "claudemcpcontent.com.example.org", "browser-intake-datadoghq.com.example.org",
+                         "time.apple.com", "pool.ntp.org"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] not in ("Claude.list", "OpenAI.list"),
+                                (hostname, match))
+
+    def test_claude_ip_fallback_is_limited_to_published_inbound_ranges(self):
+        rules = load_rules(ROOT / "rules/Claude.list")
+        ip_rules = [rule for rule in rules if rule.kind in ("IP-CIDR", "IP-CIDR6", "IP-ASN")]
+        self.assertTrue(ip_rules)
+        self.assertFalse(any(rule.kind == "IP-ASN" for rule in ip_rules))
+        self.assertTrue(all("no-resolve" in rule.options for rule in ip_rules))
+        networks = [ipaddress.ip_network(rule.value) for rule in ip_rules]
+        for address in ("160.79.104.0", "160.79.105.255", "2607:6bc0::1", "2607:6bc0:0:ffff::1"):
+            self.assertTrue(any(ipaddress.ip_address(address) in network for network in networks), address)
+        for address in ("160.79.103.255", "160.79.106.0", "160.79.111.255", "2607:6bc0:1::1", "1.1.1.1"):
+            self.assertFalse(any(ipaddress.ip_address(address) in network for network in networks), address)
+
+    def test_domain_wildcard_helper_matches_full_normalized_host(self):
+        routes = [("Test.list", "Proxy", [Rule("DOMAIN-WILDCARD", "cdn?-*.example.com")])]
+        for hostname in ("CDN1-A.EXAMPLE.COM.", "cdn2-.example.com", "cdn3-a.b.example.com"):
+            self.assertEqual(first_match_domain(hostname, routes=routes), ("Test.list", "Proxy"))
+        for hostname in ("cdn-a.example.com", "cdn12-a.example.com", "cdn1-a.example.com.invalid"):
+            self.assertIsNone(first_match_domain(hostname, routes=routes))
 
     def test_hostname_normalization(self):
         self.assert_category("YOUTUBEI.GOOGLEAPIS.COM.", "YouTube.list", "📹 油管视频")

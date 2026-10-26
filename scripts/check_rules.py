@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Validate published rule sets, deduplication and the subscription order.
 
-The domain routing helper is a static check of DOMAIN, DOMAIN-SUFFIX and
-DOMAIN-KEYWORD only. It is not a Surge traffic test and cannot simulate DNS,
+The domain routing helper is a static check of DOMAIN, DOMAIN-SUFFIX,
+DOMAIN-KEYWORD and DOMAIN-WILDCARD only. It is not a Surge traffic test and cannot simulate DNS,
 IP/ASN databases, user agents, processes, TLS SNI or routing policies.
 """
 
 import argparse
+from fnmatch import fnmatchcase
 import ipaddress
 import json
 from pathlib import Path
@@ -214,7 +215,7 @@ def load_domain_routes(root: Union[str, Path] = ROOT) -> DomainRoutes:
     entries = [("ApplicationDirect", "DIRECT"), ("ApplicationReject", "REJECT")]
     entries += [(entry["file"], entry["policy"]) for entry in manifest["rulesets"]]
     return [(name, policy, [rule for rule in load_rules(root / manifest["rules_directory"] / name)
-                           if rule.kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD"}])
+                           if rule.kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-WILDCARD"}])
             for name, policy in entries]
 
 
@@ -222,7 +223,7 @@ def first_match_domain(hostname: str, root: Union[str, Path] = ROOT,
                        routes: Optional[DomainRoutes] = None) -> Optional[Tuple[str, str]]:
     """Return (rule-set filename, policy) for a hostname's first static match.
 
-    A None result means none of these three domain rule types matched. It
+    A None result means none of these four domain rule types matched. It
     does not assert that actual Surge traffic would reach FINAL.
     """
     host = hostname.lower().rstrip(".")
@@ -237,6 +238,8 @@ def first_match_domain(hostname: str, root: Union[str, Path] = ROOT,
             if rule.kind == "DOMAIN-SUFFIX" and (host == rule.value or host.endswith("." + rule.value)):
                 return name, policy
             if rule.kind == "DOMAIN-KEYWORD" and rule.value in host:
+                return name, policy
+            if rule.kind == "DOMAIN-WILDCARD" and fnmatchcase(host, rule.value):
                 return name, policy
     return None
 
