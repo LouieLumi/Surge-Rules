@@ -1,7 +1,7 @@
 # 奈飞视频
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 1158
+# Rules: 1159
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list
@@ -16,6 +16,7 @@ DOMAIN-KEYWORD,dualstack.apiproxy-
 DOMAIN-KEYWORD,dualstack.ichnaea-web-
 DOMAIN-KEYWORD,netflix
 DOMAIN-KEYWORD,netflixdnstest
+DOMAIN-SUFFIX,amemv.com
 DOMAIN-SUFFIX,cookielaw.org
 DOMAIN-SUFFIX,fast.com
 DOMAIN-SUFFIX,flxvpn.net
