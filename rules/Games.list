@@ -1,7 +1,7 @@
 # 游戏平台（Epic / Sony / Steam / Nintendo）
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 311
+# Rules: 313
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Epic/Epic.list
@@ -272,6 +272,7 @@ DOMAIN-SUFFIX,steambroadcast.akamaized.net
 DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
 DOMAIN-SUFFIX,steamcommunity-a.akamaihd.net
 DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steamcontent.com
 DOMAIN-SUFFIX,steamcontent.tnkjmec.com
 DOMAIN-SUFFIX,steamdeck.com
 DOMAIN-SUFFIX,steamgames.com
