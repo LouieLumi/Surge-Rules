@@ -49,6 +49,8 @@ Claude / OpenAI 已按 2026-10-26 的参考清单和官方网络文档补齐 MCP
 
 ## 目录与直连兜底
 
+`domains/direct.txt` 是用于 DNS 匹配的独立 DOMAIN-SET，已从 Loyalsoldier 导入本仓库。[文件](domains/direct.txt) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/direct.txt) · [使用方式与来源](domains/README.md)。它在 `[Host]` 中指定阿里 DoH，不加入连接分流的 `[Rule]`，也不会按策略组选择自动切换 DNS。
+
 `rules/` 只存放规则集：18 个分类文件、`ApplicationDirect`、`ApplicationReject`，以及保留的 `NetInfrastructure.list`。后者未加入推荐订阅，内容保持不变。配置片段 `Surge-Rules.conf`、README、`rulesets.json`、`docs/`、`scripts/`、`tests/` 和 `LICENSES/` 都放在规则目录外。
 
 | 规则 | 作用 | 例子 / 匹配依据 |

@@ -8,6 +8,7 @@
 
 | 上游 | 本仓库对应内容 | 上游许可及随附全文 |
 | --- | --- | --- |
+| [Loyalsoldier/surge-rules](https://github.com/Loyalsoldier/surge-rules) | `domains/direct.txt`，2026-11-05 原样导入 `release/direct.txt`；作者及上游贡献者归属继续保留，具体版本见 [来源记录](domains/README.md) | 上游根 [LICENSE](https://github.com/Loyalsoldier/surge-rules/blob/master/LICENSE) 为 GNU GPL version 3；随附全文见 [GPL-3.0.txt](LICENSES/GPL-3.0.txt) |
 | [blackmatrix7/ios_rule_script](https://github.com/blackmatrix7/ios_rule_script) | 来源注明为该仓库的 Apple、Microsoft、Google、游戏、媒体及 Proxy/Lan/ChinaASN 等衍生规则；以各文件实际来源为准 | 上游根 LICENSE 为 GNU GPL version 2；对应衍生内容保留该许可，见 [GPL-2.0.txt](LICENSES/GPL-2.0.txt) |
 | [SukkaW/Surge](https://github.com/SukkaW/Surge) / [Sukka Ruleset](https://ruleset.skk.moe) | `rules/Apple.list` 中标注 Apple Intelligence 的补充内容 | 上游文件头与根 LICENSE 为 GNU AGPL version 3；见 [AGPL-3.0.txt](LICENSES/AGPL-3.0.txt) |
 | [VirgilClyne/GetSomeFries](https://github.com/VirgilClyne/GetSomeFries) | 独立文件 `rules/Telegram.list`，源自 `ruleset/ASN.Telegram.list` | 上游根 LICENSE 为 GNU GPL version 3；见 [GPL-3.0.txt](LICENSES/GPL-3.0.txt) |
