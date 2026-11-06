@@ -1,0 +1,104 @@
+# 国外本地服务域名
+# Surge RULE-SET | 2026-11-06 | 来源与分类口径见 domains/README.md
+# 原始名单源自 Loyalsoldier/surge-rules (GPL-3.0)，见 THIRD_PARTY_NOTICES.md。
+
+DOMAIN-SUFFIX,aliexpress.ru
+DOMAIN-SUFFIX,aliexpress.us
+DOMAIN-SUFFIX,ctrip.co.kr
+DOMAIN-SUFFIX,ctrip.sg
+DOMAIN-SUFFIX,futuau.com
+DOMAIN-SUFFIX,geely.pe
+DOMAIN-SUFFIX,huawei.ru
+DOMAIN-SUFFIX,icbc.jp
+DOMAIN-SUFFIX,icbcparis.fr
+DOMAIN-SUFFIX,in.th
+DOMAIN-SUFFIX,laoevisa.gov.la
+DOMAIN-SUFFIX,lazada.co.id
+DOMAIN-SUFFIX,lazada.co.th
+DOMAIN-SUFFIX,lazada.com.my
+DOMAIN-SUFFIX,lazada.com.ph
+DOMAIN-SUFFIX,lazada.sg
+DOMAIN-SUFFIX,lazada.vn
+DOMAIN-SUFFIX,tmall.ru
+DOMAIN-SUFFIX,tngdigital.com.my
+DOMAIN-SUFFIX,touchngo.com.my
+DOMAIN-SUFFIX,wondershare.com.br
+DOMAIN-SUFFIX,wondershare.jp
+
+# 本轮从国内名单移入的条目。每条前面附分类依据。
+# 洛杉矶华人社区的本地房屋租售、车辆、招聘及分类信息。 https://www.51losangeles.com/
+DOMAIN-SUFFIX,51losangeles.com
+# 尼泊尔当地旅行社提供当地线路预订、目的地攻略和当地旅游服务，受众包含中文游客。 https://www.7nepal.com/
+DOMAIN-SUFFIX,7nepal.com
+# 瑞士 Allianz 对瑞士修车合作伙伴指定的 Audatex 联系站。 https://www.allianz.ch/de/partner/kooperationen/automotive/garagen-portal.html
+DOMAIN-SUFFIX,audatex.ch
+# 柬房网经营柬埔寨金边和西港等地房产购买与租赁。 https://www.cambodiafang.com/
+DOMAIN-SUFFIX,cambodiafang.com
+# 实测 www.ctrip.co.id 重定向印度尼西亚地区 Trip.com。 https://id.trip.com/
+DOMAIN-SUFFIX,ctrip.co.id
+# 实测 www.ctrip.my 重定向马来西亚地区 Trip.com。 https://my.trip.com/
+DOMAIN-SUFFIX,ctrip.my
+# 斯里兰卡本地商城。 https://daraz.com/markets/sri-lanka/
+DOMAIN-SUFFIX,daraz.lk
+# 巴基斯坦本地商城。 https://daraz.com/markets/pakistan/
+DOMAIN-SUFFIX,daraz.pk
+# 实测官网明确为日本市场的日语钉钉服务、支持与销售。 https://www.dingtalk.co.jp/
+DOMAIN-SUFFIX,dingtalk.co.jp
+# 站内服务简介和实时栏目为阿联酋迪拜居民提供生活、餐饮、当地法规和新闻。 https://www.dubairen.com/
+DOMAIN-SUFFIX,dubairen.com
+# FindIC 官网列为韩国市场。 https://www.findic.kr/
+DOMAIN-SUFFIX,findic.kr
+# FOZL 新加坡公司注册、审计、税务及会计等辖区服务。 https://www.fozl.sg/
+DOMAIN-SUFFIX,fozl.sg
+# 吉利老挝专用经销商入口，列明万象店地址与老挝服务电话。 https://geelylaos.com/for-buyers/find-a-dealer/
+DOMAIN-SUFFIX,geelylaos.com
+# 吉利菲律宾销售、经销商与售后入口，条款明确菲律宾进口商和当地服务。 https://www.geelyph.com/policy?type=cookie-policy
+DOMAIN-SUFFIX,geelyph.com
+# 上海制造商用日语提供日本偶像、演唱会周边定制，面向当地采购方。 https://haijet.jp/
+DOMAIN-SUFFIX,haijet.jp
+# 工商银行奥地利站。 https://www.icbc-ltd.com/ICBCLtd/About%20Us/Global%20Websites/
+DOMAIN-SUFFIX,icbc-at.com
+# 工商银行布拉格分行。 https://www.icbc-ltd.com/ICBCLtd/About%20Us/Global%20Websites/
+DOMAIN-SUFFIX,icbc-cz.com
+# 工商银行伦敦分行。 https://www.icbc-ltd.com/ICBCLtd/About%20Us/Global%20Websites/
+DOMAIN-SUFFIX,icbc-uk.com
+# 工商银行美国子行。 https://www.icbc-ltd.com/ICBCLtd/About%20Us/Global%20Websites/
+DOMAIN-SUFFIX,icbc-us.com
+# 银行确认是阿布扎比分行。 https://www.icbc.ae/
+DOMAIN-SUFFIX,icbc.ae
+# 银行确认是布鲁塞尔分行。 https://www.icbc.be/
+DOMAIN-SUFFIX,icbc.be
+# 工商银行孟买分行公布的印度网站。 https://www.icbcindia.com/
+DOMAIN-SUFFIX,icbcindia.com
+# 工商银行米兰分行公布的当地银行网址。 https://milan.icbc.com.cn/SiteCollectionDocuments/ICBC/Resources/ICBC/haiwai/milan/download/2014/Personal_Internet_Banking_Manual_CN.pdf
+DOMAIN-SUFFIX,icbcit.com
+# 迪拜监管的本地分行为阿联酋及周边客户提供服务。 https://www.icbcme.ae/en/column/1438058489892454450.html
+DOMAIN-SUFFIX,icbcme.ae
+# 马来西亚央行公布的工银马来西亚官网。 https://www.bnm.gov.my/en/-/industrial-and-commercial-bank-of-china-malaysia-berhad
+DOMAIN-SUFFIX,icbcmy.com
+# 银行确认是华沙分行。 https://www.icbcpl.com/
+DOMAIN-SUFFIX,icbcpl.com
+# 工商银行苏黎世分行。 https://www.icbc-ltd.com/ICBCLtd/About%20Us/Global%20Websites/
+DOMAIN-SUFFIX,icbcswiss.com
+# 工商银行纽约分行。 https://www.icbc-ltd.com/ICBCLtd/About%20Us/Global%20Websites/
+DOMAIN-SUFFIX,icbkus.com
+# 当地中文媒体，提供印度尼西亚法规、地方新闻、汇率和展会。 https://www.indonesia-daily.com/
+DOMAIN-SUFFIX,indonesia-daily.com
+# 面向西班牙买家的电商平台。 https://sell.miravia.es/faq
+DOMAIN-SUFFIX,miravia.es
+# 新加坡 RedMart 当地生鲜配送，运营商为 Lazada Singapore。 https://pages.lazada.sg/wow/i/sg/corp/termsandconditions?hybrid=1
+DOMAIN-SUFFIX,redmart.com
+# 伊朗城市叫车、餐饮和生活服务。 https://snapp.ir/
+DOMAIN-SUFFIX,snapp.ir
+# 伊朗 Snapp 本地叫车服务官方镜像。 https://snapp.site/
+DOMAIN-SUFFIX,snapp.site
+# Snapp 官网链接 app.snapp.taxi，供伊朗顾客叫车。 https://snapp.ir/
+DOMAIN-SUFFIX,snapp.taxi
+# 项目的伊朗分类显式引用 Snapp 服务域名清单，包含 snappcloud.io；属于伊朗本地打车服务。 https://github.com/v2fly/domain-list-community/blob/master/data/snapp
+DOMAIN-SUFFIX,snappcloud.io
+# Snapp 的伊朗地图服务域，在项目维护的专项表中明确登记。 https://github.com/v2fly/domain-list-community/blob/master/data/snapp
+DOMAIN-SUFFIX,snappmaps.ir
+# 面向泰国华人，报道泰国当地侨团和社区。 https://www.thaicn.com/
+DOMAIN-SUFFIX,thaicn.com
+# 俄罗斯当地卢布购物与配送站。 https://thepoizon.ru/
+DOMAIN-SUFFIX,thepoizon.ru

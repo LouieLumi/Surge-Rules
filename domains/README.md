@@ -2,17 +2,21 @@
 
 ## 国内、国外与国际站
 
-三份文件均为 Surge 原生 DOMAIN-SET，可分别订阅。前导点匹配域名本身及其子域名，裸主机名只做精确匹配。
+三份文件均为 Surge 原生 `RULE-SET`。每行使用 `DOMAIN,主机名` 精确匹配，或用 `DOMAIN-SUFFIX,域名` 匹配根域名及其子域。它们分别对应旧 DOMAIN-SET 中的裸主机名和前导点条目。
+
+在 `[Rule]` 中使用 `RULE-SET,<Raw 链接>,<策略>`。在 `[Host]` 中按整份名单指定解析器时，使用 `RULE-SET:<Raw 链接> = server:<DNS 地址>`。
 
 | 文件 | 收录范围 |
 | --- | --- |
-| [domestic.txt](domestic.txt) · [Raw](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/domestic.txt) | 国内服务、港澳银行，以及上游按中国大陆 DNS / CDN 收录的剩余域名 |
-| [foreign.txt](foreign.txt) · [Raw](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/foreign.txt) | 有地区证据的海外本地服务和地区专用站点 |
-| [international.txt](international.txt) · [Raw](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/international.txt) | 多个市场共用的官网、下载服务和 CDN，例如 Google 下载、Apple 更新和微软 Office CDN |
+| [domestic.list](domestic.list) · [Raw](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/domestic.list) | 国内服务、港澳银行，以及上游按中国大陆 DNS / CDN 收录的剩余域名 |
+| [foreign.list](foreign.list) · [Raw](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/foreign.list) | 有地区证据的海外本地服务和地区专用站点 |
+| [international.list](international.list) · [Raw](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/international.list) | 多个市场共用的官网、下载服务和 CDN，例如 Google 下载、Apple 更新和微软 Office CDN |
 
-2026-11-06 的拆分以原 [direct.txt](direct.txt) 的 110,189 条记录和 [ApplicationDirect](../rules/ApplicationDirect) 的 5 条域名规则为底稿。原订阅地址继续可用。后者的 3 条进程规则只对应用生效，保留在原文件中。
+2026-11-06 的拆分以原 [direct.txt](direct.txt) 的 110,189 条记录和 [ApplicationDirect](../rules/ApplicationDirect) 的 5 条域名规则为底稿。底稿的两个订阅地址继续可用。之前订阅分区版的用户请换成上表的 `.list` 链接和 `RULE-SET` 类型。后者的 3 条进程规则只对应用生效，保留在原文件中。
 
 国内集合开头单列港澳银行官网及公开网银。按名册核对香港 147 家持牌银行、17 家有限制牌照银行，以及澳门 32 家银行和分行。地区专用域通常连同子域名收录，银行用全球共用主机提供当地服务时只收录该主机。以 URL 路径区分地区的网站，同一主机上的其他地区页面也会命中。部分批发银行只公布集团网站，登记网址也可能暂时无法解析。[香港金管局银行联系表](https://www.hkma.gov.hk/media/eng/doc/key-functions/banking-stability/banking-policy-and-supervision/addr.xls) · [澳门金融管理局机构名册](https://www.amcm.gov.mo/zh-hant/bank/bank-institutions-list?type=company-parent-bank-leaf-1)
+
+本轮复核对照了多个国家的网站目录、品牌与服务域名库、企业与学术机构名录。候选域名再按实际服务市场核对。同一品牌可以分属两组，例如 Daraz 的巴基斯坦和斯里兰卡商城属于国外当地服务，集团门户属于国际站。两份名单的新增规则前附复核依据。[OONI / Citizen Lab 地区目录](https://github.com/citizenlab/test-lists) · [DuckDuckGo 企业域名目录](https://github.com/duckduckgo/tracker-radar) · [ROR 研究机构名录](https://ror.org/)
 
 旧集合的上游根据大陆 DNS 或 CDN 的可用性收录域名。可识别的跨国服务和海外地区站按服务范围分出，其余保留在国内集合。这部分表示沿用原直连名单，运营方所在地未经逐一核验。原自定义域名 `anxx.net` 也在这一组。[上游收录口径](https://github.com/felixonmars/dnsmasq-china-list/blob/a8942d3ac6ebd8dcfc582d4e97fbb443a2176cb2/README.md) · [社区域名分类](https://github.com/v2fly/domain-list-community/tree/4af75ecfbd62c077f9f3ae68b0ae21b89fda1c60/data) · [原始集合的许可和归属](../THIRD_PARTY_NOTICES.md)
 
