@@ -1,7 +1,7 @@
 # 游戏平台（Epic / Sony / Steam / Nintendo）
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 313
+# Rules: 315
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Epic/Epic.list
@@ -11,7 +11,9 @@
 # Upstream: blackmatrix7/ios_rule_script and its credited contributors.
 # Upstream-derived content: GPL-2.0; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
 
+DOMAIN,gstore.val.smogfly.com
 DOMAIN,sonyliveevents-nonssai.akamaized.net
+DOMAIN,xz.pphimalayanrt.com
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
