@@ -6,7 +6,7 @@
 
 同日后续调整新增 19 条 Cloudflare 服务域名条件和 4 条标准 DNS 精确 IP 条件，增至 128 条。IP 条件包含检测页直接使用的 `1.1.1.1`；Cloudflare 全网的 ASN 13335 兜底已删除，Poe 继续归 OtherAI。该调整及官方来源见 [Cloudflare 分流说明](CLOUDFLARE.md)，上面的 AI 审计文件保留为首次扩展时的历史快照。
 
-2026-09-23 补充 Meta Muse 的 `muse.ai` 与 AI 官网 `ai.meta.com`，保留已有的 `meta.ai`，当前共 130 条。三条均为域名后缀匹配，覆盖其子域：包括 `introducing.muse.ai`、`security.muse.ai`、`dev.meta.ai`、`research.meta.ai`，以及 `ai.meta.com/muse/` 下的介绍与下载页面。
+2026-09-23 补充 Meta Muse 的 `muse.ai` 与 AI 官网 `ai.meta.com`，保留已有的 `meta.ai`，当时共 130 条。三条均为域名后缀匹配，覆盖其子域：包括 `introducing.muse.ai`、`security.muse.ai`、`dev.meta.ai`、`research.meta.ai`，以及 `ai.meta.com/muse/` 下的介绍与下载页面。
 
 本次按 AI 专用域名划分，不添加 `meta.com` 整站、Facebook、Instagram、WhatsApp、`fbcdn.net`、`fbsbx.com` 或 Meta ASN。共享登录、Graph API、社交平台内的 AI 功能与共享 CDN 继续按原规则匹配；仅凭共享主机无法区分其中的 AI 请求，因此这些条目不承诺覆盖 Muse 的全部登录和资源依赖。
 
@@ -16,7 +16,7 @@
 - OpenRouter 从仅匹配根域改为后缀匹配；JetBrains AI 从仅匹配 `api.jetbrains.ai` 改为同时覆盖其 AWS/GCP API 子域。
 - Cursor 包含其官方网络清单中的 API、Tab、代码索引、登录、CDN、marketplace、云端电脑域名及专用 S3 下载主机。
 - DeepSeek、Kimi、Qwen、智谱、MiniMax、豆包、扣子等国内 AI 也进入 OtherAI，优先于 ChinaDomain / ChinaASN 的国内直连兜底。
-- Claude、OpenAI、Gemini/Google 继续使用独立规则文件并统一映射到人工智能策略。Apple Intelligence 仍合并在 Apple，但两个 Cloudflare 中继域名改由 OtherAI 的 `cloudflare.com` 后缀覆盖。
+- Claude、OpenAI、Gemini/Google 继续使用独立规则文件并统一映射到人工智能策略。Apple Intelligence 按[原清单](https://ruleset.skk.moe/List/non_ip/apple_intelligence.conf)提取：`apple-relay.apple.com`、`apple-relay.fastly-edge.com` 和共用地区检测主机 `gspe1-ssl.ls.apple.com` 精确匹配；`apple-relay.cloudflare.com`、`cp4.cloudflare.com` 已由本文件的 `cloudflare.com` 后缀覆盖。地区检测按整个主机分流，无法只匹配 Siri 发起的查询。
 - Copilot 仅添加 AI 专用域名/主机；普通 GitHub、Microsoft、Google、AWS、支付及共享登录服务继续按现有分类匹配。
 - 平台主域规则可能同时覆盖官网、账单、文档和模型下载；不会自动识别该域名内某个 URL 是否属于 AI。
 

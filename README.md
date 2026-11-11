@@ -14,14 +14,14 @@
 
 ## 分类与顺序
 
-以下顺序与推荐片段一致。Apple Intelligence 已合并进 `rules/Apple.list`，使用 `🍎 苹果服务`；其中 Cloudflare 中继域名按基础设施策略归 OtherAI。YouTube、游戏平台、AI 等专用分类在 Google、Microsoft 大类前，防止被大范围规则提前匹配。
+以下顺序与推荐片段一致。Apple Intelligence 中继和 Apple 地区检测走 OtherAI 的 `👾 人工智能`。如果你复制过旧片段，请在本地 `[Rule]` 把 `Apple.list` 移到 `OtherAI.list` 后面，刷新两个规则集；否则 `DOMAIN-SUFFIX,apple.com` 会先匹配地区检测。YouTube、游戏平台、AI 等专用分类在 Google、Microsoft 大类前，防止被大范围规则提前匹配。
 
 | 顺序 | 分类 | 文件与订阅 | 现有策略 |
 | --- | --- | --- | --- |
-| 1 | 苹果服务（含 Apple Intelligence） | [Apple.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Apple.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Apple.list) | 🍎 苹果服务 |
-| 2 | Claude | [Claude.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Claude.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Claude.list) | 👾 人工智能 |
-| 3 | OpenAI / ChatGPT / Sora | [OpenAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OpenAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OpenAI.list) | 👾 人工智能 |
-| 4 | 其他人工智能 | [OtherAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OtherAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OtherAI.list) | 👾 人工智能 |
+| 1 | Claude | [Claude.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Claude.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Claude.list) | 👾 人工智能 |
+| 2 | OpenAI / ChatGPT / Sora | [OpenAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OpenAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OpenAI.list) | 👾 人工智能 |
+| 3 | 其他人工智能（含 Apple Intelligence） | [OtherAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OtherAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OtherAI.list) | 👾 人工智能 |
+| 4 | 苹果服务 | [Apple.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Apple.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Apple.list) | 🍎 苹果服务 |
 | 5 | 电报信息 | [Telegram.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Telegram.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Telegram.list) | 📲 电报信息 |
 | 6 | 游戏平台（Epic / Sony / Steam / Nintendo） | [Games.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Games.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Games.list) | 🎮 游戏平台 |
 | 7 | YouTube / YouTube Music | [YouTube.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/YouTube.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/YouTube.list) | 📹 油管视频 |

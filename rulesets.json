@@ -3,16 +3,6 @@
   "base_url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/",
   "rulesets": [
     {
-      "file": "Apple.list",
-      "title": "苹果服务（含 Apple Intelligence）",
-      "policy": "🍎 苹果服务",
-      "sources": [
-        "Apple",
-        "GlobalMedia",
-        "AppleIntelligence"
-      ]
-    },
-    {
       "file": "Claude.list",
       "title": "Claude",
       "policy": "👾 人工智能",
@@ -31,12 +21,22 @@
     },
     {
       "file": "OtherAI.list",
-      "title": "其他人工智能",
+      "title": "其他人工智能（含 Apple Intelligence）",
       "policy": "👾 人工智能",
       "sources": [
         "OtherAI",
         "OpenAI",
-        "Proxy"
+        "Proxy",
+        "AppleIntelligence"
+      ]
+    },
+    {
+      "file": "Apple.list",
+      "title": "苹果服务",
+      "policy": "🍎 苹果服务",
+      "sources": [
+        "Apple",
+        "GlobalMedia"
       ]
     },
     {

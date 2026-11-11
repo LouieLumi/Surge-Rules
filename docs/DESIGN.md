@@ -9,7 +9,7 @@ Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库�
 | 内容 | 整理结果 |
 | --- | --- |
 | `ApplicationDirect`、`ApplicationReject` 与五条异地组网规则 | 规则内容保留，两个应用文件迁入 `rules/`，仍放在全部分类前 |
-| Apple Intelligence | 合并到 `rules/Apple.list`；Cloudflare 中继域名随后按统一基础设施策略改由 OtherAI 覆盖，其余走 `🍎 苹果服务` |
+| Apple Intelligence | 中继与地区检测由 `OtherAI.list` 匹配，使用 `👾 人工智能`；其他苹果域名继续按 `Apple.list` 匹配 |
 | 苹果服务 | `Apple.list` 接收 Apple 上游规则，以及旧 `GlobalMedia.list` 的 Apple TV / Apple Music 章节 |
 | Claude、OpenAI、其他 AI | 保留独立分类；`chat.com` 归 `OpenAI.list`，`ai.com` 归 `OtherAI.list` |
 | Gemini / Google | 合并 Google 上游与原 Gemini 规则，继续使用 `Gemini.list` 路径，当前与其它 AI 一起使用 `👾 人工智能` 策略 |
@@ -24,7 +24,7 @@ Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库�
 
 `GlobalMedia.list` 排在 `ChinaMedia.list` 前，让 `inter.iqiyi.com`、`intl.iqiyi.com` 等国际爱奇艺具体子域先匹配国外媒体，再由国内媒体的 `iqiyi.com` 父域接住其余请求。这个顺序用于保留国际版例外，不把共享的国内域名一并转为国外媒体：`snssdk.com` 明确保留在 `ChinaMedia.list`。
 
-YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Microsoft 大类。Apple 与 Apple Intelligence 现在共用一个文件和策略。更具体的域名放前、更宽的服务范围放后，是这些顺序的共同原因。
+YouTube 必须先于 Google 大类；游戏平台和专用 AI 必须先于 Microsoft 大类。OtherAI 排在 Apple 前，让中继与地区检测先于 Apple 的 `apple.com` 后缀匹配；Claude 和 OpenAI 仍排在 OtherAI 前。更具体的域名放前、更宽的服务范围放后，是这些顺序的共同原因。
 
 上游 YouTube 清单同时包含 `gvt1.com`、`gvt2.com` 等 Google 共享 CDN。本次沿用该清单的归属，它们也可能承载地图或其他 Google 下载，不能理解成只匹配视频。Microsoft 清单中的 `edgesuite.net`、`optimizely.com` 等宽泛条目同理；Netflix、Disney 等明确的子域会先按前置专用规则匹配。
 

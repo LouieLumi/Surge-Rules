@@ -36,10 +36,12 @@ class PublishedRoutingTests(unittest.TestCase):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "Gemini.list", "👾 人工智能")
 
-    def test_apple_intelligence_remains_merged_except_cloudflare_services(self):
-        for hostname in ("apple-relay.apple.com", "gspe1-ssl.ls.apple.com",
-                         "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe",
-                         "apple-relay.fastly-edge.com", "www.apple.com"):
+    def test_apple_intelligence_and_region_lookup_precede_general_apple(self):
+        for hostname in ("gspe1-ssl.ls.apple.com", "apple-relay.apple.com", "apple-relay.fastly-edge.com",
+                         "apple-relay.cloudflare.com", "cp4.cloudflare.com", "7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "OtherAI.list", "👾 人工智能")
+        for hostname in ("www.apple.com", "www.icloud.com", "guzzoni.smoot.apple.com", "gspe19-cn-ssl.ls.apple.com"):
             with self.subTest(hostname=hostname):
                 self.assert_category(hostname, "Apple.list", "🍎 苹果服务")
         self.assertNotIn("AppleIntelligence.list", [name for name, _, _ in self.routes])

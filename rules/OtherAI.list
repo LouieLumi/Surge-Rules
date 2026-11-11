@@ -1,7 +1,7 @@
 # 其他人工智能 / Other AI
 # Maintainer: LouieLumi
-# Updated: 2026-09-23
-# Rules: 130
+# Updated: 2026-11-11
+# Rules: 106
 # Policy-free Surge RULE-SET. Edit this file directly; no regeneration is required.
 # Scope, verified sources and limitations: docs/OTHER_AI.md; docs/other-ai-audit.json.
 # Original sources: OtherAI.list, OpenAI.list and Proxy.list in this repository.
@@ -9,6 +9,18 @@
 # Upstream: https://github.com/blackmatrix7/ios_rule_script and its credited contributors.
 # See LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md for those migrated entries.
 # Cloudflare service domains are routed here by user request; see docs/CLOUDFLARE.md.
+
+# Apple Intelligence: relay hosts and Apple's shared region lookup.
+# Source: https://ruleset.skk.moe/List/non_ip/apple_intelligence.conf
+# Original author: Sukka (https://github.com/SukkaW/Surge)
+# Original homepage: https://ruleset.skk.moe
+# Original source license: AGPL-3.0; see LICENSES/AGPL-3.0.txt.
+# Source identification rule (not a service endpoint):
+DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,gspe1-ssl.ls.apple.com
+# apple-relay.cloudflare.com and cp4.cloudflare.com match cloudflare.com below.
 
 # Cloudflare services and provider-hosted endpoints (not the whole AS13335 network).
 # Covers the website, API, Turnstile, cdnjs and STUN/TURN via cloudflare.com.

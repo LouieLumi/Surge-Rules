@@ -36,7 +36,7 @@
 
 Google 是为“Gemini & Google”补充的同一 blackmatrix7 上游清单；其余均来自你提供的订阅。ApplicationDirect、ApplicationReject 下载用于核对，保持仓库文件不变。NetInfrastructure.list 未被加入订阅、未修改。
 
-当前规则已迁入 `rules/`，Apple Intelligence 已并入 Apple，现为 18 个分类。下面的表和导入报告保留首次整理时的历史统计，文件链接固定到当时提交。
+当前规则已迁入 `rules/`，Apple Intelligence 的中继与地区检测现由 OtherAI 覆盖，仍为 18 个分类。下面的表和导入报告保留首次整理时的历史统计，文件链接固定到当时提交。
 
 ## 首次分类去重统计（历史快照）
 
