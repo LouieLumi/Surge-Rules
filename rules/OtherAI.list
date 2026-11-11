@@ -1,7 +1,7 @@
 # 其他人工智能 / Other AI
 # Maintainer: LouieLumi
 # Updated: 2026-11-11
-# Rules: 106
+# Rules: 107
 # Policy-free Surge RULE-SET. Edit this file directly; no regeneration is required.
 # Scope, verified sources and limitations: docs/OTHER_AI.md; docs/other-ai-audit.json.
 # Original sources: OtherAI.list, OpenAI.list and Proxy.list in this repository.
@@ -21,6 +21,9 @@ DOMAIN,apple-relay.apple.com
 DOMAIN,apple-relay.fastly-edge.com
 DOMAIN,gspe1-ssl.ls.apple.com
 # apple-relay.cloudflare.com and cp4.cloudflare.com match cloudflare.com below.
+
+# Additional ChatGPT extension relay: https://github.com/v2fly/domain-list-community/blob/master/data/apple-intelligence
+DOMAIN,apple-relay.mask.apple-dns.net
 
 # Cloudflare services and provider-hosted endpoints (not the whole AS13335 network).
 # Covers the website, API, Turnstile, cdnjs and STUN/TURN via cloudflare.com.
