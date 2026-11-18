@@ -36,3 +36,7 @@
 ## 2026-10-26 Claude / OpenAI 补充
 
 `rules/Claude.list` 与 `rules/OpenAI.list` 中从 Proxy 迁入的端点，以及依据 blackmatrix7 Claude 清单补充的 Fathom 端点，继续保留原 GPL-2.0 来源归属；迁移不会改变许可。其他域名及网络事实按 [维护说明](docs/CLAUDE_OPENAI.md) 中的服务商文档、用户参考与 v2fly 数据核对，未整体复制其清单或文章。
+
+## 2026-11-18 网易直连域名
+
+`domains/domestic.list` 中标注的网易域名段整理自 [v2fly/domain-list-community 的 netease 数据](https://github.com/v2fly/domain-list-community/blob/master/data/netease)，原作者 V2Ray 及贡献者，MIT 许可全文见 [MIT-V2Ray.txt](LICENSES/MIT-V2Ray.txt)。删除属性标签并按父域去重，另依据网易官方产品页补充 `neteasegames.com`；不改变其余原有条目的许可。

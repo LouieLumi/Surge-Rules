@@ -1,3 +1,5 @@
+# Legacy UU-only URL; retained for existing subscribers.
+# Current profiles use domains/domestic.list for NetEase domains.
 # 网易 UU 远程 / GameViewer — DIRECT
 # Verified: 2026-11-18
 # Place before Games.list, generic PROTOCOL,STUN and fallback rules.

@@ -1,7 +1,7 @@
 # 游戏平台（Epic / Sony / Steam / Nintendo）
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 315
+# Rules: 314
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Epic/Epic.list
@@ -324,5 +324,4 @@ DOMAIN-SUFFIX,xn--mts47c3w9b1qr.cn
 DOMAIN-SUFFIX,xn--mts47c3w9b1qr.net
 DOMAIN-SUFFIX,yoshisnewisland.com
 DOMAIN-SUFFIX,yourfantasybeginsnow.com
-DOMAIN-SUFFIX,163.com
 IP-CIDR,35.192.0.0/12,no-resolve

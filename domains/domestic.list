@@ -2,6 +2,57 @@
 # Surge RULE-SET | 2026-11-06 | 来源与分类口径见 domains/README.md
 # 原始名单源自 Loyalsoldier/surge-rules (GPL-3.0)，见 THIRD_PARTY_NOTICES.md。
 
+# 网易统一直连：UU、邮箱、云音乐、游戏、有道、LOFTER、七鱼及相关基础服务。
+# 用户指定的直连服务，含网易海外域名；本段不按服务器地理位置拆分。
+# Source: https://github.com/v2fly/domain-list-community/blob/master/data/netease
+# Source blob: f9b7965fc4b7907399f680b9349e21a8c2a0a404 (2026-11-18)
+# Copyright (c) 2018-2019 V2Ray; MIT — see LICENSES/MIT-V2Ray.txt.
+# Additional official product domain: https://ir.netease.com/company-overview/products
+DOMAIN-SUFFIX,126.com
+DOMAIN-SUFFIX,126.link
+DOMAIN-SUFFIX,126.net
+DOMAIN-SUFFIX,127.com
+DOMAIN-SUFFIX,127.net
+DOMAIN-SUFFIX,163.com
+DOMAIN-SUFFIX,163cn.tv
+DOMAIN-SUFFIX,163industry.com
+DOMAIN-SUFFIX,163jiasu.com
+DOMAIN-SUFFIX,163mail.com
+DOMAIN-SUFFIX,163qiyukf.com
+DOMAIN-SUFFIX,163yun.com
+DOMAIN-SUFFIX,166.com
+DOMAIN-SUFFIX,166.net
+DOMAIN-SUFFIX,188.com
+DOMAIN-SUFFIX,321fenx.com
+DOMAIN-SUFFIX,easebar.com
+DOMAIN-SUFFIX,haowu.link
+DOMAIN-SUFFIX,icourse163.org
+DOMAIN-SUFFIX,kada.com
+DOMAIN-SUFFIX,lf126.net
+DOMAIN-SUFFIX,lf127.net
+DOMAIN-SUFFIX,lofter.com
+DOMAIN-SUFFIX,nease.net
+DOMAIN-SUFFIX,netease-inc.com
+DOMAIN-SUFFIX,netease.com
+DOMAIN-SUFFIX,netease.im
+DOMAIN-SUFFIX,neteasegames.com
+DOMAIN-SUFFIX,netstatic.net
+DOMAIN-SUFFIX,qiyukf.com
+DOMAIN-SUFFIX,qiyukf.net
+DOMAIN-SUFFIX,qiyukf.net.cn
+DOMAIN-SUFFIX,static163.net
+DOMAIN-SUFFIX,weiyang.cn
+DOMAIN-SUFFIX,ydshengxue.com
+DOMAIN-SUFFIX,ydstatic.com
+DOMAIN-SUFFIX,yeah.net
+DOMAIN-SUFFIX,yjwujian.cn
+DOMAIN-SUFFIX,youdao.com
+DOMAIN-SUFFIX,youdaoads.com
+DOMAIN-SUFFIX,yunxindns.com
+DOMAIN-SUFFIX,yunxinfw.com
+DOMAIN-SUFFIX,yysls.cn
+DOMAIN-SUFFIX,zhuanzfx.com
+
 # 香港、澳门银行公开官网和网银；集团共用主机按完整主机名匹配。
 DOMAIN-SUFFIX,abchkl.com.hk
 DOMAIN,access.jpmorgan.com
@@ -304,26 +355,13 @@ DOMAIN-SUFFIX,115meta.com
 DOMAIN-SUFFIX,115vod.com
 DOMAIN-SUFFIX,116cd.com
 DOMAIN-SUFFIX,116cd.net
-DOMAIN-SUFFIX,126.com
-DOMAIN-SUFFIX,126.net
-DOMAIN-SUFFIX,127.com
-DOMAIN-SUFFIX,127.net
 DOMAIN-SUFFIX,139.com
-DOMAIN-SUFFIX,163.com
-DOMAIN-SUFFIX,163cn.tv
-DOMAIN-SUFFIX,163jiasu.com
-DOMAIN-SUFFIX,163mail.com
-DOMAIN-SUFFIX,163qiyukf.com
-DOMAIN-SUFFIX,163yun.com
-DOMAIN-SUFFIX,166.com
-DOMAIN-SUFFIX,166.net
 DOMAIN-SUFFIX,1688.com
 DOMAIN-SUFFIX,169ol.com
 DOMAIN-SUFFIX,17roco.com
 DOMAIN-SUFFIX,17u.net
 DOMAIN-SUFFIX,17usoft.com
 DOMAIN-SUFFIX,17usoft.net
-DOMAIN-SUFFIX,188.com
 DOMAIN-SUFFIX,189cube.com
 DOMAIN-SUFFIX,189smarthome.com
 DOMAIN-SUFFIX,1huizhan.com
@@ -331,7 +369,6 @@ DOMAIN-SUFFIX,21cn.com
 DOMAIN-SUFFIX,25pp.com
 DOMAIN-SUFFIX,300hu.com
 DOMAIN-SUFFIX,315dian.com
-DOMAIN-SUFFIX,321fenx.com
 DOMAIN-SUFFIX,3304399.com
 DOMAIN-SUFFIX,3304399.net
 DOMAIN-SUFFIX,360-jr.com
@@ -1421,7 +1458,6 @@ DOMAIN-SUFFIX,haokan.com
 DOMAIN-SUFFIX,haoso.com
 DOMAIN-SUFFIX,haosou.com
 DOMAIN-SUFFIX,haosou.net
-DOMAIN-SUFFIX,haowu.link
 DOMAIN-SUFFIX,happyhlddz.com
 DOMAIN-SUFFIX,harmonyos.com
 DOMAIN-SUFFIX,hc-cdn.com
@@ -1525,7 +1561,6 @@ DOMAIN-SUFFIX,icbcstandardsecurities.com
 DOMAIN-SUFFIX,iccvlog.com
 DOMAIN-SUFFIX,iciba.com
 DOMAIN-SUFFIX,icntvcdn.com
-DOMAIN-SUFFIX,icourse163.org
 DOMAIN-SUFFIX,idcgcloudcs.com
 DOMAIN-SUFFIX,idouyinliving.com
 DOMAIN-SUFFIX,idouyinpic.com
@@ -1746,7 +1781,6 @@ DOMAIN-SUFFIX,juxieyun.com
 DOMAIN-SUFFIX,jwview.com
 DOMAIN-SUFFIX,jxedt.com
 DOMAIN-SUFFIX,jxksw.net
-DOMAIN-SUFFIX,kada.com
 DOMAIN-SUFFIX,kaifayun.com
 DOMAIN-SUFFIX,kaipai.com
 DOMAIN-SUFFIX,kanimg.com
@@ -1853,8 +1887,6 @@ DOMAIN-SUFFIX,lanzouy.com
 DOMAIN-SUFFIX,lanzov.com
 DOMAIN-SUFFIX,laohu.com
 DOMAIN-SUFFIX,lckfb.com
-DOMAIN-SUFFIX,lf126.net
-DOMAIN-SUFFIX,lf127.net
 DOMAIN-SUFFIX,liangxinyao.com
 DOMAIN-SUFFIX,lifexue.com
 DOMAIN-SUFFIX,linglonglife.com
@@ -1865,7 +1897,6 @@ DOMAIN-SUFFIX,livesaascdn.com
 DOMAIN-SUFFIX,livesaasvolccdn.com
 DOMAIN-SUFFIX,lnlib.net
 DOMAIN-SUFFIX,local-ip.online
-DOMAIN-SUFFIX,lofter.com
 DOMAIN-SUFFIX,logiseasy.com
 DOMAIN-SUFFIX,ludashi.com
 DOMAIN-SUFFIX,ludoworld.net
@@ -1981,16 +2012,11 @@ DOMAIN-SUFFIX,mysiteres.com
 DOMAIN-SUFFIX,nagcloudcs.com
 DOMAIN-SUFFIX,namiso.com
 DOMAIN-SUFFIX,ndcpp.com
-DOMAIN-SUFFIX,nease.net
 DOMAIN-SUFFIX,neihancommunity.net
 DOMAIN-SUFFIX,nellit.info
 DOMAIN-SUFFIX,nellit.net
 DOMAIN-SUFFIX,nellit.xyz
 DOMAIN-SUFFIX,nephele.tripcdn.com
-DOMAIN-SUFFIX,netease-inc.com
-DOMAIN-SUFFIX,netease.com
-DOMAIN-SUFFIX,netease.im
-DOMAIN-SUFFIX,netstatic.net
 DOMAIN-SUFFIX,nextstudios.com
 DOMAIN-SUFFIX,nextvid.net
 DOMAIN-SUFFIX,nextworkshop.net
@@ -2167,8 +2193,6 @@ DOMAIN-SUFFIX,qiniup.com
 DOMAIN-SUFFIX,qishui.com
 DOMAIN-SUFFIX,qiyi.com
 DOMAIN-SUFFIX,qiyipic.com
-DOMAIN-SUFFIX,qiyukf.com
-DOMAIN-SUFFIX,qiyukf.net
 DOMAIN-SUFFIX,qlivecdn.com
 DOMAIN-SUFFIX,qnsdk.com
 DOMAIN-SUFFIX,qnssl.com
@@ -2301,9 +2325,7 @@ DOMAIN-SUFFIX,sslawy.com
 DOMAIN-SUFFIX,sslibrary.com
 DOMAIN-SUFFIX,starlakelab.com
 DOMAIN-SUFFIX,static.tripcdn.com
-DOMAIN-SUFFIX,static163.net
 DOMAIN,storage.moegirl.org.cn
-DOMAIN,study.163.com
 DOMAIN-SUFFIX,suanya.com
 DOMAIN-SUFFIX,sunlife-everbright.com
 DOMAIN-SUFFIX,supercachenet.com
@@ -2898,8 +2920,6 @@ DOMAIN-SUFFIX,xyzfm.link
 DOMAIN-SUFFIX,xyzfm.space
 DOMAIN-SUFFIX,yangkeduo.com
 DOMAIN-SUFFIX,ybscjp.com
-DOMAIN-SUFFIX,ydstatic.com
-DOMAIN-SUFFIX,yeah.net
 DOMAIN-SUFFIX,yeyousg.com
 DOMAIN-SUFFIX,yhd.com
 DOMAIN-SUFFIX,yhgfb-cn-static.com
@@ -2916,7 +2936,6 @@ DOMAIN-SUFFIX,ylike.net
 DOMAIN-SUFFIX,ym.run
 DOMAIN-SUFFIX,yoojia.com
 DOMAIN-SUFFIX,youba.com
-DOMAIN-SUFFIX,youdao.com
 DOMAIN-SUFFIX,youhua.com
 DOMAIN-SUFFIX,youimg1.tripcdn.com
 DOMAIN-SUFFIX,youjiao.com
@@ -2956,8 +2975,6 @@ DOMAIN-SUFFIX,yunjitele.com
 DOMAIN-SUFFIX,yunos-inc.com
 DOMAIN-SUFFIX,yunos.com
 DOMAIN-SUFFIX,yunpei.com
-DOMAIN-SUFFIX,yunxindns.com
-DOMAIN-SUFFIX,yunxinfw.com
 DOMAIN-SUFFIX,yunxiu.com
 DOMAIN-SUFFIX,yushanfang.com
 DOMAIN-SUFFIX,yuweikuijianzhan.com
@@ -2988,7 +3005,6 @@ DOMAIN-SUFFIX,zhuancorp.com
 DOMAIN-SUFFIX,zhuaninc.com
 DOMAIN-SUFFIX,zhuanspirit.com
 DOMAIN-SUFFIX,zhuanstatic.com
-DOMAIN-SUFFIX,zhuanzfx.com
 DOMAIN-SUFFIX,zhuanzhuan.com
 DOMAIN-SUFFIX,zhuoyuegame.com
 DOMAIN-SUFFIX,zijieapi.com

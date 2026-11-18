@@ -22,6 +22,21 @@
 
 三份文件使用不同策略时，较具体的国际站条目应排在国内集合前面。例如国际站收录了 `time.amazonaws.cn`，国内集合中原有的 `.cn` 也能匹配它。Surge 采用最先匹配的规则。
 
+## 网易统一直连（2026-11-18）
+
+网易相关域名集中维护在 `domestic.list` 开头的网易段，按 [v2fly 的 netease 数据](https://github.com/v2fly/domain-list-community/blob/master/data/netease) 合并为 43 个父域，再依据[网易官方产品页](https://ir.netease.com/company-overview/products) 补充 `neteasegames.com`，共 44 条后缀规则。涵盖 `163.com`、`126.com`、`126.net`、`127.net`、`188.com`、`yeah.net`、`netease.com`、`easebar.com`、`youdao.com`、`qiyukf.com`、`lofter.com` 等及其全部子域。这里按用户指定服务直连，包含网易海外服务，不表示服务器全部位于中国大陆。
+
+现有国内列表的位置保留。`Games.list` 和 `ChinaMedia.list` 中 5 条网易域名规则移回国内集合，避免抢先命中专用策略。UU 原先单独的 `UURemote.list` 不再被当前配置引用；旧 URL 保留兼容。
+
+完整配置里唯一的提前例外是：
+
+```ini
+AND,((PROTOCOL,STUN),(DOMAIN-SUFFIX,nrd.nie.163.com)),DIRECT
+PROTOCOL,STUN,"🔒 网络出口"
+```
+
+只有带 `nrd.nie.163.com` 域名的 STUN 请求会命中第一行；其他协议的网易请求由后面的国内集合处理，其他 STUN 仍由原策略处理。该例外不匹配没有域名的纯 IP P2P 请求。Surge 采用首条命中规则；只更新域名文件不会改动本地的协议规则顺序。
+
 ## 原直连 DNS 名单
 
 `direct.txt` 是从 [Loyalsoldier/surge-rules](https://github.com/Loyalsoldier/surge-rules) 导入的国内及部分在国内可直连服务的域名名单，保留上游 DOMAIN-SET 格式和全部内容。它不是只包含中国域名的地域数据库，也不会根据策略组的当前选择切换 DNS。

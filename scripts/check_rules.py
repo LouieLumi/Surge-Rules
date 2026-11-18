@@ -56,6 +56,10 @@ def _manifest(root: Path) -> dict:
         if name in names:
             raise ValueError("duplicate rulesets.json file: " + name)
         names.add(name)
+        if entry.get("directory", "rules") not in ("rules", "domains"):
+            raise ValueError("invalid rule-set directory: " + name)
+        if entry.get("directory") == "domains" and policy != "DIRECT":
+            raise ValueError("domain fallback must use DIRECT: " + name)
         if not isinstance(policy, str) or not policy.strip():
             raise ValueError("missing rule-set policy: " + name)
     auxiliary = manifest.get("auxiliary_rulesets", [])
@@ -112,7 +116,7 @@ def _check_config(root: Path, manifest: dict, errors: List[str]) -> None:
     expected_references = [
         ("RULE-SET", base + "ApplicationDirect", "DIRECT"),
         ("RULE-SET", base + "ApplicationReject", "REJECT", "no-resolve"),
-    ] + [("RULE-SET", base + entry["file"], entry["policy"]) for entry in manifest["rulesets"]]
+    ] + [("RULE-SET", base[:-len("rules/")] + entry.get("directory", "rules") + "/" + entry["file"], entry["policy"]) for entry in manifest["rulesets"]]
     actual_references = []
     for line in active:
         if line.strip().startswith("RULE-SET,"):
@@ -156,9 +160,12 @@ def check_repository(root: Union[str, Path] = ROOT) -> Tuple[List[str], Dict[str
     rules_root = root / manifest["rules_directory"]
     names = list(LOCAL_FILES) + [entry["file"] for entry in manifest["rulesets"]]
     names += manifest.get("auxiliary_rulesets", [])
+    paths = {name: rules_root / name for name in names}
+    paths.update({entry["file"]: root / entry.get("directory", "rules") / entry["file"]
+                  for entry in manifest["rulesets"]})
     try:
         for path in rules_root.iterdir():
-            if path.name not in names or not path.is_file() or path.is_symlink():
+            if path.name not in names or paths[path.name] != path or not path.is_file() or path.is_symlink():
                 errors.append("rules/: unexpected non-rule entry: " + path.name)
     except OSError as exc:
         errors.append("rules/: " + str(exc))
@@ -169,7 +176,7 @@ def check_repository(root: Union[str, Path] = ROOT) -> Tuple[List[str], Dict[str
     loaded: Dict[str, List[Rule]] = {}
     for name in names:
         try:
-            rules = load_rules(rules_root / name)
+            rules = load_rules(paths[name])
         except (OSError, ValueError) as exc:
             errors.append(str(exc))
             continue
@@ -186,6 +193,10 @@ def check_repository(root: Union[str, Path] = ROOT) -> Tuple[List[str], Dict[str
         if name not in loaded:
             continue
         rules = loaded[name]
+        # Regional fallback lists intentionally overlap service categories and
+        # contain inherited parent/child entries; parse them without ownership deduplication.
+        if entry.get("directory") == "domains":
+            continue
         within = RuleIndex()
         for rule in sorted(rules, key=_broad_first):
             covered = within.covering(rule)
@@ -212,11 +223,11 @@ def load_domain_routes(root: Union[str, Path] = ROOT) -> DomainRoutes:
     """Load the configured category order for static hostname-only checks."""
     root = Path(root)
     manifest = _manifest(root)
-    entries = [("ApplicationDirect", "DIRECT"), ("ApplicationReject", "REJECT")]
-    entries += [(entry["file"], entry["policy"]) for entry in manifest["rulesets"]]
-    return [(name, policy, [rule for rule in load_rules(root / manifest["rules_directory"] / name)
+    entries = [("ApplicationDirect", "DIRECT", "rules"), ("ApplicationReject", "REJECT", "rules")]
+    entries += [(entry["file"], entry["policy"], entry.get("directory", "rules")) for entry in manifest["rulesets"]]
+    return [(name, policy, [rule for rule in load_rules(root / directory / name)
                            if rule.kind in {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-WILDCARD"}])
-            for name, policy in entries]
+            for name, policy, directory in entries]
 
 
 def first_match_domain(hostname: str, root: Union[str, Path] = ROOT,

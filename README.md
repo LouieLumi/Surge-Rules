@@ -1,6 +1,6 @@
 # Surge-Rules
 
-按服务分类、按顺序匹配的 Surge 规则集。`main` 分支是正式订阅入口；所有规则文件统一放在 `rules/`，后续可直接在 GitHub 修改对应文件。
+按服务分类、按顺序匹配的 Surge 规则集。`main` 分支是正式订阅入口；服务规则放在 `rules/`，国内等域名集合放在 `domains/`，后续可直接在 GitHub 修改对应文件。
 
 ## 使用
 
@@ -14,27 +14,27 @@
 
 ## 分类与顺序
 
-UU 远程的 API、信令和中继使用 `nrd.nie.163.com` 子域名；`Games.list` 中的 `163.com` 会优先于国内兜底命中它们。新增 `UURemote.list` 走 `DIRECT`，覆盖已核实的产品域名、资源和下载端点。完整配置应把这条引用放在 `[Rule]` 顶部，早于游戏平台及 `PROTOCOL,STUN` 规则；只刷新旧规则列表无法补上这个引用。此域名列表不匹配没有域名的纯 IP P2P 流量。
+网易域名统一维护在 `domains/domestic.list`，覆盖 UU、邮箱、云音乐、游戏、有道、LOFTER、七鱼及基础服务。游戏平台和国内媒体里重复的网易域名已移除，现有国内列表引用即可处理普通请求。UU 的 `nrd.nie.163.com` 信令与中继还可能命中配置前面的通用 STUN 规则；完整配置中只保留一条窄范围协议例外：`AND,((PROTOCOL,STUN),(DOMAIN-SUFFIX,nrd.nie.163.com)),DIRECT`，放在 `PROTOCOL,STUN` 前。国内列表整体不提前，其他服务仍由其专属分类优先匹配。旧 `UURemote.list` 地址仅供旧配置兼容。
 
 以下顺序与推荐片段一致。Apple Intelligence 中继和 Apple 地区检测走 OtherAI 的 `👾 人工智能`。如果你复制过旧片段，请在本地 `[Rule]` 把 `Apple.list` 移到 `OtherAI.list` 后面，刷新两个规则集；否则 `DOMAIN-SUFFIX,apple.com` 会先匹配地区检测。YouTube、游戏平台、AI 等专用分类在 Google、Microsoft 大类前，防止被大范围规则提前匹配。
 
 | 顺序 | 分类 | 文件与订阅 | 现有策略 |
 | --- | --- | --- | --- |
-| 1 | 网易 UU 远程 / GameViewer | [UURemote.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/UURemote.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/UURemote.list) | DIRECT |
-| 2 | Claude | [Claude.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Claude.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Claude.list) | 👾 人工智能 |
-| 3 | OpenAI / ChatGPT / Sora | [OpenAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OpenAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OpenAI.list) | 👾 人工智能 |
-| 4 | 其他人工智能（含 Apple Intelligence） | [OtherAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OtherAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OtherAI.list) | 👾 人工智能 |
-| 5 | 苹果服务 | [Apple.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Apple.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Apple.list) | 🍎 苹果服务 |
-| 6 | 电报信息 | [Telegram.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Telegram.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Telegram.list) | 📲 电报信息 |
-| 7 | 游戏平台（Epic / Sony / Steam / Nintendo） | [Games.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Games.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Games.list) | 🎮 游戏平台 |
-| 8 | YouTube / YouTube Music | [YouTube.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/YouTube.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/YouTube.list) | 📹 油管视频 |
-| 9 | 奈飞视频 | [Netflix.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Netflix.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Netflix.list) | 🎥 奈飞视频 |
-| 10 | 迪士尼 | [Disney.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Disney.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Disney.list) | 🎬 迪士尼+ |
-| 11 | 哔哩哔哩（含国际版） | [BiliBili.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/BiliBili.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/BiliBili.list) | 📽 哔哩哔哩 |
-| 12 | 其他国外媒体 | [GlobalMedia.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/GlobalMedia.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/GlobalMedia.list) | 🍿 国外媒体 |
-| 13 | 其他国内媒体 | [ChinaMedia.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/ChinaMedia.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/ChinaMedia.list) | 🍔 国内媒体 |
-| 14 | Gemini / Google | [Gemini.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Gemini.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Gemini.list) | 👾 人工智能 |
-| 15 | 微软服务 | [Microsoft.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Microsoft.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Microsoft.list) | Ⓜ️ 微软服务 |
+| 1 | Claude | [Claude.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Claude.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Claude.list) | 👾 人工智能 |
+| 2 | OpenAI / ChatGPT / Sora | [OpenAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OpenAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OpenAI.list) | 👾 人工智能 |
+| 3 | 其他人工智能（含 Apple Intelligence） | [OtherAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OtherAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OtherAI.list) | 👾 人工智能 |
+| 4 | 苹果服务 | [Apple.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Apple.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Apple.list) | 🍎 苹果服务 |
+| 5 | 电报信息 | [Telegram.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Telegram.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Telegram.list) | 📲 电报信息 |
+| 6 | 游戏平台（Epic / Sony / Steam / Nintendo） | [Games.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Games.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Games.list) | 🎮 游戏平台 |
+| 7 | YouTube / YouTube Music | [YouTube.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/YouTube.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/YouTube.list) | 📹 油管视频 |
+| 8 | 奈飞视频 | [Netflix.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Netflix.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Netflix.list) | 🎥 奈飞视频 |
+| 9 | 迪士尼 | [Disney.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Disney.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Disney.list) | 🎬 迪士尼+ |
+| 10 | 哔哩哔哩（含国际版） | [BiliBili.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/BiliBili.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/BiliBili.list) | 📽 哔哩哔哩 |
+| 11 | 其他国外媒体 | [GlobalMedia.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/GlobalMedia.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/GlobalMedia.list) | 🍿 国外媒体 |
+| 12 | 其他国内媒体 | [ChinaMedia.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/ChinaMedia.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/ChinaMedia.list) | 🍔 国内媒体 |
+| 13 | Gemini / Google | [Gemini.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Gemini.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Gemini.list) | 👾 人工智能 |
+| 14 | 微软服务 | [Microsoft.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Microsoft.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Microsoft.list) | Ⓜ️ 微软服务 |
+| 15 | 国内及指定服务直连（含网易） | [domestic.list](https://github.com/LouieLumi/Surge-Rules/blob/main/domains/domestic.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/domestic.list) | DIRECT |
 | 16 | 通用代理兜底 | [Proxy.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Proxy.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Proxy.list) | ✨ 星链网络 |
 | 17 | 局域网兜底 | [LAN.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/LAN.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/LAN.list) | DIRECT |
 | 18 | 中国 ASN 直连兜底 | [ChinaASN.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/ChinaASN.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/ChinaASN.list) | DIRECT |
@@ -54,7 +54,7 @@ Claude / OpenAI 已按 2026-10-26 的参考清单和官方网络文档补齐 MCP
 
 `domains/direct.txt` 是用于 DNS 匹配的独立 DOMAIN-SET，已从 Loyalsoldier 导入本仓库。[文件](domains/direct.txt) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/direct.txt) · [使用方式与来源](domains/README.md)。它在 `[Host]` 中指定阿里 DoH，不加入连接分流的 `[Rule]`，也不会按策略组选择自动切换 DNS。
 
-`rules/` 只存放规则集：19 个分类文件、`ApplicationDirect`、`ApplicationReject`，以及保留的 `NetInfrastructure.list`。后者未加入推荐订阅，内容保持不变。配置片段 `Surge-Rules.conf`、README、`rulesets.json`、`docs/`、`scripts/`、`tests/` 和 `LICENSES/` 都放在规则目录外。
+`rules/` 存放 18 个服务分类文件、`ApplicationDirect`、`ApplicationReject`、保留的 `NetInfrastructure.list` 及兼容旧配置的 `UURemote.list`。第 19 个订阅是 `domains/domestic.list`，作为服务分类之后的国内及指定服务直连兜底。配置片段 `Surge-Rules.conf`、README、`rulesets.json`、`docs/`、`scripts/`、`tests/` 和 `LICENSES/` 都放在规则目录外。
 
 | 规则 | 作用 | 例子 / 匹配依据 |
 | --- | --- | --- |

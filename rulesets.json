@@ -3,17 +3,6 @@
   "base_url": "https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/",
   "rulesets": [
     {
-      "file": "UURemote.list",
-      "title": "网易 UU 远程 / GameViewer",
-      "policy": "DIRECT",
-      "sources": [
-        "https://uuyc.163.com/",
-        "https://uuyc.163.com/help/macos.html",
-        "https://adl.netease.com/d/g/uuremote/c/gw_mac",
-        "Local UU Remote / Surge connection logs (2026-11-18)"
-      ]
-    },
-    {
       "file": "Claude.list",
       "title": "Claude",
       "policy": "👾 人工智能",
@@ -141,6 +130,15 @@
       ]
     },
     {
+      "file": "domestic.list",
+      "directory": "domains",
+      "title": "国内及指定服务直连（含网易）",
+      "policy": "DIRECT",
+      "sources": [
+        "domains/README.md"
+      ]
+    },
+    {
       "file": "Proxy.list",
       "title": "通用代理兜底",
       "policy": "✨ 星链网络",
@@ -177,6 +175,7 @@
   ],
   "rules_directory": "rules",
   "auxiliary_rulesets": [
-    "NetInfrastructure.list"
+    "NetInfrastructure.list",
+    "UURemote.list"
   ]
 }

@@ -34,18 +34,20 @@ class PublishedRoutingTests(unittest.TestCase):
                          "adl.netease.com", "unisdk.update.netease.com",
                          "nie.res.netease.com", "comm.res.easebar.com"):
             with self.subTest(hostname=hostname):
-                self.assert_category(hostname, "UURemote.list", "DIRECT")
+                self.assert_category(hostname, "domestic.list", "DIRECT")
 
-    def test_uu_remote_does_not_capture_all_netease_or_lookalikes(self):
-        for hostname in ("163.com", "uu.163.com", "game.163.com", "music.163.com"):
+    def test_netease_services_are_in_domestic_direct(self):
+        for domain in ('126.com', '126.link', '126.net', '127.com', '127.net', '163.com', '163cn.tv', '163industry.com', '163jiasu.com', '163mail.com', '163qiyukf.com', '163yun.com', '166.com', '166.net', '188.com', '321fenx.com', 'easebar.com', 'haowu.link', 'icourse163.org', 'kada.com', 'lf126.net', 'lf127.net', 'lofter.com', 'nease.net', 'netease-inc.com', 'netease.com', 'netease.im', 'neteasegames.com', 'netstatic.net', 'qiyukf.com', 'qiyukf.net', 'qiyukf.net.cn', 'static163.net', 'weiyang.cn', 'ydshengxue.com', 'ydstatic.com', 'yeah.net', 'yjwujian.cn', 'youdao.com', 'youdaoads.com', 'yunxindns.com', 'yunxinfw.com', 'yysls.cn', 'zhuanzfx.com'):
+            for hostname in (domain, "service." + domain):
+                with self.subTest(hostname=hostname):
+                    self.assert_category(hostname, "domestic.list", "DIRECT")
+
+    def test_netease_rules_do_not_capture_lookalikes_or_other_services(self):
+        for hostname in ("notnetease.com", "netease.com.example.org", "163.com.example.org",
+                         "youdao.com.example.org", "steampowered.com", "www.apple.com"):
             with self.subTest(hostname=hostname):
-                self.assert_category(hostname, "Games.list", "🎮 游戏平台")
-        for hostname in ("netease.com", "another.res.netease.com", "other.qiyukf.com",
-                         "notuuyc.163.com", "uuyc.163.com.example.org",
-                         "nrd.nie.163.com.example.org", "child.adl.netease.com"):
-            with self.subTest(hostname=hostname):
-                match = first_match_domain(hostname, routes=self.routes)
-                self.assertTrue(match is None or match[0] != "UURemote.list", (hostname, match))
+                self.assertNotEqual(first_match_domain(hostname, routes=self.routes),
+                                    ("domestic.list", "DIRECT"), hostname)
 
     def test_youtube_precedes_broad_google(self):
         for hostname in ("googlevideo.com", "r1.googlevideo.com", "youtubei.googleapis.com", "video.google.com"):
@@ -257,7 +259,7 @@ class PublishedRoutingTests(unittest.TestCase):
         manifest = json.loads((ROOT / "rulesets.json").read_text(encoding="utf-8"))
         for entry in manifest["rulesets"]:
             self.assertFalse(any(rule.kind == "IP-ASN" and rule.value == "13335"
-                                 for rule in load_rules(ROOT / "rules" / entry["file"])), entry["file"])
+                                 for rule in load_rules(ROOT / entry.get("directory", "rules") / entry["file"])), entry["file"])
         active = [line for line in (ROOT / "Surge-Rules.conf").read_text(encoding="utf-8").splitlines()
                   if line.strip() and not line.lstrip().startswith(("#", ";", "//"))]
         self.assertEqual(tuple(active[-len(TAIL_LINES):]), TAIL_LINES)
