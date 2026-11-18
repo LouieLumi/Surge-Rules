@@ -1,0 +1,29 @@
+# 网易 UU 远程 / GameViewer — DIRECT
+# Verified: 2026-11-18
+# Place before Games.list, generic PROTOCOL,STUN and fallback rules.
+# Official website/help: https://uuyc.163.com/ ; https://uuyc.163.com/help/macos.html
+# Legacy https://gv.163.com/ redirects to https://uuyc.163.com/.
+# Official download pages: https://adl.netease.com/d/g/uuremote/c/gw_mac
+# and https://adl.netease.com/d/g/uuremote/c/gw?type=pc
+# These pages reference api.nrd.nie.163.com and yc.uu.163.com.
+
+# API, signalling and relay namespace. Client / Surge logs confirm:
+# api.nrd.nie.163.com, api-ipv4.nrd.nie.163.com, api-dcdn.nrd.nie.163.com,
+# sig-3303-b.nrd.nie.163.com, sig-dcdn-3303-b.nrd.nie.163.com,
+# relay-mg-3303-b.nrd.nie.163.com. Match other regions / shards too.
+DOMAIN-SUFFIX,nrd.nie.163.com
+
+# Product websites, dedicated assets and support, linked from the official site.
+DOMAIN-SUFFIX,uuyc.163.com
+DOMAIN-SUFFIX,gv.163.com
+DOMAIN-SUFFIX,yc.uu.163.com
+DOMAIN-SUFFIX,uuyc.res.netease.com
+DOMAIN-SUFFIX,gv.res.netease.com
+DOMAIN-SUFFIX,uuyc-res.fp.ps.netease.com
+DOMAIN-SUFFIX,gameviewer.qiyukf.com
+
+# Shared official download / web assets: exact hosts only.
+DOMAIN,adl.netease.com
+DOMAIN,unisdk.update.netease.com
+DOMAIN,nie.res.netease.com
+DOMAIN,comm.res.easebar.com

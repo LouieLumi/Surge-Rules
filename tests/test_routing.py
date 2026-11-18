@@ -24,6 +24,29 @@ class PublishedRoutingTests(unittest.TestCase):
     def assert_category(self, hostname, filename, policy):
         self.assertEqual(first_match_domain(hostname, routes=self.routes), (filename, policy), hostname)
 
+    def test_uu_remote_precedes_games_and_fallbacks(self):
+        for hostname in ("api.nrd.nie.163.com", "api-ipv4.nrd.nie.163.com",
+                         "api-dcdn.nrd.nie.163.com", "sig-3303-b.nrd.nie.163.com",
+                         "sig-dcdn-3303-b.nrd.nie.163.com", "relay-mg-3303-b.nrd.nie.163.com",
+                         "relay-new-region.nrd.nie.163.com", "uuyc.163.com", "gv.163.com",
+                         "yc.uu.163.com", "uuyc.res.netease.com", "gv.res.netease.com",
+                         "uuyc-res.fp.ps.netease.com", "gameviewer.qiyukf.com",
+                         "adl.netease.com", "unisdk.update.netease.com",
+                         "nie.res.netease.com", "comm.res.easebar.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "UURemote.list", "DIRECT")
+
+    def test_uu_remote_does_not_capture_all_netease_or_lookalikes(self):
+        for hostname in ("163.com", "uu.163.com", "game.163.com", "music.163.com"):
+            with self.subTest(hostname=hostname):
+                self.assert_category(hostname, "Games.list", "🎮 游戏平台")
+        for hostname in ("netease.com", "another.res.netease.com", "other.qiyukf.com",
+                         "notuuyc.163.com", "uuyc.163.com.example.org",
+                         "nrd.nie.163.com.example.org", "child.adl.netease.com"):
+            with self.subTest(hostname=hostname):
+                match = first_match_domain(hostname, routes=self.routes)
+                self.assertTrue(match is None or match[0] != "UURemote.list", (hostname, match))
+
     def test_youtube_precedes_broad_google(self):
         for hostname in ("googlevideo.com", "r1.googlevideo.com", "youtubei.googleapis.com", "video.google.com"):
             with self.subTest(hostname=hostname):
