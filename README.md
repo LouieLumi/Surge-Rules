@@ -14,7 +14,7 @@
 
 ## 分类与顺序
 
-网易域名统一维护在 `domains/domestic.list`，覆盖 UU、邮箱、云音乐、游戏、有道、LOFTER、七鱼及基础服务。游戏平台和国内媒体里重复的网易域名已移除，现有国内列表引用即可处理普通请求。UU 的 `nrd.nie.163.com` 信令与中继还可能命中配置前面的通用 STUN 规则；完整配置中只保留一条窄范围协议例外：`AND,((PROTOCOL,STUN),(DOMAIN-SUFFIX,nrd.nie.163.com)),DIRECT`，放在 `PROTOCOL,STUN` 前。国内列表整体不提前，其他服务仍由其专属分类优先匹配。旧 `UURemote.list` 地址仅供旧配置兼容。
+网易域名统一维护在 `domains/domestic.list`，覆盖 UU、邮箱、云音乐、游戏、有道、LOFTER、七鱼及基础服务。游戏平台和国内媒体里重复的网易域名已移除，现有国内列表引用即可处理域名请求。按用户要求，不设置 UU 专属 STUN 例外；直接以 IP 发起的 STUN 请求继续由配置原有的 `PROTOCOL,STUN` 规则处理。国内列表整体不提前，其他服务仍由其专属分类优先匹配。旧 `UURemote.list` 地址仅供旧配置兼容。
 
 以下顺序与推荐片段一致。Apple Intelligence 中继和 Apple 地区检测走 OtherAI 的 `👾 人工智能`。如果你复制过旧片段，请在本地 `[Rule]` 把 `Apple.list` 移到 `OtherAI.list` 后面，刷新两个规则集；否则 `DOMAIN-SUFFIX,apple.com` 会先匹配地区检测。YouTube、游戏平台、AI 等专用分类在 Google、Microsoft 大类前，防止被大范围规则提前匹配。
 
@@ -80,3 +80,4 @@ python3 -m unittest discover -s tests -v
 这些文件是按分类与优先级整理后的规则集，不是各上游的完整独立副本。请按推荐组合订阅；单独摘取某一分类可能缺少已移往前置分类的规则。
 
 详见 [设计说明](docs/DESIGN.md)、[来源清单](docs/SOURCES.md)、[导入报告](docs/import-report.json) 和 [第三方声明](THIRD_PARTY_NOTICES.md)。
+

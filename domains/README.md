@@ -28,14 +28,7 @@
 
 现有国内列表的位置保留。`Games.list` 和 `ChinaMedia.list` 中 5 条网易域名规则移回国内集合，避免抢先命中专用策略。UU 原先单独的 `UURemote.list` 不再被当前配置引用；旧 URL 保留兼容。
 
-完整配置里唯一的提前例外是：
-
-```ini
-AND,((PROTOCOL,STUN),(DOMAIN-SUFFIX,nrd.nie.163.com)),DIRECT
-PROTOCOL,STUN,"🔒 网络出口"
-```
-
-只有带 `nrd.nie.163.com` 域名的 STUN 请求会命中第一行；其他协议的网易请求由后面的国内集合处理，其他 STUN 仍由原策略处理。该例外不匹配没有域名的纯 IP P2P 请求。Surge 采用首条命中规则；只更新域名文件不会改动本地的协议规则顺序。
+按用户要求，已删除 UU 专属 STUN 直连例外。普通网易域名请求继续命中国内集合；直接使用 IP 发起的 STUN 请求不会命中域名列表，而是沿用完整配置原有的 `PROTOCOL,STUN,"🔒 网络出口"` 规则。国内列表和其他服务分类的顺序保持不变。
 
 ## 原直连 DNS 名单
 
@@ -63,3 +56,4 @@ DOMAIN-SET:https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/domains/
 - 上游许可：GNU GPL version 3，随附全文见 [GPL-3.0.txt](../LICENSES/GPL-3.0.txt)，来源与贡献者归属见 [第三方声明](../THIRD_PARTY_NOTICES.md)。
 
 此文件现在由本仓库独立维护，不定时覆盖为上游版本。可直接修改并提交到 `main`，Surge 刷新远程域名集合后读取本仓库的内容。需要同步上游时，应先检查差异，保留本仓库的手工修改并更新来源记录。
+
