@@ -1,12 +1,13 @@
 # 主机游戏（PlayStation / Nintendo Switch）
 # Maintainer: LouieLumi
 # Extracted: 2026-11-20
-# Rules: 130
+# Rules: 129
 # Policy-free Surge RULE-SET; extracted from existing Games.list without expanding coverage.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PlayStation/PlayStation.list
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nintendo/Nintendo.list
 # Upstream-derived content: GPL-2.0; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
-# Nintendo retains the existing platform-wide scope, including legacy consoles and game services.
+# Nintendo domain rules retain the existing platform-wide scope, including legacy consoles and game services.
+# Nintendo IP-CIDR,35.192.0.0/12,no-resolve stays in Games.list.
 
 # PlayStation / PSN
 DOMAIN-SUFFIX,playstation.com
@@ -140,4 +141,3 @@ DOMAIN-SUFFIX,xenoblade.com
 DOMAIN-SUFFIX,xn--mts47c3w9b1qr.cn
 DOMAIN-SUFFIX,xn--mts47c3w9b1qr.net
 DOMAIN-SUFFIX,yoshisnewisland.com
-IP-CIDR,35.192.0.0/12,no-resolve

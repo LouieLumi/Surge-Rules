@@ -367,5 +367,14 @@ class ConsoleGameRoutingTests(unittest.TestCase):
                 match = first_match_domain(host, routes=routes)
                 self.assertTrue(match is None or match[0] != "GameStation.list")
 
+    def test_nintendo_ip_range_stays_in_games(self):
+        nintendo_ip = Rule("IP-CIDR", "35.192.0.0/12", ("no-resolve",))
+        games = load_rules(ROOT / "rules/Games.list")
+        station = load_rules(ROOT / "rules/GameStation.list")
+        self.assertEqual(games[-1], nintendo_ip)
+        self.assertNotIn(nintendo_ip, station)
+        self.assertEqual(len(games), 185)
+        self.assertEqual(len(station), 129)
+
 if __name__ == "__main__":
     unittest.main()

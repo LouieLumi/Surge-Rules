@@ -12,7 +12,7 @@
 
 规则集地址已从根目录迁移到 `/main/rules/`，请使用上面的新片段一次性更新订阅地址；旧地址不再维护。
 
-PlayStation / PSN 的 4 条规则与 Nintendo 的 126 条规则已从 `Games.list` 移入 `GameStation.list`，在 Surge 中使用独立的 `🎮 主机游戏` 策略组，独立选择直连或节点，不包含 `🎮 游戏平台` 选项。采用旧片段的配置需更新 RULE-SET 地址，并在 `[Proxy Group]` 增加 `🎮 主机游戏 = select, DIRECT`。
+PlayStation / PSN 的 4 条域名规则与 Nintendo 的 125 条域名规则已从 `Games.list` 移入 `GameStation.list`，在 Surge 中使用独立的 `🎮 主机游戏` 策略组，独立选择直连或节点，不包含 `🎮 游戏平台` 选项。Nintendo 上游共 126 条，其中 `IP-CIDR,35.192.0.0/12,no-resolve` 仍留在 `Games.list`，走 `🎮 游戏平台`。采用旧片段的配置需更新 RULE-SET 地址，并在 `[Proxy Group]` 增加 `🎮 主机游戏 = select, DIRECT`。
 
 ## 分类与顺序
 
