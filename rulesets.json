@@ -48,14 +48,22 @@
       ]
     },
     {
+      "file": "主机游戏.list",
+      "title": "主机游戏（PlayStation / Nintendo Switch）",
+      "policy": "🎮 游戏平台",
+      "sources": [
+        "Sony",
+        "Nintendo"
+      ]
+    },
+    {
       "file": "Games.list",
-      "title": "游戏平台（Epic / Sony / Steam / Nintendo）",
+      "title": "游戏平台（Epic / Steam / Sony 其他服务）",
       "policy": "🎮 游戏平台",
       "sources": [
         "Epic",
         "Sony",
-        "Steam",
-        "Nintendo"
+        "Steam"
       ]
     },
     {
@@ -176,7 +184,6 @@
   "rules_directory": "rules",
   "auxiliary_rulesets": [
     "NetInfrastructure.list",
-    "UURemote.list",
-    "主机游戏.list"
+    "UURemote.list"
   ]
 }

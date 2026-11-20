@@ -347,5 +347,25 @@ class CheckerFailureTests(unittest.TestCase):
             self.assertNotIn("First.list", counts)
 
 
+
+class ConsoleGameRoutingTests(unittest.TestCase):
+    def test_console_platforms_have_their_own_list_and_keep_policy(self):
+        routes = load_domain_routes(ROOT)
+        for host in ("store.playstation.com", "a.dl.playstation.net", "playstationnetwork.com",
+                     "auth.api.sonyentertainmentnetwork.com", "ec.nintendo.com", "api.lp1.npns.srv.nintendo.net",
+                     "nintendoswitch.cn", "nintendowifi.net", "pokemonhome.com"):
+            with self.subTest(host=host):
+                self.assertEqual(first_match_domain(host, routes=routes), ("主机游戏.list", "🎮 游戏平台"))
+
+    def test_pc_games_and_other_sony_services_stay_in_games(self):
+        routes = load_domain_routes(ROOT)
+        for host in ("store.steampowered.com", "steamcommunity.com", "epicgames.com", "fortnite.com", "sonypictures.com", "sony.com"):
+            with self.subTest(host=host):
+                self.assertEqual(first_match_domain(host, routes=routes), ("Games.list", "🎮 游戏平台"))
+        for host in ("playstation.com.example.org", "notnintendo.net", "nintendoswitch.net.example.org"):
+            with self.subTest(host=host):
+                match = first_match_domain(host, routes=routes)
+                self.assertTrue(match is None or match[0] != "主机游戏.list")
+
 if __name__ == "__main__":
     unittest.main()

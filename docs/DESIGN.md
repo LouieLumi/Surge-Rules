@@ -2,7 +2,7 @@
 
 Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库把可独立选择出口的服务放入专用分类，再保留通用服务、代理和国内直连兜底。分类文件自身只提供匹配条件，使用哪个策略由 `[Rule]` 中的 `RULE-SET` 行决定。
 
-本次基于用户现有规则和下载的上游快照整理。`rulesets.json` 记录 18 个分类、推荐顺序及现有策略；`Surge-Rules.conf` 提供可复制的 `[Rule]` 片段，不包含节点、DNS 或策略组定义。
+本次基于用户现有规则和下载的上游快照整理。`rulesets.json` 记录 20 个分类、推荐顺序及现有策略；`Surge-Rules.conf` 提供可复制的 `[Rule]` 片段，不包含节点、DNS 或策略组定义。
 
 ## 分类迁移
 
@@ -15,7 +15,8 @@ Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库�
 | Gemini / Google | 合并 Google 上游与原 Gemini 规则，继续使用 `Gemini.list` 路径，当前与其它 AI 一起使用 `👾 人工智能` 策略 |
 | 微软服务 | 独立 `Microsoft.list`，位于专用 AI、游戏和媒体分类之后 |
 | Telegram | 独立 `Telegram.list`，保留域名、进程及 Telegram ASN/IP 条件 |
-| 游戏平台 | Epic、Sony、Steam、Nintendo 合并为 `Games.list` |
+| 主机游戏 | PlayStation / PSN 和 Nintendo 独立为 `主机游戏.list`，沿用 `🎮 游戏平台` 策略 |
+| 游戏平台 | Epic、Steam 与 Sony 其他服务保留在 `Games.list` |
 | YouTube、Netflix、Disney | 各自的上游规则与旧 `GlobalMedia.list` 中对应章节合并，使用原有各自策略 |
 | Bilibili | 国内、国际版都归 `BiliBili.list`，使用 `📽 哔哩哔哩` |
 | 其他国外媒体 | `GlobalMedia.list` 保留移出专用分类后的其他国外媒体 |

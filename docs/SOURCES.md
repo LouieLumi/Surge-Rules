@@ -71,3 +71,7 @@ Google 是为“Gemini & Google”补充的同一 blackmatrix7 上游清单；�
 ## 2026-10-26 Claude / OpenAI 查漏
 
 依据用户提供的 Net.Coffee 两份清单，交叉核对 Claude、OpenAI 和 Surge 文档及社区域名数据。规则变化与每项来源见 [Claude / OpenAI 分流维护](CLAUDE_OPENAI.md)。本次没有改写首次导入快照；当前数量以规则正文及校验输出为准。
+
+## 2026-11-20：主机游戏拆分
+
+将当前 `Games.list` 的 314 条规则无损拆分为 `主机游戏.list`（130 条）与 `Games.list`（184 条）。PlayStation 的 4 条域名与原 Sony 条目相交，Nintendo 的 126 条沿用原有快照；其余 Sony 服务保留在游戏平台。两份规则无重复，合并后的覆盖范围不变。新分类仍使用原 `🎮 游戏平台` 策略。

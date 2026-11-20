@@ -1,15 +1,15 @@
-# 游戏平台（Epic / Sony / Steam / Nintendo）
+# 游戏平台（Epic / Steam / Sony 其他服务）
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 314
+# Rules: 184
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Epic/Epic.list
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Sony/Sony.list
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list
-# Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nintendo/Nintendo.list
 # Upstream: blackmatrix7/ios_rule_script and its credited contributors.
 # Upstream-derived content: GPL-2.0; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
+# PlayStation and Nintendo moved to 主机游戏.list on 2026-11-20.
 
 DOMAIN,gstore.val.smogfly.com
 DOMAIN,sonyliveevents-nonssai.akamaized.net
@@ -17,136 +17,34 @@ DOMAIN,xz.pphimalayanrt.com
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
-DOMAIN-SUFFIX,100classicbooks.com
-DOMAIN-SUFFIX,ac-pocketcamp.com
-DOMAIN-SUFFIX,amiibo.com
-DOMAIN-SUFFIX,ayudanintendo.com
 DOMAIN-SUFFIX,battlebreakers.com
-DOMAIN-SUFFIX,bowsersinsidestory.com
 DOMAIN-SUFFIX,cdn-ali.content.steamchina.com
 DOMAIN-SUFFIX,cdn-qc.content.steamchina.com
 DOMAIN-SUFFIX,cdn-ws.content.steamchina.com
 DOMAIN-SUFFIX,cn-playnow.com.cn
 DOMAIN-SUFFIX,csgo.wmsj.cn
-DOMAIN-SUFFIX,dialga.com
-DOMAIN-SUFFIX,diddykongracing.com
-DOMAIN-SUFFIX,dkr.com
 DOMAIN-SUFFIX,dl.steam.clngaa.com
 DOMAIN-SUFFIX,dl.steam.ksyna.com
-DOMAIN-SUFFIX,donkeykongcountryreturns.com
 DOMAIN-SUFFIX,dota2.wmsj.cn
-DOMAIN-SUFFIX,drmario-world.com
 DOMAIN-SUFFIX,eac-cdn.com
 DOMAIN-SUFFIX,easy.ac
 DOMAIN-SUFFIX,easyanticheat.net
 DOMAIN-SUFFIX,edge.steam-dns.top.comcast.net
 DOMAIN-SUFFIX,epicgames.com
 DOMAIN-SUFFIX,epicgames.dev
-DOMAIN-SUFFIX,excitebots.com
 DOMAIN-SUFFIX,f3b7q2p3.ssl.hwcdn.net
 DOMAIN-SUFFIX,fanatical.com
-DOMAIN-SUFFIX,fire-emblem-heroes.com
-DOMAIN-SUFFIX,fireemblemawakening.com
-DOMAIN-SUFFIX,flipnotestudio.com
 DOMAIN-SUFFIX,fortnite.com
 DOMAIN-SUFFIX,ginzasonypark.jp
-DOMAIN-SUFFIX,giratina.com
-DOMAIN-SUFFIX,gloryofheracles.com
-DOMAIN-SUFFIX,hackyourconsole.com
 DOMAIN-SUFFIX,helpshift.com
 DOMAIN-SUFFIX,humblebundle.com
 DOMAIN-SUFFIX,imageworks.com
-DOMAIN-SUFFIX,kirbysepicyarn.com
-DOMAIN-SUFFIX,kirbysuperstarultra.com
-DOMAIN-SUFFIX,kyurem.com
-DOMAIN-SUFFIX,legendofzelda.cn
-DOMAIN-SUFFIX,legendofzelda.com.cn
-DOMAIN-SUFFIX,marioandluigidreamteam.com
-DOMAIN-SUFFIX,mariobroswii.com
-DOMAIN-SUFFIX,mariokart.cn
-DOMAIN-SUFFIX,mariokart.com.cn
-DOMAIN-SUFFIX,mariokart7.com
-DOMAIN-SUFFIX,mariokart8.com
-DOMAIN-SUFFIX,mariosupersluggers.com
-DOMAIN-SUFFIX,miitomo.com
-DOMAIN-SUFFIX,miitomo.com.cn
-DOMAIN-SUFFIX,miiverse.com
 DOMAIN-SUFFIX,motionpictureser.com
-DOMAIN-SUFFIX,newsupermariobrosu.com
-DOMAIN-SUFFIX,nintendo-europe-sales.com
-DOMAIN-SUFFIX,nintendo-europe.com
-DOMAIN-SUFFIX,nintendo.at
-DOMAIN-SUFFIX,nintendo.be
-DOMAIN-SUFFIX,nintendo.ch
-DOMAIN-SUFFIX,nintendo.co.jp
-DOMAIN-SUFFIX,nintendo.co.kr
-DOMAIN-SUFFIX,nintendo.co.uk
-DOMAIN-SUFFIX,nintendo.co.za
-DOMAIN-SUFFIX,nintendo.com
-DOMAIN-SUFFIX,nintendo.com.au
-DOMAIN-SUFFIX,nintendo.com.hk
-DOMAIN-SUFFIX,nintendo.com.pt
-DOMAIN-SUFFIX,nintendo.de
-DOMAIN-SUFFIX,nintendo.dk
-DOMAIN-SUFFIX,nintendo.es
-DOMAIN-SUFFIX,nintendo.eu
-DOMAIN-SUFFIX,nintendo.fi
-DOMAIN-SUFFIX,nintendo.fr
-DOMAIN-SUFFIX,nintendo.it
-DOMAIN-SUFFIX,nintendo.jp
-DOMAIN-SUFFIX,nintendo.net
-DOMAIN-SUFFIX,nintendo.nl
-DOMAIN-SUFFIX,nintendo.no
-DOMAIN-SUFFIX,nintendo.pt
-DOMAIN-SUFFIX,nintendo.ru
-DOMAIN-SUFFIX,nintendo.se
-DOMAIN-SUFFIX,nintendo.tw
-DOMAIN-SUFFIX,nintendo3ds.com
-DOMAIN-SUFFIX,nintendodsi.com
-DOMAIN-SUFFIX,nintendoeurope.com
-DOMAIN-SUFFIX,nintendolabo.cn
-DOMAIN-SUFFIX,nintendonetwork.net
-DOMAIN-SUFFIX,nintendonyc.com
-DOMAIN-SUFFIX,nintendostore.com
-DOMAIN-SUFFIX,nintendoswitch.cn
-DOMAIN-SUFFIX,nintendoswitch.com
-DOMAIN-SUFFIX,nintendoswitch.com.cn
-DOMAIN-SUFFIX,nintendoswitch.net
-DOMAIN-SUFFIX,nintendoswitchtogether.com
-DOMAIN-SUFFIX,nintendowifi.net
-DOMAIN-SUFFIX,nintendowii.com
 DOMAIN-SUFFIX,paragon.com
-DOMAIN-SUFFIX,personaltrainermath.com
 DOMAIN-SUFFIX,playartifact.com
-DOMAIN-SUFFIX,playnintendo.com
 DOMAIN-SUFFIX,playparagon.com
 DOMAIN-SUFFIX,playshow.io
 DOMAIN-SUFFIX,playshowtv.com
-DOMAIN-SUFFIX,playstation.com
-DOMAIN-SUFFIX,playstation.net
-DOMAIN-SUFFIX,playstationnetwork.com
-DOMAIN-SUFFIX,pokedex3d.com
-DOMAIN-SUFFIX,pokemon-moon.com
-DOMAIN-SUFFIX,pokemon-sun.com
-DOMAIN-SUFFIX,pokemon-sunmoon.com
-DOMAIN-SUFFIX,pokemon.com
-DOMAIN-SUFFIX,pokemonbank.com
-DOMAIN-SUFFIX,pokemonblackwhite.com
-DOMAIN-SUFFIX,pokemonbw.com
-DOMAIN-SUFFIX,pokemonchampionships.com
-DOMAIN-SUFFIX,pokemongoldsilver.com
-DOMAIN-SUFFIX,pokemonhome.com
-DOMAIN-SUFFIX,pokemonletsgoeevee.com
-DOMAIN-SUFFIX,pokemonletsgopikachu.com
-DOMAIN-SUFFIX,pokemonmysterydungeon.com
-DOMAIN-SUFFIX,pokemonpicross.com
-DOMAIN-SUFFIX,pokemonplatinum.com
-DOMAIN-SUFFIX,pokemonrubysapphire.com
-DOMAIN-SUFFIX,pokemonsunmoon.com
-DOMAIN-SUFFIX,pokemonswordshield.com
-DOMAIN-SUFFIX,pokemonultrasunmoon.com
-DOMAIN-SUFFIX,pokemonvgc.com
-DOMAIN-SUFFIX,pokemonwifi.net
 DOMAIN-SUFFIX,roborecall.com
 DOMAIN-SUFFIX,s.team
 DOMAIN-SUFFIX,shadowcomplex.com
@@ -234,7 +132,6 @@ DOMAIN-SUFFIX,sonybuilding.jp
 DOMAIN-SUFFIX,sonyclassics.com
 DOMAIN-SUFFIX,sonydesign.com
 DOMAIN-SUFFIX,sonydna.com
-DOMAIN-SUFFIX,sonyentertainmentnetwork.com
 DOMAIN-SUFFIX,sonyged.com.cn
 DOMAIN-SUFFIX,sonyglobalsolutions.jp
 DOMAIN-SUFFIX,sonykigyo.jp
@@ -253,12 +150,10 @@ DOMAIN-SUFFIX,sonystoragemedia.co.jp
 DOMAIN-SUFFIX,sonystyle.com.cn
 DOMAIN-SUFFIX,sonytc.co.jp
 DOMAIN-SUFFIX,sovec.net
-DOMAIN-SUFFIX,splatoon2tournament.com
 DOMAIN-SUFFIX,spyjinx.com
 DOMAIN-SUFFIX,st.dl.bscstorage.net
 DOMAIN-SUFFIX,st.dl.eccdnx.com
 DOMAIN-SUFFIX,st.dl.pinyuncloud.com
-DOMAIN-SUFFIX,starfox.com
 DOMAIN-SUFFIX,steam-api.com
 DOMAIN-SUFFIX,steam-chat.com
 DOMAIN-SUFFIX,steam.apac.qtlglb.com
@@ -292,36 +187,11 @@ DOMAIN-SUFFIX,steamunlocked.net
 DOMAIN-SUFFIX,steamusercontent-a.akamaihd.net
 DOMAIN-SUFFIX,steamuserimages-a.akamaihd.net
 DOMAIN-SUFFIX,steamvideo-a.akamaihd.net
-DOMAIN-SUFFIX,supermario.com
-DOMAIN-SUFFIX,supermario3dworld.com
-DOMAIN-SUFFIX,supermariobros.com.cn
-DOMAIN-SUFFIX,supermariogalaxy.com
-DOMAIN-SUFFIX,supermariorun.com
-DOMAIN-SUFFIX,superpapermario.com
-DOMAIN-SUFFIX,supersmashbros.cn
-DOMAIN-SUFFIX,supersmashbros.com.cn
-DOMAIN-SUFFIX,thelegendarystarfy.com
-DOMAIN-SUFFIX,thewonderful101.com
 DOMAIN-SUFFIX,underlords.com
 DOMAIN-SUFFIX,unrealengine.com
 DOMAIN-SUFFIX,unrealtournament.com
 DOMAIN-SUFFIX,valvesoftware.com
-DOMAIN-SUFFIX,wariolandshakeit.com
-DOMAIN-SUFFIX,wariowarediy.com
 DOMAIN-SUFFIX,wheelpop.com
-DOMAIN-SUFFIX,wii-u.com
-DOMAIN-SUFFIX,wiifit.com
-DOMAIN-SUFFIX,wiifitu.com
-DOMAIN-SUFFIX,wiipartyu.com
-DOMAIN-SUFFIX,wiisports.com
-DOMAIN-SUFFIX,wiisportsresort.com
-DOMAIN-SUFFIX,wiiugamepad.com
-DOMAIN-SUFFIX,wiivc.net
 DOMAIN-SUFFIX,wmsjsteam.com
 DOMAIN-SUFFIX,wwtbam.com
-DOMAIN-SUFFIX,xenoblade.com
-DOMAIN-SUFFIX,xn--mts47c3w9b1qr.cn
-DOMAIN-SUFFIX,xn--mts47c3w9b1qr.net
-DOMAIN-SUFFIX,yoshisnewisland.com
 DOMAIN-SUFFIX,yourfantasybeginsnow.com
-IP-CIDR,35.192.0.0/12,no-resolve

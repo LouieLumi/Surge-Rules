@@ -12,6 +12,7 @@ import ipaddress
 import json
 from pathlib import Path
 import re
+from urllib.parse import quote
 from typing import Dict, List, Optional, Tuple, Union
 
 from rulelib import Rule, RuleIndex, load_rules
@@ -116,7 +117,7 @@ def _check_config(root: Path, manifest: dict, errors: List[str]) -> None:
     expected_references = [
         ("RULE-SET", base + "ApplicationDirect", "DIRECT"),
         ("RULE-SET", base + "ApplicationReject", "REJECT", "no-resolve"),
-    ] + [("RULE-SET", base[:-len("rules/")] + entry.get("directory", "rules") + "/" + entry["file"], entry["policy"]) for entry in manifest["rulesets"]]
+    ] + [("RULE-SET", base[:-len("rules/")] + entry.get("directory", "rules") + "/" + quote(entry["file"]), entry["policy"]) for entry in manifest["rulesets"]]
     actual_references = []
     for line in active:
         if line.strip().startswith("RULE-SET,"):
