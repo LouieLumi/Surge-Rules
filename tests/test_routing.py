@@ -355,7 +355,7 @@ class ConsoleGameRoutingTests(unittest.TestCase):
                      "auth.api.sonyentertainmentnetwork.com", "ec.nintendo.com", "api.lp1.npns.srv.nintendo.net",
                      "nintendoswitch.cn", "nintendowifi.net", "pokemonhome.com"):
             with self.subTest(host=host):
-                self.assertEqual(first_match_domain(host, routes=routes), ("主机游戏.list", "🎮 游戏平台"))
+                self.assertEqual(first_match_domain(host, routes=routes), ("GameStation.list", "🎮 主机游戏"))
 
     def test_pc_games_and_other_sony_services_stay_in_games(self):
         routes = load_domain_routes(ROOT)
@@ -365,7 +365,7 @@ class ConsoleGameRoutingTests(unittest.TestCase):
         for host in ("playstation.com.example.org", "notnintendo.net", "nintendoswitch.net.example.org"):
             with self.subTest(host=host):
                 match = first_match_domain(host, routes=routes)
-                self.assertTrue(match is None or match[0] != "主机游戏.list")
+                self.assertTrue(match is None or match[0] != "GameStation.list")
 
 if __name__ == "__main__":
     unittest.main()

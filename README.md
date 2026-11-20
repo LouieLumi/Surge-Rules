@@ -12,7 +12,7 @@
 
 规则集地址已从根目录迁移到 `/main/rules/`，请使用上面的新片段一次性更新订阅地址；旧地址不再维护。
 
-PlayStation / PSN 的 4 条规则与 Nintendo 的 126 条规则已从 `Games.list` 移入 `主机游戏.list`，现有策略仍为 `🎮 游戏平台`。采用旧片段的配置需增加新的主机游戏 RULE-SET 引用。
+PlayStation / PSN 的 4 条规则与 Nintendo 的 126 条规则已从 `Games.list` 移入 `GameStation.list`，在 Surge 中使用独立的 `🎮 主机游戏` 策略组，默认跟随原 `🎮 游戏平台` 出口，也可单独选择节点。采用旧片段的配置需更新 RULE-SET 地址，并在 `[Proxy Group]` 增加 `🎮 主机游戏 = select, "🎮 游戏平台", DIRECT`。
 
 ## 分类与顺序
 
@@ -27,7 +27,7 @@ PlayStation / PSN 的 4 条规则与 Nintendo 的 126 条规则已从 `Games.lis
 | 3 | 其他人工智能（含 Apple Intelligence） | [OtherAI.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/OtherAI.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/OtherAI.list) | 👾 人工智能 |
 | 4 | 苹果服务 | [Apple.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Apple.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Apple.list) | 🍎 苹果服务 |
 | 5 | 电报信息 | [Telegram.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Telegram.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Telegram.list) | 📲 电报信息 |
-| 6 | 主机游戏（PlayStation / Nintendo Switch） | [主机游戏.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/%E4%B8%BB%E6%9C%BA%E6%B8%B8%E6%88%8F.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/%E4%B8%BB%E6%9C%BA%E6%B8%B8%E6%88%8F.list) | 🎮 游戏平台 |
+| 6 | 主机游戏（PlayStation / Nintendo Switch） | [GameStation.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/GameStation.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/GameStation.list) | 🎮 主机游戏 |
 | 7 | 游戏平台（Epic / Steam / Sony 其他服务） | [Games.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Games.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Games.list) | 🎮 游戏平台 |
 | 8 | YouTube / YouTube Music | [YouTube.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/YouTube.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/YouTube.list) | 📹 油管视频 |
 | 9 | 奈飞视频 | [Netflix.list](https://github.com/LouieLumi/Surge-Rules/blob/main/rules/Netflix.list) · [Raw 订阅](https://raw.githubusercontent.com/LouieLumi/Surge-Rules/main/rules/Netflix.list) | 🎥 奈飞视频 |

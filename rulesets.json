@@ -48,9 +48,9 @@
       ]
     },
     {
-      "file": "主机游戏.list",
+      "file": "GameStation.list",
       "title": "主机游戏（PlayStation / Nintendo Switch）",
-      "policy": "🎮 游戏平台",
+      "policy": "🎮 主机游戏",
       "sources": [
         "Sony",
         "Nintendo"
@@ -184,7 +184,6 @@
   "rules_directory": "rules",
   "auxiliary_rulesets": [
     "NetInfrastructure.list",
-    "UURemote.list",
-    "GameStation.list"
+    "UURemote.list"
   ]
 }
