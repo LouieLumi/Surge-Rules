@@ -176,6 +176,7 @@
   "rules_directory": "rules",
   "auxiliary_rulesets": [
     "NetInfrastructure.list",
-    "UURemote.list"
+    "UURemote.list",
+    "主机游戏.list"
   ]
 }
