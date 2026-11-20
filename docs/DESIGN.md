@@ -15,7 +15,7 @@ Surge 按配置从上到下匹配，先命中的规则决定策略。本仓库�
 | Gemini / Google | 合并 Google 上游与原 Gemini 规则，继续使用 `Gemini.list` 路径，当前与其它 AI 一起使用 `👾 人工智能` 策略 |
 | 微软服务 | 独立 `Microsoft.list`，位于专用 AI、游戏和媒体分类之后 |
 | Telegram | 独立 `Telegram.list`，保留域名、进程及 Telegram ASN/IP 条件 |
-| 主机游戏 | PlayStation / PSN 和 Nintendo 独立为 `GameStation.list`，使用独立 `🎮 主机游戏` 策略组，默认跟随原游戏出口 |
+| 主机游戏 | PlayStation / PSN 和 Nintendo 独立为 `GameStation.list`，使用独立 `🎮 主机游戏` 策略组，独立选择直连或节点 |
 | 游戏平台 | Epic、Steam 与 Sony 其他服务保留在 `Games.list` |
 | YouTube、Netflix、Disney | 各自的上游规则与旧 `GlobalMedia.list` 中对应章节合并，使用原有各自策略 |
 | Bilibili | 国内、国际版都归 `BiliBili.list`，使用 `📽 哔哩哔哩` |
