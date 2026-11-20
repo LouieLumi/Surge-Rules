@@ -1,15 +1,17 @@
 # 游戏平台（Epic / Steam / Sony 其他服务）
 # Maintainer: LouieLumi
 # Organized: 2026-09-17
-# Rules: 184
+# Rules: 185
 # Policy-free Surge RULE-SET; edit this file directly on GitHub.
 # Use the order in Surge-Rules.conf. Sources and changes: docs/SOURCES.md, docs/import-report.json.
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Epic/Epic.list
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Sony/Sony.list
 # Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list
+# Source: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Nintendo/Nintendo.list
 # Upstream: blackmatrix7/ios_rule_script and its credited contributors.
 # Upstream-derived content: GPL-2.0; see LICENSES/GPL-2.0.txt and THIRD_PARTY_NOTICES.md.
-# PlayStation and Nintendo moved to GameStation.list on 2026-11-20.
+# PlayStation and Nintendo domains moved to GameStation.list on 2026-11-20.
+# Nintendo IP-CIDR,35.192.0.0/12,no-resolve remains in this file.
 
 DOMAIN,gstore.val.smogfly.com
 DOMAIN,sonyliveevents-nonssai.akamaized.net
@@ -195,3 +197,4 @@ DOMAIN-SUFFIX,wheelpop.com
 DOMAIN-SUFFIX,wmsjsteam.com
 DOMAIN-SUFFIX,wwtbam.com
 DOMAIN-SUFFIX,yourfantasybeginsnow.com
+IP-CIDR,35.192.0.0/12,no-resolve

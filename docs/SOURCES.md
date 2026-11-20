@@ -74,4 +74,4 @@ Google 是为“Gemini & Google”补充的同一 blackmatrix7 上游清单；�
 
 ## 2026-11-20：主机游戏拆分
 
-将当前 `Games.list` 的 314 条规则无损拆分为 `GameStation.list`（130 条）与 `Games.list`（184 条）。PlayStation 的 4 条域名与原 Sony 条目相交，Nintendo 的 126 条沿用原有快照；其余 Sony 服务保留在游戏平台。两份规则无重复，合并后的覆盖范围不变。新分类使用 `🎮 主机游戏` 策略组，独立选择直连或节点。
+将当时 `Games.list` 的 314 条规则拆分为 `GameStation.list`（129 条）与 `Games.list`（185 条）。PlayStation 的 4 条域名与原 Sony 条目相交，Nintendo 的 125 条域名沿用原有快照；Nintendo 的 `IP-CIDR,35.192.0.0/12,no-resolve` 保留在游戏平台，其余 Sony 服务同样留在 `Games.list`。两份规则无重复，合并后的覆盖范围不变。新分类使用 `🎮 主机游戏` 策略组，独立选择直连或节点。
