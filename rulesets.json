@@ -184,6 +184,7 @@
   "rules_directory": "rules",
   "auxiliary_rulesets": [
     "NetInfrastructure.list",
-    "UURemote.list"
+    "UURemote.list",
+    "GameStation.list"
   ]
 }
